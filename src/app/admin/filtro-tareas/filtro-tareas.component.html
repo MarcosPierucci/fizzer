@@ -1,6 +1,22 @@
 <app-barra-verde-admin></app-barra-verde-admin>
 <div class="contenido-tareas">
+<h2>FILTRAR TAREAS</h2>
 
-  <h2>filtro-tareas works!</h2>
+@for (item of listaTareasPorFiltar; track $index) {
+  @if (!item.aceptada) {
+    <div class="tarea">
+      <p><strong>ID:</strong> {{item.id}}</p>
+      <p><strong>Titulo:</strong> {{item.titulo}}</p>
+      <p><strong>Categoria:</strong> {{item.categoria}}</p>
+      <p><strong>Descripcion:</strong> {{item.descripcion}}</p>
+      <p><strong>Creador:</strong> {{item.creador}}</p>
+
+      <button class="aceptar" (click)="aceptarTarea()">Aceptar</button>
+      <button class="rechazar" (click)="rechazarTarea(item.id)">Rechazar</button>
+    </div>
+
+  }
+
+}
 </div>
 

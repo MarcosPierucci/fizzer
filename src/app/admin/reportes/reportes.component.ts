@@ -54,12 +54,11 @@ rechazarReporte(id:string)
 this.rs.deleteReporte(id).subscribe(
   {
     next:() =>{
-      console.log("Reporte rechazado borrado correctamente")
       window.location.reload();
     },
     error:(e:Error)=>
     {
-      console.log("error en borrar")
+
       console.log(e.message);
     }
   }

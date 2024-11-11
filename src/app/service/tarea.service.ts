@@ -1,4 +1,7 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Tarea } from '../interfaces/tarea';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +9,26 @@ import { Injectable } from '@angular/core';
 export class TareaService {
 
   constructor() { }
+  http = inject(HttpClient);
+  urlBase = 'http://localhost:3000/tareas'
+
+
+
+  getTareas():Observable<Tarea[]>{
+    return this.http.get<Tarea[]>(this.urlBase);
+  }
+
+deleteTarea(id: string): Observable<void>{
+    return this.http.delete<void>(`${this.urlBase}/${id}`);
+  }
+
+  postTarea(tarea : Tarea): Observable<Tarea>{
+    return this.http.post<Tarea>(this.urlBase, tarea);
+  }
+
+  putReporte(reporte: Tarea, id: string): Observable<Tarea>{
+    return this.http.put<Tarea>(`${this.urlBase}/${id}`, reporte);
+  }
+
+
 }

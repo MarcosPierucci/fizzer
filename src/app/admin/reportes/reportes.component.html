@@ -11,7 +11,7 @@
     <p><strong>Reportado:</strong> {{item.reportado}} ({{item.tipoReporte}})</p>
     <a href={{item.link}}><p><strong>Link</strong> </p></a> <!--En el json tiene que ir http://localhost:4200/publicacion, osea tiene que ir asi el link de la publicacion que sea para poder ingresar directamente con este link-->
     <button class="aceptar" (click)="aceptarReporte(item.tipoReporte, item.idReportado)">Aceptar</button>
-    <button class="rechazar" (click)="rechazarReporte(item.id)" routerLink="admin-reportes">Rechazar</button>
+    <button class="rechazar" (click)="rechazarReporte(item.id)" >Rechazar</button>
   </div>
 
 }

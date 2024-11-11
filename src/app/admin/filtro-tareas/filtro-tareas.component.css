@@ -1,5 +1,41 @@
 .contenido-tareas {
   margin-left: 80px;
+  padding: 5px;
+  margin-top: 40px;
+}
+
+.contenido-tareas {
+  margin-left: 80px;
   padding: 20px;
-  margin-top: 70px;
+}
+
+
+.tarea {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.tarea p {
+  margin: 5px 0;
+}
+
+
+.aceptar {
+  background-color: green;
+  color: white;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.rechazar {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
 }
