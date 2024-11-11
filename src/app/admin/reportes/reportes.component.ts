@@ -28,9 +28,11 @@ rs = inject(ReporteService);
   {
     if(tipoReporte.toLowerCase() == 'publicacion')
     {
+      alert("Se apreto aceptar, tipo reporte: " + tipoReporte);
       this.borrarPublicacion(idAborrar); //Aca seria de tipo number porque la publicacion tendria un id de tipo number
     } else if(tipoReporte.toLowerCase() == 'perfil')
     {
+      alert("Se apreto aceptar, tipo reporte: " + tipoReporte);
       this.borrarPerfil(idAborrar); //Aca seria de tipo string porque los usuarios tienen un id de tipo String
     }
   }

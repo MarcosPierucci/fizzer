@@ -5,4 +5,5 @@ export interface Reporte {
   reportado:string,
   link: string,
   tipoReporte: string
+  idReportado: string|number
   }

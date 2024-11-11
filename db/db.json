@@ -21,7 +21,8 @@
       "motivo": "spam",
       "reportado": "santino",
       "link": "http://youtube.com",
-      "tipoReporte": "publicacion"
+      "tipoReporte": "publicacion",
+      "idReportado" : "1"
     },
     {
       "id": "2",
@@ -29,7 +30,8 @@
       "motivo": "Inapropiado",
       "reportado": "Mac",
       "link": "Zelda",
-      "tipoReporte": "publicacion"
+      "tipoReporte": "publicacion",
+      "idReportado" : "2"
     },
     {
       "id": "3",
@@ -37,7 +39,8 @@
       "motivo": "Spam",
       "reportado": "Lucia",
       "link": "Oferta de trabajo",
-      "tipoReporte": "mensaje"
+      "tipoReporte": "perfil",
+      "idReportado" : "3"
     },
     {
       "id": "4",
@@ -45,7 +48,8 @@
       "motivo": "Contenido ofensivo",
       "reportado": "Pedro",
       "link": "Imagen agresiva",
-      "tipoReporte": "publicacion"
+      "tipoReporte": "publicacion",
+      "idReportado" : "4"
     },
     {
       "id": "5",
@@ -53,7 +57,8 @@
       "motivo": "Violación de privacidad",
       "reportado": "Juan",
       "link": "Fotos privadas",
-      "tipoReporte": "mensaje"
+      "tipoReporte": "perfil",
+      "idReportado" : "5"
     }
   ]
 
