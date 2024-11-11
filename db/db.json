@@ -14,11 +14,59 @@
 
 ,
 
-  "reporte" : [
-  {
-    
-  }
+  "reporte": [
+    {
+      "id": "1",
+      "emisor": "marcos",
+      "motivo": "spam",
+      "reportado": "santino",
+      "link": "http://youtube.com",
+      "tipoReporte": "publicacion",
+      "idReportado" : "1"
+    },
+    {
+      "id": "2",
+      "emisor": "Facu",
+      "motivo": "Inapropiado",
+      "reportado": "Mac",
+      "link": "Zelda",
+      "tipoReporte": "publicacion",
+      "idReportado" : "2"
+    },
+    {
+      "id": "3",
+      "emisor": "Ana",
+      "motivo": "Spam",
+      "reportado": "Lucia",
+      "link": "Oferta de trabajo",
+      "tipoReporte": "perfil",
+      "idReportado" : "3"
+    },
+    {
+      "id": "4",
+      "emisor": "Carlos",
+      "motivo": "Contenido ofensivo",
+      "reportado": "Pedro",
+      "link": "Imagen agresiva",
+      "tipoReporte": "publicacion",
+      "idReportado" : "4"
+    },
+    {
+      "id": "5",
+      "emisor": "Luisa",
+      "motivo": "Violación de privacidad",
+      "reportado": "Juan",
+      "link": "Fotos privadas",
+      "tipoReporte": "perfil",
+      "idReportado" : "5"
+    }
   ]
 
 }
+
+
+
+
+
+
 
