@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BarraVerdeAdminComponent } from "../barra-verde-admin/barra-verde-admin.component";
 import { Reporte } from '../../interfaces/reporte';
 
@@ -9,10 +9,21 @@ import { Reporte } from '../../interfaces/reporte';
   templateUrl: './reportes.component.html',
   styleUrl: './reportes.component.css'
 })
-export class ReportesComponent {
+export class ReportesComponent implements OnInit{
+  ngOnInit(): void {
+
+  }
 
 
   listaReportes : Reporte[]= [
 
   ]
+
+rechazarReporte()
+{
+  
+}
+
+
+
 }
