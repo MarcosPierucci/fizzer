@@ -1,7 +1,8 @@
+import { Reporte } from './../interfaces/reporte';
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Reporte } from '../interfaces/reporte';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,14 @@ export class ReporteService {
   deleteReporte(id: string): Observable<void>{
     return this.http.delete<void>(`${this.urlBase}/${id}`);
   }
+
+  postReporte(reporte : Reporte): Observable<Reporte>{
+    return this.http.post<Reporte>(this.urlBase, reporte);
+  }
+
+  putReporte(reporte: Reporte, id: string): Observable<Reporte>{
+    return this.http.put<Reporte>(`${this.urlBase}/${id}`, reporte);
+  }
+
 
 }
