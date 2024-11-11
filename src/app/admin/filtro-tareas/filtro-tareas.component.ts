@@ -28,7 +28,7 @@ listaTareasPorFiltar : Tarea[]=[
 
 aceptarTarea()
 {
-  
+  console.log("funciona");
 }
 
 rechazarTarea(id:string){
