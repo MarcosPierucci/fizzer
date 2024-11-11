@@ -1,1 +1,18 @@
 <p>reportes works!</p>
+<app-barra-verde-admin></app-barra-verde-admin>
+
+<div class="contenido-reportes">
+  <h2>REPORTES</h2>
+@for (item of listaReportes; track $index) {
+  <div class="reporte">
+    <p><strong>ID:</strong> {{item.id}}</p>
+    <p><strong>Emisor:</strong> {{item.emisor}}</p>
+    <p><strong>Motivo:</strong> {{item.motivo}}</p>
+    <p><strong>Reportado:</strong> {{item.reportado}} ({{item.tipoReporte}})</p>
+    <p><strong>Link:</strong> {{item.link}}</p>
+    <button class="aceptar">Aceptar</button>
+    <button class="rechazar">Rechazar</button>
+  </div>
+
+}
+</div>

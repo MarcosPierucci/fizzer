@@ -1,0 +1,40 @@
+
+.barra-superior {
+  display: flex;
+  align-items: center;
+  background-color: #4CAF50;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.boton-reportes, .boton-tareas {
+  background-color: yellow;
+  border: none;
+  padding: 10px 30px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+
+
+
+.barra-lateral {
+  background-color: #4CAF50;
+  width: 60px;
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
