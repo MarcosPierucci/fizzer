@@ -1,1 +1,54 @@
-<p>inicio-sesion works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizzer - Inicio de Sesión</title>
+    <link rel="stylesheet" href="inicio-sesion.component.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <img src="https://ih1.redbubble.net/image.2714584457.7441/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Fizzer Logo" class="logo">
+            <h1>FIZZER</h1>
+            <div class="description">
+                <p>Come join our team of creators! Connect with other users through the most intriguing and exciting daily activities.</p>
+            </div>
+        </div>
+        
+        <div class="right-panel">
+            <form [formGroup]="formularioInicioSesion" (ngSubmit)="inicioSesion()">
+
+                <label for="">USUARIO</label>
+                <input type="text" placeholder="USUARIO" formControlName="nombreUsuario" class="input-field">
+                @if (formularioInicioSesion.controls["nombreUsuario"].getError('required') && formularioInicioSesion.controls["nombreUsuario"].touched) {
+                    <div>
+                        Campo Requerido
+                    </div>
+                }
+                @if (this.formularioInicioSesion.controls["nombreUsuario"].getError('minleght') && formularioInicioSesion.controls["nombreUsuario"].touched) {
+                    <div>
+                        Minimo 3 caracteres
+                    </div>
+                }
+
+
+                <label for="">CONTRASENIA</label>
+                <input type="password" placeholder="CONTRASEÑA"formControlName="contraseniaUsuario" class="input-field" >
+                @if(formularioInicioSesion.controls['contraseniaUsuario'].getError('required')&& formularioInicioSesion.controls["contraseniaUsuario"].touched) {
+                    <div>
+                        Campo Requerido
+                    </div>
+                }
+                @if(formularioInicioSesion.controls["contraseniaUsuario"].getError('minleght')&& formularioInicioSesion.controls["contraseniaUsuario"].touched) {
+                    <div>
+                        Minimo 5 caracteres
+                    </div>
+                }
+                <button type="submit" class="login-button">Login</button>
+                <p class="register-text">No tenes cuenta? Registrate gratis <a href="/">haciendo click aquí</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
