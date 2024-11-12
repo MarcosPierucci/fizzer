@@ -26,9 +26,18 @@ deleteTarea(id: string): Observable<void>{
     return this.http.post<Tarea>(this.urlBase, tarea);
   }
 
-  putReporte(reporte: Tarea, id: string): Observable<Tarea>{
-    return this.http.put<Tarea>(`${this.urlBase}/${id}`, reporte);
+  putTarea(tarea: Tarea, id: string): Observable<Tarea>{
+    return this.http.put<Tarea>(`${this.urlBase}/${id}`, tarea);
   }
+
+  /*putTareaEstado(estado: boolean, id: string): Observable<Tarea> {
+    return this.http.put<Tarea>(`${this.urlBase}/${id}`, { aceptada: estado });
+  }*/
+
+  patchTareaAceptada(id: string, aceptada: boolean): Observable<Tarea> {
+    return this.http.patch<Tarea>(`${this.urlBase}/${id}`, { aceptada });
+  }
+
 
 
 }

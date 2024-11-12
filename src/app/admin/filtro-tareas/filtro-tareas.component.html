@@ -11,7 +11,7 @@
       <p><strong>Descripcion:</strong> {{item.descripcion}}</p>
       <p><strong>Creador:</strong> {{item.creador}}</p>
 
-      <button class="aceptar" (click)="aceptarTarea()">Aceptar</button>
+      <button class="aceptar" (click)="aceptarTarea(item.id)">Aceptar</button>
       <button class="rechazar" (click)="rechazarTarea(item.id)">Rechazar</button>
     </div>
 
