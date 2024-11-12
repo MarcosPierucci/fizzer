@@ -1,34 +1,49 @@
 <div class="container">
-    <div class="sidebar">
-      <img src="path/to/logo.png" alt="Logo" class="logo" />
-      <div class="chat-icon"></div>
+  <div class="sidebar">
+    <img src="path/to/logo.png" alt="Logo" class="logo" />
+    <div class="chat-icon"></div>
+  </div>
+
+  <div class="content">
+    <h1>Propone tu tarea!</h1>
+    <div class="description">
+      ¿Te gustaría que todos los usuarios de Fizzer compartan una actividad propuesta por vos? ¡Te damos la oportunidad de cargar el siguiente formulario una vez por día! Un administrador se encargará de leer y seleccionar las ideas más divertidas y originales.
     </div>
-  
-    <div class="content">
-      <h1>Propone tu tarea!</h1>
-      <div class="description">
-        ¿Te gustaría que todos los usuarios de Fizzer compartan una actividad propuesta por vos? ¡Te damos la oportunidad de cargar el siguiente formulario una vez por día! Un administrador vá a encargarse de leer y seleccionar las ideas más divertidas y originales!
-      </div>
-  
-      <div class="form-container">
+
+    <div class="form-container">
+      <form [formGroup]="formularioTareas" (ngSubmit)="agregarTarea()">
         <div class="form-group">
-          <label for="title">Título de tu tarea:</label>
-          <input type="text" id="title" class="input-box" />
+          <label for="titulo">Título de tu tarea:</label>
+          <input type="text" id="tituloTarea" class="input-box" formControlName="titulo" placeholder="Ej: A cocinar pastas caseras!" />
+          <div *ngIf="formularioTareas.get('titulo')?.touched && formularioTareas.get('titulo')?.invalid">
+            <small class="error">El título es obligatorio.</small>
+          </div>
         </div>
+
         <div class="form-group">
-          <label for="description">Descripción:</label>
-          <textarea id="description" class="input-box"></textarea>
+          <label for="descripcion">Descripción:</label>
+          <textarea id="descripcion" class="input-box" formControlName="descripcion" placeholder="Ej: Preparar pasta desde cero, amasando y dando forma a la masa para una deliciosa comida casera. Receta guiada con un video tutorial compartido para todos los FizzerLovers."></textarea>
+          <div *ngIf="formularioTareas.get('descripcion')?.touched && formularioTareas.get('descripcion')?.invalid">
+            <small class="error">La descripción es obligatoria.</small>
+          </div>
+          
         </div>
+
         <div class="form-group">
           <label for="category">Posible Categoría:</label>
-          <select id="category" class="dropdown">
+          <select id="category" formControlName="categoria" class="dropdown">
             <option value="" disabled selected>Selecciona una opción</option>
-            <option value="option1">Opción 1</option>
-            <option value="option2">Opción 2</option>
-            <option value="option3">Opción 3</option>
+            <option *ngFor="let categoria of categorias" [value]="categoria">
+              {{ categoria }}
+            </option>
           </select>
+          <div *ngIf="formularioTareas.get('categoria')?.touched && formularioTareas.get('categoria')?.invalid">
+            <small class="error">Debes seleccionar una categoría.</small>
+          </div>
         </div>
-      </div>
+
+        <button type="submit" [disabled]="formularioTareas.invalid" class="btn-submit">Enviar Tarea</button>
+      </form>
     </div>
   </div>
-  
+</div>

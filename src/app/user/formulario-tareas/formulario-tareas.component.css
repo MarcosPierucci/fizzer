@@ -1,5 +1,4 @@
-/* Contenedor general */
-.container {
+  .container {
     display: flex;
     font-family: 'Arial', sans-serif;
     background-color: #d3d3d3;
@@ -95,5 +94,10 @@
     background-color: #97e379;
     border: 2px solid #000;
     appearance: none; /* Quita la flecha del desplegable para personalizarlo */
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.8em;
   }
   
