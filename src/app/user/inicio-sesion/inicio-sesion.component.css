@@ -1,0 +1,143 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #d3d3d3;
+    
+}
+
+/* Panel izquierdo */
+.left-panel {
+    width: 50%;
+    background-color: #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.left-panel h1 {
+    font-size: 48px;
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    /* margin: 20px 0; */
+    width: 100%;
+}
+
+.description {
+    background-color: #b8ff4d;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: black;
+}
+
+/* Panel derecho */
+.right-panel {
+    width: 70%;
+    background-color: #b8ff4d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 250px;
+}
+
+.input-field {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius:12px;
+    background-color: #ffdb4d;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(6, 6, 6);
+    outline: none;
+    
+}
+
+.login-button {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-text {
+    margin-top: 20px;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+}
+
+.register-text a {
+    color: blue;
+    text-decoration: none;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+.ojito-button{
+   padding: 10px;
+   border: none;
+   background-color:#e3b70a;
+   border-radius:  0 12px 12px 0;
+   font-size: 16px;
+}
+
+.formulario-login{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    align-content: space-evenly;
+}
+
+.input-usuario{
+width: 100%;
+}
+
+.contra-field
+{
+    border-radius:12px 0 0 12px;
+    
+
+}
+
+.input-contra{
+    width: 100%;
+}
+
+button,input{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
