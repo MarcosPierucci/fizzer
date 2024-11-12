@@ -26,10 +26,23 @@ listaTareasPorFiltar : Tarea[]=[
 ]
 
 
-aceptarTarea()
-{
-  console.log("funciona");
+aceptarTarea(id: string) {
+  this.ts.patchTareaAceptada(id, true).subscribe({next:() => {
+    const tarea = this.listaTareasPorFiltar.find(t => t.id === id);
+    if (tarea) {
+      console.log("Tarea aceptada")
+      tarea.aceptada = true;
+    }}, error:(e:Error) =>
+    {
+      console.log(e.message)
+    }
+  });
 }
+
+
+
+
+
 
 rechazarTarea(id:string){
   this.ts.deleteTarea(id).subscribe(
