@@ -9,6 +9,7 @@ import { BehaviorSubject, catchError, map, Observable, of } from 'rxjs';
 export class UsuarioService {
 
 urlBase = 'http://localhost:3000/usuario'
+
 private activeUserSubject = new BehaviorSubject<UsuarioActivo | undefined>(undefined);
 
 constructor(private http: HttpClient) { }
@@ -35,21 +36,36 @@ constructor(private http: HttpClient) { }
     }
     
 
-    login(nombreUsario: string, contraseniaUsario: string): Observable<boolean> {
-      return this.http.get<Usuario[]>(`${this.urlBase}?nombreUsario=${nombreUsario}`).pipe(
-        map((usuarios) => {
-          const usuario = usuarios.at(0);
-          if (usuario && usuario.nombreUsario == nombreUsario && usuario.contraseniaUsuario == contraseniaUsario) {
+    // login(nombreUsario: string, contraseniaUsario: string): Observable<boolean> {
+    //   return this.http.get<Usuario[]>(`${this.urlBase}?nombreUsario=${nombreUsario}`).pipe(
+    //     map((usuarios) => {
+    //       const usuario = usuarios.at(0);
+    //       if (usuario && usuario.nombreUsario == nombreUsario && usuario.contraseniaUsuario == contraseniaUsario) {
+    //         /* this.activeUser = { username: user.username, id: user.id! }; */
+    //         this.activeUserSubject.next({ nombre: usuario.nombreUsario, id: usuario.idUsuario! });
+    //         return true;
+    //       }
+    //       return false;
+    //     }),
+    //     catchError(() => of(false))
+    //   );
+    // }
+
+    loginn(username: string, password: string): Observable<boolean> {
+      return this.http.get<Usuario[]>(`${this.urlBase}?nombreUsuario=${username}`).pipe(
+        map((users) => {
+          const user = users.at(0);
+          if (user && user.nombreUsario == username && user.contraseniaUsuario == password){
             /* this.activeUser = { username: user.username, id: user.id! }; */
-            this.activeUserSubject.next({ username: usuario.nombreUsario, id: usuario.idUsuario! });
+            this.activeUserSubject.next({ nombre: user.nombreUsario, id: user.id! });
             return true;
           }
-          return false;
+          console.log("tira false")
+          return true;
         }),
         catchError(() => of(false))
       );
     }
-
 
     logout(): Observable<boolean> {
       /* this.activeUser = undefined; */
@@ -58,11 +74,11 @@ constructor(private http: HttpClient) { }
     }
   
     signup(usuario: Usuario): Observable<boolean> {
-      return this.http.post<Usuario>(this.urlBase, usuario).pipe(
-        map(({ idUsuario, nombreUsario }) => {
-          if (idUsuario) {
+      return this.http.post<UsuarioActivo>(this.urlBase, usuario).pipe(
+        map(({ id, nombre }) => {
+          if (id) {
             /* this.activeUser = { id, username }; */
-            this.activeUserSubject.next({idUsuario, nombreUsario});
+            this.activeUserSubject.next({id, nombre});
             return true;
           }
           return false;

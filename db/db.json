@@ -1,7 +1,18 @@
 {
   "usuario": [
-    {}
+    {
+      "nombreUsuario" : "santi",
+      "contraniaUsuario" : "123456789"
+    },
+    {
+       "nombreUsuario" : "piru",
+      "contraniaUsuario" : "123456"
+    }
   ],
+
+
+
+
   "tareas": [
     {
       "id": "1",
@@ -36,6 +47,7 @@
       "aceptada": false
     }
   ],
+
   "reporte": [
     {
       "id": "1",
@@ -83,4 +95,6 @@
       "idReportado": "5"
     }
   ]
+
+  
 }

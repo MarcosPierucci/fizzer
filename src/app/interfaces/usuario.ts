@@ -1,4 +1,5 @@
 export interface Usuario {
+    id: string
     idUsuario?: string
     nombreUsario: string
     contraseniaUsuario: string
@@ -6,5 +7,5 @@ export interface Usuario {
 
 export interface UsuarioActivo {
     id: string,
-    username: string
+    nombre: string
 }

@@ -12,6 +12,7 @@
     width: 100vw;
     height: 100vh;
     background-color: #d3d3d3;
+    
 }
 
 /* Panel izquierdo */
@@ -35,7 +36,8 @@
     font-size: 48px;
     color: black;
     font-family: 'Press Start 2P', cursive;
-    margin: 20px 0;
+    /* margin: 20px 0; */
+    width: 100%;
 }
 
 .description {
@@ -48,7 +50,7 @@
 
 /* Panel derecho */
 .right-panel {
-    width: 50%;
+    width: 70%;
     background-color: #b8ff4d;
     display: flex;
     flex-direction: column;
@@ -69,11 +71,13 @@
     padding: 10px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius:12px;
     background-color: #ffdb4d;
     text-transform: uppercase;
     text-align: center;
-    color: black;
+    color: rgb(6, 6, 6);
+    outline: none;
+    
 }
 
 .login-button {
@@ -101,4 +105,39 @@
 
 .register-text a:hover {
     text-decoration: underline;
+}
+
+.ojito-button{
+   padding: 10px;
+   border: none;
+   background-color:#e3b70a;
+   border-radius:  0 12px 12px 0;
+   font-size: 16px;
+}
+
+.formulario-login{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    align-content: space-evenly;
+}
+
+.input-usuario{
+width: 100%;
+}
+
+.contra-field
+{
+    border-radius:12px 0 0 12px;
+    
+
+}
+
+.input-contra{
+    width: 100%;
+}
+
+button,input{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

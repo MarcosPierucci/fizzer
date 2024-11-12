@@ -34,12 +34,15 @@ inicioSesion()
 {
   const {nombreUsuario,contraseniaUsuario} = this.formularioInicioSesion.getRawValue()
 
-  this.usuarioServicio.login(nombreUsuario!,contraseniaUsuario!).subscribe(
+  if (this.formularioInicioSesion.invalid) return;
+
+
+  this.usuarioServicio.loginn(nombreUsuario!,contraseniaUsuario!).subscribe(
     {
       next: (loggedIn) =>
       {
         if(loggedIn)
-          this.router.navigate(['/'])
+          this.router.navigate(['/home'])
       },
       error: (e: Error) =>
       {
@@ -48,10 +51,18 @@ inicioSesion()
     }
   )
 
+}
+
+// Esta funcion es para que el usuario pueda ver su contrania
+onRevealPassword(pwInput: HTMLInputElement) {
+  if (pwInput.type == 'password') {
+    pwInput.type = 'text';
+  } else {
+    pwInput.type = 'password';
+  }
+}
 
 }
 
 
 
-
-}
