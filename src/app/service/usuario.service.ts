@@ -51,17 +51,6 @@ getPubliacionbyId(publicacionId: string): Observable<Publicacion> {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
     // login(nombreUsario: string, contraseniaUsario: string): Observable<boolean> {
     //   return this.http.get<Usuario[]>(`${this.urlBase}?nombreUsario=${nombreUsario}`).pipe(
     //     map((usuarios) => {
@@ -86,7 +75,7 @@ getPubliacionbyId(publicacionId: string): Observable<Publicacion> {
             this.activeUserSubject.next({ nombre: user.nombreUsario, id: user.id! });
             return true;
           }
-          console.log("tira false")
+          
           return true;
         }),
         catchError(() => of(false))
@@ -114,6 +103,13 @@ getPubliacionbyId(publicacionId: string): Observable<Publicacion> {
 
     auth(): Observable<UsuarioActivo | undefined> {
       return this.activeUserSubject.asObservable();}
+
+    
+      getUsersCount(): Observable<string> {
+        return this.http.get<any[]>(this.urlBase).pipe(
+          map(users => (users.length).toString()) // Mapear a la longitud del arreglo de usuarios
+            );
+          }
 
 
 

@@ -11,7 +11,7 @@ import { PublicacionComponent } from './user/publicacion/publicacion.component';
 export const routes: Routes = [
   {path: "admin-reportes", component:ReportesComponent},
   {path: "filtro-tareas", component: FiltroTareasComponent},
-  {path: '', component: HomePageComponent},
+  {path: '', component: InicioSesionComponent},
   {path: "login", component: InicioSesionComponent},
   {path: "register", component: RegistroComponent},
   {path: "home", component: HomePageComponent},
