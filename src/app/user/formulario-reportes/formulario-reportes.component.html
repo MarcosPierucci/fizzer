@@ -1,0 +1,51 @@
+<app-barra-verde-usuario></app-barra-verde-usuario>
+<div class="contenido">
+  <h2>Formulario de Reportes</h2>
+
+  <form [formGroup]="formulario" class="formulario">
+
+
+    <div class="form-group">
+      <label for="motivo">Motivo</label>
+      <input type="text" formControlName="motivo" id="motivo">
+      @if (formulario.controls['motivo'].getError('required') && formulario.controls['motivo'].touched) {
+        <div class="error-message">Por favor explíquenos brevemente por qué está haciendo el reporte</div>
+      }
+      @if (formulario.controls['motivo'].getError('minlength')) {
+        <div class="error-message">Mínimo 5 caracteres</div>
+      }
+    </div>
+
+
+    <div class="form-group">
+      <label for="link">Link</label>
+      <input type="text" formControlName="link" id="link">
+      @if (formulario.controls['link'].getError('required') && formulario.controls['link'].touched) {
+        <div class="error-message">Por favor ingrese el link de lo que está reportando para que nosotros podamos trabajar con el reporte</div>
+      }
+      @if (formulario.controls['link'].getError('minlength')) {
+        <div class="error-message">Mínimo 5 caracteres</div>
+      }
+    </div>
+
+  
+    <div class="form-group">
+      <label for="tipoReporte">Tipo de Reporte</label>
+      <div class="radio-group">
+        <div>
+          <input type="radio" id="opcion1" formControlName="tipoReporte" value="perfil">
+          <label for="opcion1">Perfil</label>
+        </div>
+        <div>
+          <input type="radio" id="opcion2" formControlName="tipoReporte" value="publicacion">
+          <label for="opcion2">Publicación</label>
+        </div>
+      </div>
+      @if (formulario.controls['tipoReporte'].getError('required') && formulario.controls['tipoReporte'].touched) {
+        <div class="error-message">Seleccione una opción</div>
+      }
+    </div>
+
+    <button class="submit-btn" (click)="cargarReporte()">Enviar Reporte</button>
+  </form>
+</div>

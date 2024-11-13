@@ -1,18 +1,64 @@
 {
   "usuario": [
     {
-      "nombreUsuario" : "santi",
-      "contraniaUsuario" : "123456789"
+      "id": "1",
+      "nombreUsuario": "santi",
+      "contraniaUsuario": "123456789",
+      "baneado": false,
+      "publicaciones": [
+        {
+          "id": "1",
+          "idUsuario": "1",
+          "link": "LINKPUBLICACION",
+          "descripcion": "DESCRIPCION PUBLICACION",
+          "baneado": false
+        },
+        {
+          "id": "2",
+          "idUsuario": "1",
+          "link": "LINKPUBLICACION",
+          "descripcion": "DESCRIPCION PUBLICACION",
+          "baneado": false
+        },
+        {
+          "id": "3",
+          "idUsuario": "1",
+          "link": "LINKPUBLICACION",
+          "descripcion": "DESCRIPCION PUBLICACION",
+          "baneado": false
+        }
+      ]
     },
     {
-       "nombreUsuario" : "piru",
-      "contraniaUsuario" : "123456"
+      "id": "2",
+      "nombreUsuario": "piru",
+      "contraniaUsuario": "123456",
+      "baneado": false,
+      "publicaciones": [
+        {
+          "id": "1",
+          "idUsuario": "2",
+          "link": "LINKPUBLICACION",
+          "descripcion": "DESCRIPCION PUBLICACION",
+          "baneado": false
+        },
+        {
+          "id": "2",
+          "idUsuario": "2",
+          "link": "LINKPUBLICACION",
+          "descripcion": "DESCRIPCION PUBLICACION",
+          "baneado": false
+        },
+        {
+          "id": "3",
+          "idUsuario": "2",
+          "link": "LINKPUBLICACION",
+          "descripcion": "DESCRIPCION PUBLICACION",
+          "baneado": false
+        }
+      ]
     }
   ],
-
-
-
-
   "tareas": [
     {
       "id": "1",
@@ -47,34 +93,38 @@
       "aceptada": false
     }
   ],
-
   "reporte": [
     {
       "id": "1",
       "emisor": "marcos",
-      "motivo": "spam",
+      "motivo": "publicacion inapropiada",
       "reportado": "santino",
       "link": "http://youtube.com",
       "tipoReporte": "publicacion",
-      "idReportado": "1"
+      "idReportado": 1,
+      "idPublicacionReportada": "2",
+      "reporteTerminado": false
     },
     {
       "id": "2",
-      "emisor": "Facu",
-      "motivo": "Inapropiado",
-      "reportado": "Mac",
-      "link": "Zelda",
-      "tipoReporte": "publicacion",
-      "idReportado": "2"
+      "emisor": "facu",
+      "motivo": "spam",
+      "reportado": "marcos",
+      "link": "http://youtube.com",
+      "tipoReporte": "perfil",
+      "idReportado": 2,
+      "reporteTerminado": false
     },
     {
       "id": "3",
       "emisor": "Ana",
       "motivo": "Spam",
-      "reportado": "Lucia",
+      "reportado": "Marcos",
       "link": "Oferta de trabajo",
-      "tipoReporte": "perfil",
-      "idReportado": "3"
+      "tipoReporte": "publicacion",
+      "idReportado": "2",
+      "idPublicacionReportada": "3",
+      "reporteTerminado": false
     },
     {
       "id": "4",
@@ -82,8 +132,10 @@
       "motivo": "Contenido ofensivo",
       "reportado": "Pedro",
       "link": "Imagen agresiva",
-      "tipoReporte": "publicacion",
-      "idReportado": "4"
+      "tipoReporte": "perfil",
+      "idReportado": "4",
+      "idPublicacion": -1,
+      "reporteTerminado": false
     },
     {
       "id": "5",
@@ -92,9 +144,9 @@
       "reportado": "Juan",
       "link": "Fotos privadas",
       "tipoReporte": "perfil",
-      "idReportado": "5"
+      "idReportado": "5",
+      "idPublicacion": -1,
+      "reporteTerminado": false
     }
   ]
-
-  
 }
