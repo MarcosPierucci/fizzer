@@ -3,5 +3,7 @@ export interface Publicacion{
   idUsuario:string,
   link : string,
   descripcion: string,
-  baneado : boolean
+  baneado : boolean,
+  nombreUsuario : string
 }
+

@@ -1,0 +1,20 @@
+<app-barra-verde-usuario></app-barra-verde-usuario>
+
+<div class="contenido">
+  <h2>Publiacion</h2>
+
+  <div class="profile-container">
+    <div class="image-container">
+        <img [src]="publicacion.link" alt="Foto de usuario">
+    </div>
+    <div class="description-container">
+        <h2>{{publicacion.nombreUsuario}}</h2>
+        <p>{{publicacion.descripcion}}</p>
+
+
+
+      </div>
+      <button (click)="reportarPublicacion()">REPORTAR</button>
+</div>
+</div>
+

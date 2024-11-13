@@ -2,6 +2,8 @@ import { Component, inject, OnInit } from '@angular/core';
 import { BarraVerdeAdminComponent } from "../barra-verde-admin/barra-verde-admin.component";
 import { Tarea } from '../../interfaces/tarea';
 import { TareaService } from '../../service/tarea.service';
+import { TareasGlobalesService } from '../../service/tareas-globales.service';
+import { TareaGlobal } from '../../interfaces/tarea-Global';
 
 @Component({
   selector: 'app-filtro-tareas',
@@ -17,6 +19,7 @@ ngOnInit(): void {
 
 
 ts = inject(TareaService)
+tgs = inject(TareasGlobalesService)
 
 
 
@@ -32,6 +35,15 @@ aceptarTarea(id: string) {
     if (tarea) {
       console.log("Tarea aceptada")
       tarea.aceptada = true;
+
+      const tareaGlobal :TareaGlobal = {
+        id: tarea.id,
+        usada: false,
+        descripcion: tarea.descripcion,
+        titulo: tarea.titulo
+      };
+
+      this.mandarAglobales(tareaGlobal);
     }}, error:(e:Error) =>
     {
       console.log(e.message)
@@ -39,7 +51,16 @@ aceptarTarea(id: string) {
   });
 }
 
-
+mandarAglobales(tareaGlobal : TareaGlobal)
+{
+this.tgs.postTareaGlobal(tareaGlobal).subscribe({
+  next:(tarea:TareaGlobal)=>{
+    console.log("Tarea global guardada correctamente")
+  }, error:()=>{
+    console.log("Error en el mandarAglobales")
+  }
+})
+}
 
 
 

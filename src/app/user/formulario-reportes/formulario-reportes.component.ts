@@ -1,9 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { BarraVerdeAdminComponent } from "../../admin/barra-verde-admin/barra-verde-admin.component";
 import { BarraVerdeUsuarioComponent } from "../barra-verde-usuario/barra-verde-usuario.component";
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { identifierName } from '@angular/compiler';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Reporte } from '../../interfaces/reporte';
 import { ReporteService } from '../../service/reporte.service';
 
@@ -14,11 +14,23 @@ import { ReporteService } from '../../service/reporte.service';
   templateUrl: './formulario-reportes.component.html',
   styleUrl: './formulario-reportes.component.css'
 })
-export class FormularioReportesComponent {
+export class FormularioReportesComponent implements OnInit{
 
+  ngOnInit(): void {
+
+    this.route.queryParams.subscribe(params => {
+      this.formulario.patchValue({
+        reportado: params['reportado'],
+        link: params['link'],
+        idReportado: params['idReportado'],
+        idPublicacionReportada: params['idPublicacionReportada']
+      });
+    });
+  }
 
 fb= inject(FormBuilder);
 rs = inject(ReporteService);
+route = inject(ActivatedRoute);
 
 formulario = this.fb.nonNullable.group(
 {
@@ -73,7 +85,7 @@ tamanioArregloReportes(id:number)
 */
 
 cargarReporte() {
-  if (this.formulario.invalid) return;
+  if (this.formulario.invalid) return console.log("Error en el formulario");
 
   const reporteFormulario : Reporte = this.formulario.getRawValue(); // Conserva esta variable para los datos del formulario
 
@@ -83,7 +95,10 @@ cargarReporte() {
     console.log("ID calculado:", id);
     //Aca despues hay que cargarle a nuevoReporte el id, lo tenemos que hacer a lo ultimo porque sino por la promesa no lo llega a cargar
     reporteFormulario.id = id.toString()
+
     console.log("Formulario completo:", reporteFormulario);
+
+    this.addReportedb(reporteFormulario)
 
   });
 
@@ -105,6 +120,15 @@ tamanioArregloReportes(callback: (id: number) => void) {
   });
 }
 
-
+addReportedb(reporte : Reporte)
+{
+  this.rs.postReporte(reporte).subscribe({
+    next:()=>{
+      console.log("Reporte guardado correctamente")
+    }, error:()=>{
+      console.log("Erorr al cargar el reporte")
+    }
+  })
+}
 
 }

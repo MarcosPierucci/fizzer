@@ -6,6 +6,7 @@ import { InicioSesionComponent } from './user/inicio-sesion/inicio-sesion.compon
 import { RegistroComponent } from './user/registro/registro.component';
 import { FormularioReportesComponent } from './user/formulario-reportes/formulario-reportes.component';
 import { PerfilComponent } from './user/perfil/perfil.component';
+import { PublicacionComponent } from './user/publicacion/publicacion.component';
 
 export const routes: Routes = [
   {path: "admin-reportes", component:ReportesComponent},
@@ -15,6 +16,6 @@ export const routes: Routes = [
   {path: "register", component: RegistroComponent},
   {path: "home", component: HomePageComponent},
   {path: "formulario-reportes" , component: FormularioReportesComponent},
-  {path:"perfil", component:PerfilComponent}
-
+  {path:"perfil", component:PerfilComponent},
+  { path: "publicacion/:publicacionId/usuario/:usuarioId", component: PublicacionComponent }
 ];
