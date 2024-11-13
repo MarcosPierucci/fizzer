@@ -11,14 +11,13 @@ export class TareaService {
   constructor() { }
   http = inject(HttpClient);
   urlBase = 'http://localhost:3000/tareas'
-
-
+  private contadorId: number = 0;
 
   getTareas():Observable<Tarea[]>{
     return this.http.get<Tarea[]>(this.urlBase);
   }
 
-deleteTarea(id: string): Observable<void>{
+  deleteTarea(id: string): Observable<void>{
     return this.http.delete<void>(`${this.urlBase}/${id}`);
   }
 
@@ -30,12 +29,14 @@ deleteTarea(id: string): Observable<void>{
     return this.http.put<Tarea>(`${this.urlBase}/${id}`, tarea);
   }
 
-  /*putTareaEstado(estado: boolean, id: string): Observable<Tarea> {
-    return this.http.put<Tarea>(`${this.urlBase}/${id}`, { aceptada: estado });
-  }*/
 
   patchTareaAceptada(id: string, aceptada: boolean): Observable<Tarea> {
     return this.http.patch<Tarea>(`${this.urlBase}/${id}`, { aceptada });
+  }
+
+  generarId(): string {
+    this.contadorId++;
+    return 'id-' + this.contadorId.toString();
   }
 
 

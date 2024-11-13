@@ -1,6 +1,33 @@
 {
   "usuario": [
-    {}
+    {
+      "id": "1",
+      "nombreUsuario": "santi",
+      "contraniaUsuario": "123456789",
+      "baneado": false
+    },
+    {
+      "id": "2",
+      "nombreUsuario": "piru",
+      "contraniaUsuario": "123456",
+      "baneado": false
+    },
+    {
+      "id": "3",
+      "nombreUsuario": "lucia",
+      "contraniaUsuario": "abc123",
+      "baneado": false
+    },
+    {
+      "id": "3",
+      "nombreUsuario": "santi",
+      "contraseniaUsuario": "123456"
+    },
+    {
+      "id": "4",
+      "nombreUsuario": "noestoyregistrado",
+      "contraseniaUsuario": "1234567"
+    }
   ],
   "tareas": [
     {
@@ -9,7 +36,7 @@
       "descripcion": "En esta tarea vamos a dibujar a messi",
       "creador": "Marcospieru",
       "categoria": "arte",
-      "aceptada": false
+      "aceptada": true
     },
     {
       "id": "2",
@@ -40,29 +67,34 @@
     {
       "id": "1",
       "emisor": "marcos",
-      "motivo": "spam",
+      "motivo": "publicacion inapropiada",
       "reportado": "santino",
       "link": "http://youtube.com",
       "tipoReporte": "publicacion",
-      "idReportado": "1"
+      "idReportado": 1,
+      "idPublicacionReportada": "2",
+      "reporteTerminado": false
     },
     {
       "id": "2",
-      "emisor": "Facu",
-      "motivo": "Inapropiado",
-      "reportado": "Mac",
-      "link": "Zelda",
-      "tipoReporte": "publicacion",
-      "idReportado": "2"
+      "emisor": "facu",
+      "motivo": "spam",
+      "reportado": "marcos",
+      "link": "http://youtube.com",
+      "tipoReporte": "perfil",
+      "idReportado": 2,
+      "reporteTerminado": false
     },
     {
       "id": "3",
       "emisor": "Ana",
       "motivo": "Spam",
-      "reportado": "Lucia",
+      "reportado": "Marcos",
       "link": "Oferta de trabajo",
-      "tipoReporte": "perfil",
-      "idReportado": "3"
+      "tipoReporte": "publicacion",
+      "idReportado": "2",
+      "idPublicacionReportada": "3",
+      "reporteTerminado": false
     },
     {
       "id": "4",
@@ -70,8 +102,10 @@
       "motivo": "Contenido ofensivo",
       "reportado": "Pedro",
       "link": "Imagen agresiva",
-      "tipoReporte": "publicacion",
-      "idReportado": "4"
+      "tipoReporte": "perfil",
+      "idReportado": "4",
+      "idPublicacion": -1,
+      "reporteTerminado": false
     },
     {
       "id": "5",
@@ -80,7 +114,37 @@
       "reportado": "Juan",
       "link": "Fotos privadas",
       "tipoReporte": "perfil",
-      "idReportado": "5"
+      "idReportado": "5",
+      "idPublicacion": -1,
+      "reporteTerminado": false
+    },
+    {
+      "id": "6",
+      "motivo": "puta barata",
+      "reportado": "lucia",
+      "link": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Woman_in_Eyeglasses_%283%29.jpg",
+      "tipoReporte": "publicacion",
+      "idReportado": "3",
+      "idPublicacionReportada": "1",
+      "reporteTerminado": false
+    }
+  ],
+  "tareasGlobales": [
+    {
+      "id": "1",
+      "usada": false,
+      "descripcion": "En esta tarea vamos a dibujar a messi",
+      "titulo": "Dibujar a Messi"
+    }
+  ],
+  "publicaciones": [
+    {
+      "id": "1",
+      "idUsuario": "3",
+      "link": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Woman_in_Eyeglasses_%283%29.jpg",
+      "descripcion": "Publicación de Lucia",
+      "baneado": false,
+      "nombreUsuario": "lucia"
     }
   ]
 }

@@ -3,6 +3,7 @@ import { BarraVerdeAdminComponent } from "../barra-verde-admin/barra-verde-admin
 import { Reporte } from '../../interfaces/reporte';
 import { ReporteService } from '../../service/reporte.service';
 import { RouterLink } from '@angular/router';
+import { UsuarioService } from '../../service/usuario.service';
 
 @Component({
   selector: 'app-reportes',
@@ -17,52 +18,85 @@ export class ReportesComponent implements OnInit{
   }
 
 rs = inject(ReporteService);
+us = inject(UsuarioService);
 
 
   listaReportes : Reporte[]= [
 
   ]
 
-
-  aceptarReporte(tipoReporte : string, idAborrar : string|number)
+/*
+  aceptarReporte(tipoReporte : string, idAbanear : string|number, idPublicacion : string|null|any)
   {
+    console.log('tipoReporte:', tipoReporte, 'idAbanear:', idAbanear, 'idPublicacion:', idPublicacion);
+
     if(tipoReporte.toLowerCase() == 'publicacion')
     {
       alert("Se apreto aceptar, tipo reporte: " + tipoReporte);
-      this.borrarPublicacion(idAborrar); //Aca seria de tipo number porque la publicacion tendria un id de tipo number
+      this.banearPublicacion(idAbanear, idPublicacion); //Aca seria de tipo number porque la publicacion tendria un id de tipo number
     } else if(tipoReporte.toLowerCase() == 'perfil')
     {
-      alert("Se apreto aceptar, tipo reporte: " + tipoReporte);
-      this.borrarPerfil(idAborrar); //Aca seria de tipo string porque los usuarios tienen un id de tipo String
+      this.banearPerfil(idAbanear); //Aca seria de tipo string porque los usuarios tienen un id de tipo String
+    }
+  }
+  */
+
+  aceptarReporte(tipoReporte: string, idAbanear: string | number, idPublicacion: string | null) {
+    console.log('tipoReporte:', tipoReporte, 'idAbanear:', idAbanear, 'idPublicacion:', idPublicacion);
+
+    if (tipoReporte.toLowerCase() === 'publicacion' && idPublicacion !== null) {
+      alert("Se apretó aceptar, tipo reporte: " + tipoReporte);
+      this.banearPublicacion(idAbanear, idPublicacion);
+    } else if (tipoReporte.toLowerCase() === 'perfil') {
+      this.banearPerfil(idAbanear);
+     alert("Apretaste banear perfil")
+    } else {
+      console.error('ID de publicación no válido o no especificado');
     }
   }
 
-borrarPublicacion(id:number|any)
+
+
+banearPublicacion(id:number|any, idPublicacion : string|any)
 {
-  //LOGICA DE BORRAR PUBLICACION (Necesito tener las publicaciones en el json para ver como lo hago)
+  /*LOGICA DE BORRAR PUBLICACION, NO PUDE HACER QUE EL JSON ME DE EL ENDPOINT PARA PODER INGRESAR A LAS PUBLICACIONES QUE SON UN ARREGLO DENTRO DE CADA USUARIO,
+  ASI QUE HAY QUE VER COMO LO SOLUCIONAMOS (Intentar no hacer un json de publicaciones aparte, sino que sea un arreglo dentro del json de usuario)*/
 }
 
-borrarPerfil(id : string|any)
-{
-  //LOGICA DE BORRAR PERFIL (Necesito tener los perfiles en el json para ver como lo hago)
-}
 
+banearPerfil(id: number|any) {
+  this.us.patchBaneado(id, true).subscribe({
+    next: () => {
+      console.log('Usuario baneado exitosamente');
+      this.terminarReporte(id);
+    },
+    error: () => {
+      console.log("Error en el baneado de perfil");
+    }
+  });
+}
 
 
 rechazarReporte(id:string)
 {
-this.rs.deleteReporte(id).subscribe(
-  {
-    next:() =>{
-      window.location.reload();
-    },
-    error:(e:Error)=>
-    {
+  this.terminarReporte(id);
+  console.log("Reporte rechazado correctamente!");
+}
 
-      console.log(e.message);
+
+terminarReporte(id:string|number)
+{
+  this.rs.patchCerrarReporte(id, true).subscribe(
+    {
+      next:()=>{
+        console.log("Cerrado correctamente")
+        window.location.reload();
+      },
+      error: ()=>{
+        console.log("Error al cerrar reporte")
+      }
     }
-  }
-)
+  )
 }
 
 mostrarListaReportes()

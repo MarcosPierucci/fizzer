@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Categoria } from '../../enums/categoria';
 import { CommonModule, NgFor } from '@angular/common';
-import { TareaService } from '../../services/tarea-service.service';
+import { TareaService } from '../../service/tarea.service'; 
 import { Tarea } from '../../interfaces/tarea';
 
 

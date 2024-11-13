@@ -1,1 +1,19 @@
-<p>registro works!</p>
+
+<body>
+    <div class="form-container">
+        <h2>Registro</h2>
+
+        <form [formGroup]="formularioRegister" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="NOMBRE" class="input-field" formControlName="nombreUsuario">
+        
+        <input type="password" #inputContra placeholder="CONTRASEÑA" class="input-field" formControlName="contraseniaUsuario">
+
+        <button type="submit" class="ojito-button" (click)="onRevealPassword(inputContra)">👁</button>
+        <button type="submit" [disabled]="formularioRegister.invalid">Registrarse</button>
+        <a href="/login" class="link">¿Ya tienes cuenta? Inicia sesión aquí</a>
+    </form>
+
+    </div>
+</body>
+
+
