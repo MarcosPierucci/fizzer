@@ -17,9 +17,18 @@
       "nombreUsuario": "lucia",
       "contraniaUsuario": "abc123",
       "baneado": false
+    },
+    {
+      "id": "3",
+      "nombreUsuario": "santi",
+      "contraseniaUsuario": "123456"
+    },
+    {
+      "id": "4",
+      "nombreUsuario": "noestoyregistrado",
+      "contraseniaUsuario": "1234567"
     }
   ],
-
   "tareas": [
     {
       "id": "1",
@@ -54,7 +63,6 @@
       "aceptada": false
     }
   ],
-
   "reporte": [
     {
       "id": "1",
@@ -121,7 +129,6 @@
       "reporteTerminado": false
     }
   ],
-  
   "tareasGlobales": [
     {
       "id": "1",
