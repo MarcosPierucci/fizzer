@@ -4,61 +4,22 @@
       "id": "1",
       "nombreUsuario": "santi",
       "contraniaUsuario": "123456789",
-      "baneado": false,
-      "publicaciones": [
-        {
-          "id": "1",
-          "idUsuario": "1",
-          "link": "LINKPUBLICACION",
-          "descripcion": "DESCRIPCION PUBLICACION",
-          "baneado": false
-        },
-        {
-          "id": "2",
-          "idUsuario": "1",
-          "link": "LINKPUBLICACION",
-          "descripcion": "DESCRIPCION PUBLICACION",
-          "baneado": false
-        },
-        {
-          "id": "3",
-          "idUsuario": "1",
-          "link": "LINKPUBLICACION",
-          "descripcion": "DESCRIPCION PUBLICACION",
-          "baneado": false
-        }
-      ]
+      "baneado": false
     },
     {
       "id": "2",
       "nombreUsuario": "piru",
       "contraniaUsuario": "123456",
-      "baneado": false,
-      "publicaciones": [
-        {
-          "id": "1",
-          "idUsuario": "2",
-          "link": "LINKPUBLICACION",
-          "descripcion": "DESCRIPCION PUBLICACION",
-          "baneado": false
-        },
-        {
-          "id": "2",
-          "idUsuario": "2",
-          "link": "LINKPUBLICACION",
-          "descripcion": "DESCRIPCION PUBLICACION",
-          "baneado": false
-        },
-        {
-          "id": "3",
-          "idUsuario": "2",
-          "link": "LINKPUBLICACION",
-          "descripcion": "DESCRIPCION PUBLICACION",
-          "baneado": false
-        }
-      ]
+      "baneado": false
+    },
+    {
+      "id": "3",
+      "nombreUsuario": "lucia",
+      "contraniaUsuario": "abc123",
+      "baneado": false
     }
   ],
+
   "tareas": [
     {
       "id": "1",
@@ -66,7 +27,7 @@
       "descripcion": "En esta tarea vamos a dibujar a messi",
       "creador": "Marcospieru",
       "categoria": "arte",
-      "aceptada": false
+      "aceptada": true
     },
     {
       "id": "2",
@@ -93,6 +54,7 @@
       "aceptada": false
     }
   ],
+
   "reporte": [
     {
       "id": "1",
@@ -147,6 +109,35 @@
       "idReportado": "5",
       "idPublicacion": -1,
       "reporteTerminado": false
+    },
+    {
+      "id": "6",
+      "motivo": "puta barata",
+      "reportado": "lucia",
+      "link": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Woman_in_Eyeglasses_%283%29.jpg",
+      "tipoReporte": "publicacion",
+      "idReportado": "3",
+      "idPublicacionReportada": "1",
+      "reporteTerminado": false
+    }
+  ],
+  
+  "tareasGlobales": [
+    {
+      "id": "1",
+      "usada": false,
+      "descripcion": "En esta tarea vamos a dibujar a messi",
+      "titulo": "Dibujar a Messi"
+    }
+  ],
+  "publicaciones": [
+    {
+      "id": "1",
+      "idUsuario": "3",
+      "link": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Woman_in_Eyeglasses_%283%29.jpg",
+      "descripcion": "Publicación de Lucia",
+      "baneado": false,
+      "nombreUsuario": "lucia"
     }
   ]
 }

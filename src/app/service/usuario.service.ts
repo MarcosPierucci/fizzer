@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario, UsuarioActivo } from '../interfaces/usuario';
 import { BehaviorSubject, catchError, map, Observable, of, switchMap } from 'rxjs';
+import { Publicacion } from '../interfaces/publicacion';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import { BehaviorSubject, catchError, map, Observable, of, switchMap } from 'rxj
 export class UsuarioService {
 
 urlBase = 'http://localhost:3000/usuario'
+urlBase2 = 'http://localhost:3000/publicaciones'
 
 private activeUserSubject = new BehaviorSubject<UsuarioActivo | undefined>(undefined);
 
@@ -39,8 +41,15 @@ constructor(private http: HttpClient) { }
       return this.http.patch(`${this.urlBase}/${id}`, { baneado });
     }
 
+/*
+getPubliacionbyId(publicacionId: string, usuarioId: string): Observable<Publicacion> {
+  return this.http.get<Publicacion>(`${this.urlBase}/${usuarioId}/publicaciones/${publicacionId}`);
+}*/
 
-   
+getPubliacionbyId(publicacionId: string): Observable<Publicacion> {
+  return this.http.get<Publicacion>(`${this.urlBase2}/${publicacionId}`);
+}
+
 
 
 
