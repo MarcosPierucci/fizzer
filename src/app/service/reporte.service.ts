@@ -19,7 +19,7 @@ export class ReporteService {
     return this.http.get<Reporte[]>(this.urlBase);
   }
 
-  deleteReporte(id: string): Observable<void>{
+  deleteReporte(id: string|number): Observable<void>{
     return this.http.delete<void>(`${this.urlBase}/${id}`);
   }
 
@@ -29,6 +29,10 @@ export class ReporteService {
 
   putReporte(reporte: Reporte, id: string): Observable<Reporte>{
     return this.http.put<Reporte>(`${this.urlBase}/${id}`, reporte);
+  }
+
+  patchCerrarReporte(id: string|number, reporteTerminado: boolean): Observable<Reporte> {
+    return this.http.patch<Reporte>(`${this.urlBase}/${id}`, { reporteTerminado });
   }
 
 

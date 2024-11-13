@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario, UsuarioActivo } from '../interfaces/usuario';
-import { BehaviorSubject, catchError, map, Observable, of } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, of, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,27 +14,44 @@ private activeUserSubject = new BehaviorSubject<UsuarioActivo | undefined>(undef
 
 constructor(private http: HttpClient) { }
 
-
+/*Che, hay que ver porque pusimos en todos con tarea si estamos en usuario, y ver que no se rompa nada cuando lo cambiemos*/
   getTareas(): Observable<Usuario[]>{
     return this.http.get<Usuario[]>(this.urlBase);
     }
-  
+
     getTareaById(id : string | null): Observable<Usuario>{
       return this.http.get<Usuario>(`${this.urlBase}/${id}`);
       }
-  
+
     postTareas(tarea : Usuario): Observable<Usuario>{
       return this.http.post<Usuario>(this.urlBase, tarea);
     }
-  
+
     putTareas(usuario: Usuario, id: string | null): Observable<Usuario>{
       return this.http.put<Usuario>(`${this.urlBase}/${id}`, usuario);
     }
-  
+
     deleteTareas(id:string):Observable<void>{
       return this.http.delete<void>(`${this.urlBase}/${id}`);
     }
-    
+
+    patchBaneado(id: number, baneado: boolean): Observable<any> {
+      return this.http.patch(`${this.urlBase}/${id}`, { baneado });
+    }
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
 
     // login(nombreUsario: string, contraseniaUsario: string): Observable<boolean> {
     //   return this.http.get<Usuario[]>(`${this.urlBase}?nombreUsario=${nombreUsario}`).pipe(
@@ -72,7 +89,7 @@ constructor(private http: HttpClient) { }
       this.activeUserSubject.next(undefined);
       return of(true);
     }
-  
+
     signup(usuario: Usuario): Observable<boolean> {
       return this.http.post<UsuarioActivo>(this.urlBase, usuario).pipe(
         map(({ id, nombre }) => {
@@ -88,7 +105,7 @@ constructor(private http: HttpClient) { }
 
     auth(): Observable<UsuarioActivo | undefined> {
       return this.activeUserSubject.asObservable();}
-    
-      
+
+
 
 }
