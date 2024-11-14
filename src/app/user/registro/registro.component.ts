@@ -17,7 +17,7 @@ fb = inject(FormBuilder)
 usuarioServicio = inject (UsuarioService)
 
 formularioRegister = this.fb.nonNullable.group({
-  nombreUsuario: ["",],
+  nombreUsario: ["",],
   contraseniaUsuario: [""]
 })
 

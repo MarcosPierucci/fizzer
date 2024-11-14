@@ -4,15 +4,17 @@
         <h2>Registro</h2>
 
         <form [formGroup]="formularioRegister" (ngSubmit)="onSubmit()">
-        <input type="text" placeholder="NOMBRE" class="input-field" formControlName="nombreUsuario">
+        <input type="text" placeholder="NOMBRE" class="input-field" formControlName="nombreUsario">
         
-        <input type="password" #inputContra placeholder="CONTRASEÑA" class="input-field" formControlName="contraseniaUsuario">
-
-        <button type="submit" class="ojito-button" (click)="onRevealPassword(inputContra)">👁</button>
-        <button type="submit" [disabled]="formularioRegister.invalid">Registrarse</button>
+        <div>
+        <input type="text" #inputContra placeholder="CONTRASEÑA" class="input-field" formControlName="contraseniaUsuario">
+            
+        </div>
+         <button class="button" type="submit" [disabled]="formularioRegister.invalid">Registrarse</button>
+       
         <a href="/login" class="link">¿Ya tienes cuenta? Inicia sesión aquí</a>
     </form>
-
+   
     </div>
 </body>
 
