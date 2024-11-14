@@ -19,7 +19,7 @@ export const routes: Routes = [
   {path: "home", component: HomePageComponent},
   {path: "formulario-tareas", component: FormularioTareasComponent},
   {path: "formulario-reportes", component: FormularioReportesComponent},
-  {path:"perfil", component:PerfilComponent},
+  {path: "perfil", component:PerfilComponent},
   {path: "publicacion/:publicacionId/usuario/:usuarioId", component: PublicacionComponent },
   {path: "editar-perfil", component: EditarPerfilComponent}
 ];

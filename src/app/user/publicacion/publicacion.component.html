@@ -1,24 +1,35 @@
 <app-barra-verde-usuario></app-barra-verde-usuario>
 
-<div class="contenido">
-  @if (publicacion.baneado) {
-    <h2>ESTA PUBLICACION ESTA BANEADA</h2>
-  } @else {<h2>Publiacion</h2>
+<app-barra-verde-usuario></app-barra-verde-usuario>
 
+<app-barra-verde-usuario></app-barra-verde-usuario>
+
+<div class="contenido">
+  <h2 *ngIf="publicacion.baneado">ESTA PUBLICACION ESTA BANEADA</h2>
+  <ng-container *ngIf="!publicacion.baneado">
+    <h2>Publicación</h2>
     <div class="profile-container">
       <div class="image-container">
-          <img [src]="publicacion.link" alt="Foto de usuario">
+        <img [src]="publicacion.link" alt="Foto de usuario">
       </div>
       <div class="description-container">
-          <h2>{{publicacion.nombreUsuario}}</h2>
-          <p>{{publicacion.descripcion}}</p>
+        <h2>{{publicacion.nombreUsuario}}</h2>
+        <p>{{publicacion.descripcion}}</p>
 
-          <button class="report-button" (click)="reportarPublicacion()">REPORTAR</button>
+        <button class="report-button" (click)="reportarPublicacion()">REPORTAR</button>
+        <button (click)="agregarLike()">Like ({{publicacion.likes}})</button>
+        <button (click)="agregarPuntoFizzer()">Punto Fizzer ({{publicacion.puntosFizzer}})</button>
+      </div>
+    </div>
 
-        </div>
+    <div class="comentarios-section">
+      <h3>Comentarios</h3>
+      <ul>
+        <li *ngFor="let comentario of publicacion.comentarios">{{ comentario }}</li>
+      </ul>
 
-  </div>}
-
-
+      <input type="text" [(ngModel)]="nuevoComentarioTexto" placeholder="Escribe un comentario...">
+      <button (click)="agregarComentario(nuevoComentarioTexto); nuevoComentarioTexto = ''">Añadir comentario</button>
+    </div>
+  </ng-container>
 </div>
-
