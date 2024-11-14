@@ -45,6 +45,8 @@ body {
   border-radius: 8px;
   color: white;
   width: 100%;
+  position: relative; /* Necesario para que el botón se posicione dentro */
+  height: 100%; /* Asegura que el contenedor ocupe todo el espacio necesario */
 }
 
 .description-container h2 {
@@ -55,4 +57,21 @@ body {
 .description-container p {
   font-size: 1em;
   line-height: 1.5;
+}
+.report-button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.report-button:hover {
+  background-color: darkred;
 }

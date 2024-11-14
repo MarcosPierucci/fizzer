@@ -1,20 +1,24 @@
 <app-barra-verde-usuario></app-barra-verde-usuario>
 
 <div class="contenido">
-  <h2>Publiacion</h2>
+  @if (publicacion.baneado) {
+    <h2>ESTA PUBLICACION ESTA BANEADA</h2>
+  } @else {<h2>Publiacion</h2>
 
-  <div class="profile-container">
-    <div class="image-container">
-        <img [src]="publicacion.link" alt="Foto de usuario">
-    </div>
-    <div class="description-container">
-        <h2>{{publicacion.nombreUsuario}}</h2>
-        <p>{{publicacion.descripcion}}</p>
-
-
-
+    <div class="profile-container">
+      <div class="image-container">
+          <img [src]="publicacion.link" alt="Foto de usuario">
       </div>
-      <button (click)="reportarPublicacion()">REPORTAR</button>
-</div>
+      <div class="description-container">
+          <h2>{{publicacion.nombreUsuario}}</h2>
+          <p>{{publicacion.descripcion}}</p>
+
+          <button class="report-button" (click)="reportarPublicacion()">REPORTAR</button>
+
+        </div>
+
+  </div>}
+
+
 </div>
 

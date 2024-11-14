@@ -1,47 +1,3 @@
-/*import { Component, inject, OnInit } from '@angular/core';
-import { BarraVerdeUsuarioComponent } from "../barra-verde-usuario/barra-verde-usuario.component";
-import { UsuarioService } from '../../service/usuario.service';
-import { Publicacion } from '../../interfaces/publicacion';
-
-@Component({
-  selector: 'app-publicacion',
-  standalone: true,
-  imports: [BarraVerdeUsuarioComponent],
-  templateUrl: './publicacion.component.html',
-  styleUrl: './publicacion.component.css'
-})
-export class PublicacionComponent implements OnInit{
-ngOnInit(): void {
-
-}
-
-publicacion : Publicacion = {
-  id: '',
-  idUsuario : '',
-  link: '',
-  descripcion : '',
-  baneado : false,
-  nombreUsuario : ''
-}
-
-
-us = inject(UsuarioService);
-
-buscarPublicacionId(publicacionId :string, usuarioId:string)
-{
-  this.us.getPubliacionbyId(publicacionId, usuarioId).subscribe({
-    next: (publicacion : Publicacion) =>
-    {
-        this.publicacion = publicacion
-    }, error:()=>{
-        console.log("Erorr al traer la publicacion")
-    }
-  })
-}
-
-}
-*/
-
 import { Component, inject, OnInit } from '@angular/core';
 import { BarraVerdeUsuarioComponent } from "../barra-verde-usuario/barra-verde-usuario.component";
 import { UsuarioService } from '../../service/usuario.service';
@@ -119,11 +75,13 @@ ngOnInit(): void {
       reportarPublicacion() {
         const { id, nombreUsuario, link, idUsuario } = this.publicacion;
 
+        const linkPublicacion = `/publicacion/${id}/usuario/${idUsuario}`
+
         // Redirigir al formulario de reportes pasando los datos como query parameters
         this.router.navigate(['/formulario-reportes'], {
           queryParams: {
             reportado: nombreUsuario,
-            link: link,
+            link: linkPublicacion,
             idReportado: idUsuario,
             idPublicacionReportada: id
           }

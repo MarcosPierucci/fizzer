@@ -3,7 +3,7 @@ import { BarraVerdeAdminComponent } from "../../admin/barra-verde-admin/barra-ve
 import { BarraVerdeUsuarioComponent } from "../barra-verde-usuario/barra-verde-usuario.component";
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { identifierName } from '@angular/compiler';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Reporte } from '../../interfaces/reporte';
 import { ReporteService } from '../../service/reporte.service';
 
@@ -31,13 +31,14 @@ export class FormularioReportesComponent implements OnInit{
 fb= inject(FormBuilder);
 rs = inject(ReporteService);
 route = inject(ActivatedRoute);
+router = inject(Router);
 
 formulario = this.fb.nonNullable.group(
 {
   id: [''],
   motivo:['', [Validators.required, Validators.minLength(5)]],
   reportado: [''],
-  link:['', [Validators.required, Validators.minLength(5)]],
+  link:[''],
   tipoReporte: ['', [Validators.required]],
   idReportado: [''],
   idPublicacionReportada: [''],
@@ -85,7 +86,7 @@ tamanioArregloReportes(id:number)
 */
 
 cargarReporte() {
-  if (this.formulario.invalid) return console.log("Error en el formulario");
+  if (this.formulario.invalid) return alert("Formulario Invalido");
 
   const reporteFormulario : Reporte = this.formulario.getRawValue(); // Conserva esta variable para los datos del formulario
 
@@ -105,6 +106,8 @@ cargarReporte() {
   //Si yo hago esto, basicamente no muestra nada porque tamanioArregloReportes trabaja con promesas, entonces tarda
   console.log("Fuera de promesa ID calculado:", reporteFormulario.id);
 
+  //this.router.navigate(['/formulario-reportes']
+this.router.navigate(['/home']);
 }
 
 tamanioArregloReportes(callback: (id: number) => void) {
