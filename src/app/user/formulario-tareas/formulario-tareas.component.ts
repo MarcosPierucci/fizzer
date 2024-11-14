@@ -4,6 +4,7 @@ import { Categoria } from '../../enums/categoria';
 import { CommonModule, NgFor } from '@angular/common';
 import { TareaService } from '../../service/tarea.service'; 
 import { Tarea } from '../../interfaces/tarea';
+import { Usuario } from '../../interfaces/usuario';
 
 
 @Component({
@@ -13,6 +14,8 @@ import { Tarea } from '../../interfaces/tarea';
   templateUrl: './formulario-tareas.component.html',
   styleUrl: './formulario-tareas.component.css'
 })
+
+
 export class FormularioTareasComponent {
 
   formularioTareas = new FormGroup({
@@ -38,13 +41,14 @@ export class FormularioTareasComponent {
     aceptada: false,
     creador: '' //completar con un codigo que retorne el nombre del usuario
   } 
+    console.log("Tarea: "+tarea_nuevos_atributos.titulo+" "+tarea_nuevos_atributos.categoria+tarea_nuevos_atributos.creador+tarea_nuevos_atributos.aceptada)
     this.agregarTareaBD(tarea_nuevos_atributos);
   }
 
   agregarTareaBD(tareaNueva: Tarea){
     this.servicioTarea.postTarea(tareaNueva).subscribe({
       next: (tarea)=>console.log("Tarea: "+tareaNueva.titulo+" agregada exitosamente"),
-      error: (err: Error) => {console.log("Error: "+err.message)}
+      error: (err: Error) => {console.log("Error cargando tarea a la base de datos: "+err.message)}
     })
   }
 
