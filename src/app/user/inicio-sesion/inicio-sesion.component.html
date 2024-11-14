@@ -1,59 +1,59 @@
 
-    <div class="container">
+<div class="container">
 
-        <div class="left-panel">
-            <img src="" alt="Fizzer Logo" class="logo">
-            <h1>FIZZER</h1>
-            <div class="description">
-                <p>Come join our team of creators! Connect with other users through the most intriguing and exciting daily activities.</p>
-            </div>
-        </div>
-        
-        <div class="right-panel">
-            <form [formGroup]="formularioInicioSesion" (ngSubmit)="inicioSesion()"
-            class="formulario-login">
-
-                <div class="input-usuario">
-                <input type="text" placeholder="USUARIO" formControlName="nombreUsuario" class="input-field">
-                </div>
-
-                @if (formularioInicioSesion.controls["nombreUsuario"].getError('required') && formularioInicioSesion.controls["nombreUsuario"].touched) {
-                    <div>
-                        Campo Requerido
-                    </div>
-                }
-                @if (this.formularioInicioSesion.controls["nombreUsuario"].getError('minlength') && formularioInicioSesion.controls["nombreUsuario"].touched) {
-                    <div>
-                        Minimo 3 caracteres
-                    </div>
-                }
-
-                <div class="input-login">
-                
-
-                <div class="input-contra">
-                <input #inputContra type="contrasenia"  placeholder="CONTRASEÑA"formControlName="contraseniaUsuario" class="input-field contra-field">
-    
-                <button type="submit" class="ojito-button" (click)="onRevealPassword(inputContra)">ver contra</button>
-                </div>
-                </div>
-
-
-                @if(formularioInicioSesion.controls['contraseniaUsuario'].getError('required')&& formularioInicioSesion.controls["contraseniaUsuario"].touched) {
-                    <div>
-                        Campo Requerido
-                    </div>
-                }
-                @if(formularioInicioSesion.controls["contraseniaUsuario"].getError('minlength')&& formularioInicioSesion.controls["contraseniaUsuario"].touched) {
-                    <div>
-                        Minimo 5 caracteres
-                    </div>
-                }
-                <button type="submit" class="login-button" [disabled]="formularioInicioSesion.invalid">Login</button>
-
-                <p class="register-text">No tenes cuenta? Registrate gratis <a href="/register">haciendo click aquí</a></p>
-            </form>
+    <div class="left-panel">
+        <img src="" alt="Fizzer Logo" class="logo">
+        <h1>FIZZER</h1>
+        <div class="description">
+            <p>Come join our team of creators! Connect with other users through the most intriguing and exciting daily activities.</p>
         </div>
     </div>
+    
+    <div class="right-panel">
+        <form [formGroup]="formularioInicioSesion" (ngSubmit)="inicioSesion()"
+        class="formulario-login">
+
+            <div class="input-usuario">
+            <input type="text" placeholder="USUARIO" formControlName="nombreUsuario" class="input-field">
+            </div>
+
+            @if (formularioInicioSesion.controls["nombreUsuario"].getError('required') && formularioInicioSesion.controls["nombreUsuario"].touched) {
+                <div>
+                    Campo Requerido
+                </div>
+            }
+            @if (this.formularioInicioSesion.controls["nombreUsuario"].getError('minlength') && formularioInicioSesion.controls["nombreUsuario"].touched) {
+                <div>
+                    Minimo 3 caracteres
+                </div>
+            }
+
+            <div class="input-login">
+            
+
+            <div class="input-contra">
+            <input #inputContra type="contrasenia"  placeholder="CONTRASEÑA"formControlName="contraseniaUsuario" class="input-field contra-field">
+
+            <button type="submit" class="ojito-button" (click)="onRevealPassword(inputContra)">ver contra</button>
+            </div>
+            </div>
+
+
+            @if(formularioInicioSesion.controls['contraseniaUsuario'].getError('required')&& formularioInicioSesion.controls["contraseniaUsuario"].touched) {
+                <div>
+                    Campo Requerido
+                </div>
+            }
+            @if(formularioInicioSesion.controls["contraseniaUsuario"].getError('minlength')&& formularioInicioSesion.controls["contraseniaUsuario"].touched) {
+                <div>
+                    Minimo 5 caracteres
+                </div>
+            }
+            <button type="submit" class="login-button" [disabled]="formularioInicioSesion.invalid">Login</button>
+
+            <p class="register-text">No tenes cuenta? Registrate gratis <a href="/register">haciendo click aquí</a></p>
+        </form>
+    </div>
+</div>
 
 

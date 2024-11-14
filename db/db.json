@@ -1,32 +1,44 @@
 {
   "usuario": [
     {
-      "id": "1",
-      "nombreUsuario": "santi",
-      "contraniaUsuario": "123456789",
-      "baneado": false
-    },
-    {
-      "id": "2",
-      "nombreUsuario": "piru",
-      "contraniaUsuario": "123456",
-      "baneado": false
-    },
-    {
       "id": "3",
-      "nombreUsuario": "lucia",
-      "contraniaUsuario": "abc123",
-      "baneado": false
-    },
-    {
-      "id": "3",
-      "nombreUsuario": "santi",
+      "nombreUsario": "santi",
       "contraseniaUsuario": "123456"
     },
     {
       "id": "4",
-      "nombreUsuario": "noestoyregistrado",
+      "nombreUsario": "noestoyregistrado",
       "contraseniaUsuario": "1234567"
+    },
+    {
+      "id": "2",
+      "nombreUsario": "piru",
+      "contraseniaUsuario": "pepe123"
+    },
+    {
+      "id": "3",
+      "nombreUsario": "facu",
+      "contraseniaUsuario": "facu123"
+    },
+    {
+      "id": "4",
+      "nombreUsario": "juan",
+      "contraseniaUsuario": "125478"
+    },
+    {
+      "id": "5",
+      "nombreUsario": "aaa",
+      "contraseniaUsuario": "aaaaaa"
+    },
+    {
+      "id": "6",
+      "nombreUsario": "sasasas",
+      "contraseniaUsuario": "sasasasa"
+    },
+    {
+      "id": "7",
+      "nombreUsario": "piraniaMalevola",
+      "contraseniaUsuario": "piru123"
     }
   ],
   "tareas": [],

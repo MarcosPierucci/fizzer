@@ -1,12 +1,9 @@
-import { Publicacion } from "./publicacion";
 
 export interface Usuario {
-    id: string,
-    idUsuario?: string,
+    id?: string,
     nombreUsario: string,
     contraseniaUsuario: string,
-    baneado : boolean,
-    publicaciones: Publicacion[];
+    baneado : boolean
 }
 
 export interface UsuarioActivo {

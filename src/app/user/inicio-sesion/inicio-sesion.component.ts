@@ -4,6 +4,7 @@ import { UsuarioService } from '../../service/usuario.service';
 import { Router, RouterModule } from '@angular/router';
 import { Usuario } from '../../interfaces/usuario';
 
+
 @Component({
   selector: 'app-inicio-sesion',
   standalone: true,
@@ -17,7 +18,7 @@ private fb = inject (FormBuilder)
 private router = inject (Router)
 private usuarioServicio = inject (UsuarioService)
 
-usuarios : Usuario [] = []
+listausuarios : Usuario [] = []
 
 formularioInicioSesion = this.fb.nonNullable.group(
 {
@@ -51,6 +52,31 @@ inicioSesion()
       }
     }
   )
+  
+
+  //Esto funciona y es otra alternativa para iniciar sesion, lo que no tiene esta forma es el activeUser
+  this.usuarioServicio.getUsuarioByName(nombreUsuario, contraseniaUsuario).subscribe({
+    next:(usuario : Usuario[]) =>{
+      this.listausuarios = usuario
+
+      console.log(this.listausuarios);
+      console.log("nombre: " + nombreUsuario)
+
+      this.listausuarios.forEach(a =>
+      {
+        console.log("entre")
+        if(a.nombreUsario === nombreUsuario && a.contraseniaUsuario === contraseniaUsuario.toString())
+        {
+        alert("Inicio correcto")
+        this.router.navigate(['/home'])
+        }else console.log("no bro")
+      })
+    }, error:()=>{
+      console.log("Error en el inicio de sesion")
+      return false;
+    }
+  })
+  
 }
 
 // Esta funcion es para que el usuario pueda ver su contrania
