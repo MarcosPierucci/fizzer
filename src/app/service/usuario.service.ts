@@ -41,6 +41,10 @@ constructor(private http: HttpClient) { }
       return this.http.patch(`${this.urlBase}/${id}`, { baneado });
     }
 
+    patchBaneadoPublicacion(id: string, baneado: boolean): Observable<any> {
+      return this.http.patch(`${this.urlBase2}/${id}`, { baneado });
+    }
+
 /*
 getPubliacionbyId(publicacionId: string, usuarioId: string): Observable<Publicacion> {
   return this.http.get<Publicacion>(`${this.urlBase}/${usuarioId}/publicaciones/${publicacionId}`);
@@ -75,7 +79,7 @@ getPubliacionbyId(publicacionId: string): Observable<Publicacion> {
             this.activeUserSubject.next({ nombre: user.nombreUsario, id: user.id! });
             return true;
           }
-          
+
           return true;
         }),
         catchError(() => of(false))
@@ -104,7 +108,7 @@ getPubliacionbyId(publicacionId: string): Observable<Publicacion> {
     auth(): Observable<UsuarioActivo | undefined> {
       return this.activeUserSubject.asObservable();}
 
-    
+
       getUsersCount(): Observable<string> {
         return this.http.get<any[]>(this.urlBase).pipe(
           map(users => (users.length).toString()) // Mapear a la longitud del arreglo de usuarios

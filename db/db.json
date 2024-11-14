@@ -29,15 +29,10 @@
       "contraseniaUsuario": "1234567"
     }
   ],
-  "tareas": [
-
-  ],
-
-
+  "tareas": [],
   "reporte": [
     {
       "id": "1",
-      "emisor": "marcos",
       "motivo": "publicacion inapropiada",
       "reportado": "santino",
       "link": "http://youtube.com",
@@ -48,7 +43,6 @@
     },
     {
       "id": "2",
-      "emisor": "facu",
       "motivo": "spam",
       "reportado": "marcos",
       "link": "http://youtube.com",
@@ -58,7 +52,6 @@
     },
     {
       "id": "3",
-      "emisor": "Ana",
       "motivo": "Spam",
       "reportado": "Marcos",
       "link": "Oferta de trabajo",
@@ -69,31 +62,9 @@
     },
     {
       "id": "4",
-      "emisor": "Carlos",
-      "motivo": "Contenido ofensivo",
-      "reportado": "Pedro",
-      "link": "Imagen agresiva",
-      "tipoReporte": "perfil",
-      "idReportado": "4",
-      "idPublicacion": -1,
-      "reporteTerminado": false
-    },
-    {
-      "id": "5",
-      "emisor": "Luisa",
-      "motivo": "Violación de privacidad",
-      "reportado": "Juan",
-      "link": "Fotos privadas",
-      "tipoReporte": "perfil",
-      "idReportado": "5",
-      "idPublicacion": -1,
-      "reporteTerminado": false
-    },
-    {
-      "id": "6",
-      "motivo": "puta barata",
+      "motivo": "mala onda",
       "reportado": "lucia",
-      "link": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Woman_in_Eyeglasses_%283%29.jpg",
+      "link": "/publicacion/1/usuario/3",
       "tipoReporte": "publicacion",
       "idReportado": "3",
       "idPublicacionReportada": "1",

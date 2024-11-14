@@ -18,18 +18,6 @@
 
 
     <div class="form-group">
-      <label for="link">Link</label>
-      <input type="text" formControlName="link" id="link">
-      @if (formulario.controls['link'].getError('required') && formulario.controls['link'].touched) {
-        <div class="error-message">Por favor ingrese el link de lo que está reportando para que nosotros podamos trabajar con el reporte</div>
-      }
-      @if (formulario.controls['link'].getError('minlength')) {
-        <div class="error-message">Mínimo 5 caracteres</div>
-      }
-    </div>
-
-  
-    <div class="form-group">
       <label for="tipoReporte">Tipo de Reporte</label>
       <div class="radio-group">
         <div>

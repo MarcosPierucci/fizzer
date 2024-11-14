@@ -41,14 +41,14 @@ us = inject(UsuarioService);
   }
   */
 
-  aceptarReporte(tipoReporte: string, idAbanear: string | number, idPublicacion: string | null) {
+  aceptarReporte(tipoReporte: string,idReporte : string,  idAbanear: string | number, idPublicacion: string | null) {
     console.log('tipoReporte:', tipoReporte, 'idAbanear:', idAbanear, 'idPublicacion:', idPublicacion);
 
     if (tipoReporte.toLowerCase() === 'publicacion' && idPublicacion !== null) {
       alert("Se apretó aceptar, tipo reporte: " + tipoReporte);
-      this.banearPublicacion(idAbanear, idPublicacion);
+      this.banearPublicacion(idPublicacion, idReporte);
     } else if (tipoReporte.toLowerCase() === 'perfil') {
-      this.banearPerfil(idAbanear);
+      this.banearPerfil(idAbanear, idReporte);
      alert("Apretaste banear perfil")
     } else {
       console.error('ID de publicación no válido o no especificado');
@@ -57,18 +57,24 @@ us = inject(UsuarioService);
 
 
 
-banearPublicacion(id:number|any, idPublicacion : string|any)
+banearPublicacion(idPublicacion : string|any, idReporte : string)
 {
-  /*LOGICA DE BORRAR PUBLICACION, NO PUDE HACER QUE EL JSON ME DE EL ENDPOINT PARA PODER INGRESAR A LAS PUBLICACIONES QUE SON UN ARREGLO DENTRO DE CADA USUARIO,
-  ASI QUE HAY QUE VER COMO LO SOLUCIONAMOS (Intentar no hacer un json de publicaciones aparte, sino que sea un arreglo dentro del json de usuario)*/
+  this.us.patchBaneadoPublicacion(idPublicacion, true).subscribe({
+    next:()=>{
+      console.log('Publicacion baneada correctamente')
+      this.terminarReporte(idReporte)
+    }, error:(e:Error)=>{
+      console.log(e.message)
+    }
+  })
 }
 
 
-banearPerfil(id: number|any) {
+banearPerfil(id: number|any, idReporte : string) {
   this.us.patchBaneado(id, true).subscribe({
     next: () => {
       console.log('Usuario baneado exitosamente');
-      this.terminarReporte(id);
+      this.terminarReporte(idReporte);
     },
     error: () => {
       console.log("Error en el baneado de perfil");
