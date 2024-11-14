@@ -7,6 +7,8 @@ import { RegistroComponent } from './user/registro/registro.component';
 import { FormularioReportesComponent } from './user/formulario-reportes/formulario-reportes.component';
 import { PerfilComponent } from './user/perfil/perfil.component';
 import { PublicacionComponent } from './user/publicacion/publicacion.component';
+import { FormularioTareasComponent } from './user/formulario-tareas/formulario-tareas.component';
+import { EditarPerfilComponent } from './user/editar-perfil/editar-perfil.component';
 
 export const routes: Routes = [
   {path: "admin-reportes", component:ReportesComponent},
@@ -15,7 +17,9 @@ export const routes: Routes = [
   {path: "login", component: InicioSesionComponent},
   {path: "register", component: RegistroComponent},
   {path: "home", component: HomePageComponent},
-  {path: "formulario-reportes" , component: FormularioReportesComponent},
+  {path: "formulario-tareas", component: FormularioTareasComponent},
+  {path: "formulario-reportes", component: FormularioReportesComponent},
   {path:"perfil", component:PerfilComponent},
-  { path: "publicacion/:publicacionId/usuario/:usuarioId", component: PublicacionComponent }
+  {path: "publicacion/:publicacionId/usuario/:usuarioId", component: PublicacionComponent },
+  {path: "editar-perfil", component: EditarPerfilComponent}
 ];

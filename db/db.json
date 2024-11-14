@@ -30,39 +30,10 @@
     }
   ],
   "tareas": [
-    {
-      "id": "1",
-      "titulo": "Dibujar a Messi",
-      "descripcion": "En esta tarea vamos a dibujar a messi",
-      "creador": "Marcospieru",
-      "categoria": "arte",
-      "aceptada": true
-    },
-    {
-      "id": "2",
-      "titulo": "Hacer un dibujo de la Torre Eiffel",
-      "descripcion": "Realizar un dibujo de la Torre Eiffel usando lápices de colores.",
-      "creador": "Facu",
-      "categoria": "arte",
-      "aceptada": false
-    },
-    {
-      "id": "3",
-      "titulo": "Escribir un ensayo sobre Inteligencia Artificial",
-      "descripcion": "Escribe un ensayo de al menos 500 palabras sobre los avances recientes en Inteligencia Artificial.",
-      "creador": "Lucia",
-      "categoria": "escritura",
-      "aceptada": false
-    },
-    {
-      "id": "5",
-      "titulo": "Cocinar una receta de pasta",
-      "descripcion": "Cocina una receta de pasta casera desde cero, incluyendo la salsa y el acompañamiento.",
-      "creador": "Luisa",
-      "categoria": "cocina",
-      "aceptada": false
-    }
+
   ],
+
+
   "reporte": [
     {
       "id": "1",

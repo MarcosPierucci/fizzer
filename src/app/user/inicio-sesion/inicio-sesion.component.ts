@@ -46,11 +46,11 @@ inicioSesion()
       },
       error: (e: Error) =>
       {
+        console.log("ERROR Inicio de Sesion: "+e.message)
         alert ('ERROR INICIO SESION')
       }
     }
   )
-
 }
 
 // Esta funcion es para que el usuario pueda ver su contrania
