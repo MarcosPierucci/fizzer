@@ -39,6 +39,11 @@
       "id": "7",
       "nombreUsario": "piraniaMalevola",
       "contraseniaUsuario": "piru123"
+    },
+    {
+      "id": "8",
+      "nombreUsario": "facundoroch",
+      "contraseniaUsuario": "facu12345"
     }
   ],
   "tareas": [],
@@ -96,9 +101,13 @@
       "id": "1",
       "idUsuario": "3",
       "link": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Woman_in_Eyeglasses_%283%29.jpg",
+      "urlFoto": "",
       "descripcion": "Publicación de Lucia",
       "baneado": false,
-      "nombreUsuario": "lucia"
+      "nombreUsuario": "lucia",
+      "likes": 15,
+      "puntosFizzer": 5,
+      "comentarios": []
     }
   ]
 }
