@@ -100,14 +100,34 @@
     {
       "id": "1",
       "idUsuario": "3",
-      "link": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Woman_in_Eyeglasses_%283%29.jpg",
+      "link": "https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg",
       "urlFoto": "",
       "descripcion": "Publicación de Lucia",
       "baneado": false,
       "nombreUsuario": "lucia",
       "likes": 15,
-      "puntosFizzer": 5,
-      "comentarios": []
+      "puntosFizzer": 5
+    },
+    {
+      "id": "",
+      "idUsuario": "3",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg",
+      "descripcion": "La pase muy bien y fue graciosa",
+      "baneado": false,
+      "nombreUsuario": "santi",
+      "likes": 0,
+      "puntosFizzer": 0,
+      "link": ""
+    },
+    {
+      "id": "",
+      "nombreUsuario": "piru",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg",
+      "descripcion": "me aburri",
+      "baneado": false,
+      "likes": 0,
+      "puntosFizzer": 0,
+      "link": ""
     }
   ]
 }

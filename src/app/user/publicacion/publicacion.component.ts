@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { BarraVerdeUsuarioComponent } from "../barra-verde-usuario/barra-verde-usuario.component";
 import { UsuarioService } from '../../service/usuario.service';
-import { Comentario, Publicacion } from '../../interfaces/publicacion';
+import {Publicacion } from '../../interfaces/publicacion';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, NgFor } from '@angular/common';
@@ -25,7 +25,6 @@ export class PublicacionComponent implements OnInit {
     nombreUsuario: '',
     likes: 0,
     puntosFizzer: 0,
-    comentarios: [],
     urlFoto: ''
   };
 
@@ -88,15 +87,4 @@ export class PublicacionComponent implements OnInit {
     this.publicacion.puntosFizzer++;
   }
 
-  agregarComentario(comentario: string) {
-    if (comentario.trim()) {
-      const comentarioAgregar: Comentario = {
-          id: '',
-          idUsuario: '',
-          nombreUsuario: '',
-          texto: comentario
-      }
-      this.publicacion.comentarios.push(comentarioAgregar);
-    }
-  }
 }

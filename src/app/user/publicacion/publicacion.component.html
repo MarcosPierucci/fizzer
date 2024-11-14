@@ -18,15 +18,5 @@
         <button (click)="agregarPuntoFizzer()">Punto Fizzer ({{publicacion.puntosFizzer}})</button>
       </div>
     </div>
-
-    <div class="comentarios-section">
-      <h3>Comentarios</h3>
-      <ul>
-        <li *ngFor="let comentario of publicacion.comentarios">{{ comentario }}</li>
-      </ul>
-
-      <input type="text" [(ngModel)]="nuevoComentarioTexto" placeholder="Escribe un comentario...">
-      <button (click)="agregarComentario(nuevoComentarioTexto); nuevoComentarioTexto = ''">Añadir comentario</button>
-    </div>
   </ng-container>
 </div>
