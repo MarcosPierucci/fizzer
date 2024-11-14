@@ -17,8 +17,7 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuarioService.auth().subscribe({
-
-      next: (usuario: UsuarioActivo | undefined) => {
+    next: (usuario: UsuarioActivo | undefined) => {
 
         if(usuario)
         this.usuarioActivo = usuario; // Almacena la información del usuario

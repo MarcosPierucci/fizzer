@@ -1,0 +1,25 @@
+<body>
+<div class="formulario-container">
+    <p>¡Genial! 🌟 No todos se animan a compartir su creatividad y esfuerzo, pero aquí estás, dando un paso adelante. Cada tarea que subes es una inspiración para otros y una oportunidad para mostrar tu talento y entusiasmo. 🎉 ¡Recuerda que tus ideas pueden motivar a toda la comunidad! Gracias por compartir tu pasión con nosotros. 🙌</p>
+    
+    <form>
+        <div class="campo">
+            <label for="nombre">Nombre de usuario:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: FizzerLover123">
+        </div>
+        <div class="campo">
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" placeholder="Describe tu proceso aquí..."></textarea>
+        </div>
+
+        <ngx-dropzone (change)="onSelect($event)">
+	    <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+	    <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+		<ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+	    </ngx-dropzone-preview>
+        </ngx-dropzone>
+
+        <button type="submit" style="background-color: rgb(26, 239, 26);">PUBLICAR</button>
+    </form>
+</div>
+</body>

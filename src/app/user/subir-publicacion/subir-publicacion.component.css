@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #a99306; /* Cambia a cualquier color de fondo que desees */
+    min-height: 100vh; /* Asegura que ocupe al menos toda la altura de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario-container {
+    background-color: #f9f871;
+    border: 2px solid #000;
+    padding: 20px;
+    width: 50%;
+    margin: 20px auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+p {
+    background-color: #ffe680;
+    padding: 10px;
+    border: 2px solid #000;
+    margin: 10px 0;
+}
+
+.campo {
+    margin: 10px 0;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #000;
+    background-color: #a8e6a1;
+    padding: 5px;
+    border: 2px solid #000;
+}
+
+input[type="text"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 2px solid #000;
+    background-color: #e0e0e0;
+    color: #6d6d6d;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    background-color: #c0c0c0;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: not-allowed;
+}
