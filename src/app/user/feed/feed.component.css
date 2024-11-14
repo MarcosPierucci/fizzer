@@ -1,0 +1,39 @@
+.feed {
+    padding: 16px;
+    max-width:400px; /* Ajusta el ancho máximo */
+    margin: 0 auto; /* Centra el contenido */
+  }
+  
+  .post {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    background-color: #fff;
+  }
+  
+  .post-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 32px; /* Reduce el tamaño de la fuente */
+  }
+  
+  .post-body {
+    margin-top: 8px;
+  }
+  
+  .post-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    object-fit: cover; /* Ajusta la imagen para que quepa mejor */
+  }
+  
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 12px; /* Reduce el tamaño de la fuente */
+  }
+  
