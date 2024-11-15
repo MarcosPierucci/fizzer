@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { UsuarioService } from '../../service/usuario.service';
 
 @Component({
   selector: 'app-barra-verde-admin',
@@ -10,5 +11,18 @@ import { RouterLink } from '@angular/router';
 })
 export class BarraVerdeAdminComponent {
 
-  logoFizzer: string = 'logo-fizzer.png'
+
+  constructor(private router: Router, private busquedaUsuariosService: UsuarioService) {}
+
+  cerrarSesion() {
+    const logoutButton = document.getElementById('logoutButton');
+    if (logoutButton) {
+      logoutButton.innerText = "Cerrando sesión...";
+      logoutButton.setAttribute('disabled', 'true');
+    }
+    setTimeout(() => {
+      this.router.navigate(['/login']);
+    }, 1000);
+  }
+
 }

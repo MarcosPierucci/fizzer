@@ -30,7 +30,7 @@
 .boton {
   background-color: yellow;
   border: none;
-  padding: 10px 30px;
+  padding: 0px 30px;
   cursor: pointer;
   font-weight: bold;
 }
@@ -68,6 +68,7 @@
 .botones{
 display: flex;
 gap: 10px;
+margin-right: 30px;
 }
 .botones button {
   background-color: #a5f0a5;
@@ -124,12 +125,25 @@ gap: 10px;
   border: none;
   cursor: pointer;
   padding: 10px;
-  margin-top: 40px; /* Espacio para separarlo del borde superior */
+  margin-top: 70px; /* Espacio para separarlo del borde superior */
 }
 
 
 /* Efecto hover para el botón de cámara */
 .camera-button:hover {
+  background-color: #8ed68e;
+  border-radius: 50%;
+}
+
+.tarea-button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 70px;
+}
+
+.tarea-button:hover {
   background-color: #8ed68e;
   border-radius: 50%;
 }

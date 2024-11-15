@@ -6,11 +6,12 @@ import { UsuarioActivo } from '../../interfaces/usuario';
 import { Publicacion } from '../../interfaces/publicacion';
 import { UsuarioService } from '../../service/usuario.service';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-subir-publicacion',
   standalone: true,
-  imports: [NgxDropzoneModule, ReactiveFormsModule, CommonModule],
+  imports: [NgxDropzoneModule, ReactiveFormsModule, CommonModule,RouterLink],
   templateUrl: './subir-publicacion.component.html',
   styleUrls: ['./subir-publicacion.component.css']
 })
@@ -40,7 +41,6 @@ export class SubirPublicacionComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    // Obtener usuario activo al iniciar el componente
     this.usuarioService.auth().subscribe({
       next: (usuario: UsuarioActivo | undefined) => {
         if (usuario) {

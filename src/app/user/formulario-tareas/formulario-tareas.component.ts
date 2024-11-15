@@ -1,22 +1,42 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Categoria } from '../../enums/categoria';
 import { CommonModule, NgFor } from '@angular/common';
 import { TareaService } from '../../service/tarea.service'; 
 import { Tarea } from '../../interfaces/tarea';
-import { Usuario } from '../../interfaces/usuario';
-
+import { Usuario, UsuarioActivo } from '../../interfaces/usuario';
+import { RouterLink } from '@angular/router';
+import { UsuarioService } from '../../service/usuario.service';
 
 @Component({
   selector: 'app-formulario-tareas',
   standalone: true,
-  imports: [CommonModule, NgFor, ReactiveFormsModule],
+  imports: [CommonModule, NgFor, ReactiveFormsModule,RouterLink],
   templateUrl: './formulario-tareas.component.html',
   styleUrl: './formulario-tareas.component.css'
 })
 
 
-export class FormularioTareasComponent {
+export class FormularioTareasComponent implements OnInit {
+
+  usuarioActivo: UsuarioActivo | undefined; 
+
+  constructor(private usuarioService: UsuarioService) {}
+  ngOnInit(): void {
+    this.usuarioService.auth().subscribe({
+      next: (usuario: UsuarioActivo | undefined) => {
+          if(usuario)
+          this.usuarioActivo = usuario; // Almacena la información del usuario
+        },
+        error: (err) => {
+          console.error('Error al obtener el usuario:', err);
+        },
+        complete: () => {
+          console.log('Suscripción completada');
+        }
+      });
+    
+  }
 
   formularioTareas = new FormGroup({
     'titulo' : new FormControl('', Validators.required),
@@ -39,15 +59,15 @@ export class FormularioTareasComponent {
     descripcion: tareaNueva.descripcion ?? '',
     categoria: tareaNueva.categoria as Categoria ?? Categoria.Arte,
     aceptada: false,
-    creador: '' //completar con un codigo que retorne el nombre del usuario
+    creador: this.usuarioActivo?.nombre //completar con un codigo que retorne el nombre del usuario
   } 
-    console.log("Tarea: "+tarea_nuevos_atributos.titulo+" "+tarea_nuevos_atributos.categoria+tarea_nuevos_atributos.creador+tarea_nuevos_atributos.aceptada)
+    
     this.agregarTareaBD(tarea_nuevos_atributos);
   }
 
   agregarTareaBD(tareaNueva: Tarea){
     this.servicioTarea.postTarea(tareaNueva).subscribe({
-      next: (tarea)=>console.log("Tarea: "+tareaNueva.titulo+" agregada exitosamente"),
+      next: (tarea)=> alert("GRACIAS POR TU PARTICIPACION"),
       error: (err: Error) => {console.log("Error cargando tarea a la base de datos: "+err.message)}
     })
   }

@@ -21,8 +21,6 @@ export class PerfilComponent implements OnInit {
 
         if(usuario)
         this.usuarioActivo = usuario; // Almacena la información del usuario
-         else
-         alert ("No existe")
       },
       error: (err) => {
         console.error('Error al obtener el usuario:', err);

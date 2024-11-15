@@ -1,8 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UsuarioService } from '../../service/usuario.service';
 import { Router, RouterModule } from '@angular/router';
-import { Usuario } from '../../interfaces/usuario';
+import { Usuario, UsuarioActivo } from '../../interfaces/usuario';
 
 
 @Component({
@@ -12,7 +12,28 @@ import { Usuario } from '../../interfaces/usuario';
   templateUrl: './inicio-sesion.component.html',
   styleUrl: './inicio-sesion.component.css'
 })
-export class InicioSesionComponent {
+export class InicioSesionComponent implements OnInit {
+
+    usuarioActivo: UsuarioActivo | undefined; 
+  
+    constructor(private usuarioService: UsuarioService) {}
+  
+    ngOnInit(): void {
+      this.usuarioService.auth().subscribe({
+      next: (usuario: UsuarioActivo | undefined) => {
+          if(usuario)
+          this.usuarioActivo = usuario; // Almacena la información del usuario
+        },
+        error: (err) => {
+          console.error('Error al obtener el usuario:', err);
+        },
+        complete: () => {
+          console.log('Suscripción completada');
+        }
+      });
+  
+  }
+
 
 private fb = inject (FormBuilder)
 private router = inject (Router)
@@ -43,7 +64,13 @@ inicioSesion()
       next: (loggedIn) =>
       {
         if(loggedIn)
-          this.router.navigate(['/home'])
+        {
+          if(this.usuarioActivo?.admin)
+          {this.router.navigate(['/admin-reportes'])}
+          else{this.router.navigate(['/home'])}
+  
+        }else
+        alert ("usuario o contraseña incorrecto")
       },
       error: (e: Error) =>
       {
