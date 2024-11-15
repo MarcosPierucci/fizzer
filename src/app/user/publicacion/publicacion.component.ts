@@ -24,6 +24,7 @@ export class PublicacionComponent implements OnInit {
   likeAgregado = false; // Variable para controlar si el usuario ya dio Like
   puntoFizzerAgregado = false; 
 
+
   us = inject(UsuarioService);
   route = inject(ActivatedRoute);
   router = inject(Router);

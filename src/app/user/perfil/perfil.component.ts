@@ -26,11 +26,16 @@ export class PerfilComponent implements OnInit {
   ngOnInit(): void {
     // Obtener el usuario activo
     this.usuarioService.auth().subscribe({
-    next: (usuario: UsuarioActivo | undefined) => {
+      next: (usuario: UsuarioActivo | undefined) => {
+        if (usuario) {
+          this.usuarioActivo = usuario;
 
         if(usuario)
         this.usuarioActivo = usuario; // Almacena la información del usuario
-        
+          // Si el usuario existe, cargar sus publicaciones
+          this.cargarPublicaciones(usuario.id);
+        }
+
       },
       error: (err) => {
         console.error('Error al obtener el usuario:', err);
