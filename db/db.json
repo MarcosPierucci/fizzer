@@ -1,0 +1,112 @@
+{
+  "usuario": [
+    {
+      "id": "9",
+      "nombreUsario": "santiAdmin",
+      "contraseniaUsuario": "admin123",
+      "baneado": false,
+      "admin": true
+    },
+    {
+      "id": "1",
+      "nombreUsario": "piru",
+      "contraseniaUsuario": "hola123",
+      "baneado": false,
+      "admin": false
+    },
+    {
+      "id": "2",
+      "nombreUsario": "facu",
+      "contraseniaUsuario": "contraseña",
+      "baneado": false,
+      "admin": false
+    },
+    {
+      "id": "3",
+      "nombreUsario": "santi",
+      "contraseniaUsuario": "santi",
+      "baneado": false,
+      "admin": false
+    }
+  ],
+  "tareas": [
+    {
+      "id": "id-1",
+      "titulo": "Dibujar a Messi",
+      "descripcion": "En esta tarea quiero que la gente dibuje a messi",
+      "categoria": "Arte",
+      "aceptada": true,
+      "creador": "piru"
+    },
+    {
+      "id": "id-1",
+      "titulo": "Preparar unos buenos choripanes",
+      "descripcion": "Anda a tu carnicero de confianza y conseguí lo necesario para un buen asado en familia",
+      "categoria": "Cocina",
+      "aceptada": false,
+      "creador": "facu"
+    },
+    {
+      "id": "id-1",
+      "titulo": "Completa hasta el primer castillo de bowser en el Super Mario bros.",
+      "descripcion": "Quiero ver cuanto tardan las personas en pasarse el primer mundo del super mario",
+      "categoria": "Videojuegos",
+      "aceptada": false,
+      "creador": "santi"
+    }
+  ],
+  "reporte": [
+    {
+      "id": "1",
+      "motivo": "Esto no es un dibujo de messi es una foto de google",
+      "reportado": "santi",
+      "link": "/publicacion/3/usuario/3",
+      "idReportado": "3",
+      "idPublicacionReportada": "3",
+      "reporteTerminado": false
+    }
+  ],
+  "tareasGlobales": [
+    {
+      "id": "id-1",
+      "usada": false,
+      "descripcion": "En esta tarea quiero que la gente dibuje a messi",
+      "titulo": "Dibujar a Messi"
+    }
+  ],
+  "publicaciones": [
+    {
+      "id": "1",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731671278/ojbc4xyi6rpz0mnkyxtb.jpg",
+      "descripcion": "Este dibujo lo hice en 20 minutos cuando estaba en el colectivo :D",
+      "baneado": false,
+      "nombreUsuario": "piru",
+      "likes": 1,
+      "puntosFizzer": 1,
+      "link": ""
+    },
+    {
+      "id": "2",
+      "idUsuario": "2",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731671515/qp4yvov2jarnhf9qp5bv.jpg",
+      "descripcion": "Este dibujo me llevo 3 dias y me dejo mi novia por mi obsesion :(",
+      "baneado": false,
+      "nombreUsuario": "facu",
+      "likes": 1,
+      "puntosFizzer": 1,
+      "link": ""
+    },
+    {
+      "id": "3",
+      "idUsuario": "3",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731671711/bts4qcsngbnkip437dba.jpg",
+      "descripcion": "Bueno, aca lo hice con los ojos cerrados, de espalda y con unicamente lapices verdes (NO ES UNA FOTO DE GOOGLE)",
+      "baneado": false,
+      "nombreUsuario": "santi",
+      "likes": 0,
+      "puntosFizzer": 1,
+      "link": ""
+    }
+  ]
+}

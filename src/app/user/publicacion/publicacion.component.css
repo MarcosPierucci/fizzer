@@ -1,0 +1,49 @@
+.publicacion-card {
+  background-color: #a1c349; /* Color de fondo principal */
+  border-radius: 8px;
+  padding: 10px;
+  width: 250px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.usuario-nombre {
+  background-color: #ffeb3b; /* Fondo amarillo */
+  padding: 5px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.image-container {
+  margin-top: 10px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.likes-info {
+  background-color: #ffeb3b; /* Fondo amarillo */
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.report-container {
+  margin-top: 10px;
+}
+
+.report-button {
+  background-color: #ff3b3b; /* Color rojo */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bold;
+}

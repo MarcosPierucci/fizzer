@@ -1,0 +1,22 @@
+<app-barra-verde-usuario></app-barra-verde-usuario>
+<div class="contenido">
+  <h2>Formulario de Reportes</h2>
+
+  <form [formGroup]="formulario" class="formulario">
+
+
+    <div class="form-group">
+      <label for="motivo">Motivo</label>
+      <input type="text" formControlName="motivo" id="motivo">
+      @if (formulario.controls['motivo'].getError('required') && formulario.controls['motivo'].touched) {
+        <div class="error-message">Por favor explíquenos brevemente por qué está haciendo el reporte</div>
+      }
+      @if (formulario.controls['motivo'].getError('minlength')) {
+        <div class="error-message">Mínimo 5 caracteres</div>
+      }
+    </div>
+
+
+    <button class="submit-btn" (click)="cargarReporte()">Enviar Reporte</button>
+  </form>
+</div>
