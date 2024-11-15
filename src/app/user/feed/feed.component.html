@@ -1,8 +1,12 @@
 <div class="feed">
     <div *ngFor="let publicacion of publicaciones" class="post">
-        <app-publicacion 
-          [publicacion]="publicacion">
-        </app-publicacion>
+      @if (!publicacion.baneado) {
+
+        <app-publicacion
+        [publicacion]="publicacion">
+      </app-publicacion>
+      }
+
     </div>
 </div>
 

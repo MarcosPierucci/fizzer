@@ -39,51 +39,13 @@ formulario = this.fb.nonNullable.group(
   motivo:['', [Validators.required, Validators.minLength(5)]],
   reportado: [''],
   link:[''],
-  tipoReporte: ['', [Validators.required]],
   idReportado: [''],
   idPublicacionReportada: [''],
   reporteTerminado: [false]
 }
 )
 
-/*
-cargarReporte()
-{
-  if(this.formulario.invalid) return;
 
-
-
-  const reporteFormulario = this.formulario.getRawValue(); /*aca conseguimos que los datos cargados en el formulario queden guardado en reporte formulario, despues hay que pasar los
-  datos de reporteFormulaio a una variable que aun no creamos llamada nuevoReporte, que es la que mandariamos al JSON*/
-/*
-  const id : number = 0 /*con esto conseguimos el id del reporte, con el largo del arreglo de reportes*/
- /*  this.tamanioArregloReportes(id);
-
-  console.log("id: " + id);
-}
-*/
-
-/*
-tamanioArregloReportes(id:number)
-{
-
-  this.rs.getReportes().subscribe(
-    {
-      next:(reporte : Reporte[]) =>
-      {
-        const listaReportes = reporte;
-
-         id = listaReportes.length;
-         console.log("id en fun: " + id);
-      },
-      error:()=>{
-        console.log("Error al traer el arreglo de reportes");
-      }
-    }
-  )
-
-}
-*/
 
 cargarReporte() {
   if (this.formulario.invalid) return alert("Formulario Invalido");
@@ -103,7 +65,7 @@ cargarReporte() {
 
   });
 
-  
+
 
   //this.router.navigate(['/formulario-reportes']
 this.router.navigate(['/home']);

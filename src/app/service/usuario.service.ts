@@ -47,7 +47,7 @@ patchBaneado(id: number, baneado: boolean): Observable<any> {
   return this.http.patch(`${this.urlBase}/${id}`, { baneado });
 }
 
-patchBaneadoPublicacion(id: string, baneado: boolean): Observable<any> {
+patchBaneadoPublicacion(id: string|any, baneado: boolean): Observable<any> {
   return this.http.patch(`${this.urlBase2}/${id}`, { baneado });
 }
 

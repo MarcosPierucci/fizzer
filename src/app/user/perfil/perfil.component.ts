@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { UsuarioActivo } from '../../interfaces/usuario';
 import { UsuarioService } from '../../service/usuario.service';
 import { PublicacionServiceService } from '../../service/publicacion-service.service';
 import { Publicacion } from '../../interfaces/publicacion';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -22,6 +22,8 @@ export class PerfilComponent implements OnInit {
     private usuarioService: UsuarioService,
     private publicacionService: PublicacionServiceService
   ) {}
+
+  router = inject(Router);
 
   ngOnInit(): void {
     // Obtener el usuario activo
@@ -57,4 +59,7 @@ export class PerfilComponent implements OnInit {
       }
     });
   }
+
+
+
 }

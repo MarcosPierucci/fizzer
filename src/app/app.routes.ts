@@ -30,4 +30,5 @@ export const routes: Routes = [
   {path: "resultados-busqueda", component: ResultadosBusquedaComponent},
   {path: "ver-tarea" , component: VerTareaComponent},
   
+
 ];
