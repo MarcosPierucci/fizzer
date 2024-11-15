@@ -23,7 +23,7 @@ export class BarraVerdeUsuarioComponent {
       logoutButton.setAttribute('disabled', 'true');
     }
     setTimeout(() => {
-      this.router.navigate(['/logisn']);
+      this.router.navigate(['/login']);
     }, 1000);
   }
 

@@ -2,13 +2,12 @@
 <div class="container">
 
     <div class="left-panel">
-        <img src="" alt="Fizzer Logo" class="logo">
+        <img src="https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg" alt="Fizzer Logo" class="logo">
         <h1>FIZZER</h1>
         <div class="description">
             <p>Come join our team of creators! Connect with other users through the most intriguing and exciting daily activities.</p>
         </div>
     </div>
-    
     <div class="right-panel">
         <form [formGroup]="formularioInicioSesion" (ngSubmit)="inicioSesion()"
         class="formulario-login">
@@ -18,12 +17,12 @@
             </div>
 
             @if (formularioInicioSesion.controls["nombreUsuario"].getError('required') && formularioInicioSesion.controls["nombreUsuario"].touched) {
-                <div>
+                <div class="validaciones">
                     Campo Requerido
                 </div>
             }
             @if (this.formularioInicioSesion.controls["nombreUsuario"].getError('minlength') && formularioInicioSesion.controls["nombreUsuario"].touched) {
-                <div>
+                <div class="validaciones">
                     Minimo 3 caracteres
                 </div>
             }
@@ -40,12 +39,12 @@
 
 
             @if(formularioInicioSesion.controls['contraseniaUsuario'].getError('required')&& formularioInicioSesion.controls["contraseniaUsuario"].touched) {
-                <div>
+                <div class="validaciones">
                     Campo Requerido
                 </div>
             }
             @if(formularioInicioSesion.controls["contraseniaUsuario"].getError('minlength')&& formularioInicioSesion.controls["contraseniaUsuario"].touched) {
-                <div>
+                <div class="validaciones">
                     Minimo 5 caracteres
                 </div>
             }

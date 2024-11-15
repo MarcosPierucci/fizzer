@@ -3,6 +3,7 @@ import { Publicacion } from '../../interfaces/publicacion';
 import { PublicacionServiceService } from '../../service/publicacion-service.service';
 import { PublicacionComponent } from '../publicacion/publicacion.component';
 import { CommonModule } from '@angular/common';
+import { PublicacionComponent } from '../publicacion/publicacion.component';
 
 
 @Component({
