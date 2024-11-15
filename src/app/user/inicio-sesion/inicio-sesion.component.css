@@ -141,3 +141,7 @@ width: 100%;
 button,input{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.validaciones{
+    color: red;
+}

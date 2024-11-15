@@ -44,9 +44,48 @@
       "id": "8",
       "nombreUsario": "facundoroch",
       "contraseniaUsuario": "facu12345"
+    },
+    {
+      "id": "9",
+      "nombreUsario": "santiAdmin",
+      "contraseniaUsuario": "admin123",
+      "baneado": false,
+      "admin": true
     }
   ],
-  "tareas": [],
+  "tareas": [
+    {
+      "id": "id-1",
+      "titulo": "Salir a caminar",
+      "descripcion": "tenes que salir a caminar con tus amigos en la tarde",
+      "categoria": "Social",
+      "aceptada": false,
+      "creador": ""
+    },
+    {
+      "id": "id-2",
+      "titulo": "Salir a caminar",
+      "descripcion": "tenes que salir a caminar con tus amigos en la tarde",
+      "categoria": "Social",
+      "aceptada": false,
+      "creador": ""
+    },
+    {
+      "id": "id-1",
+      "titulo": "selfi",
+      "descripcion": "salfie con friends",
+      "categoria": "Social",
+      "aceptada": false,
+      "creador": "santi"
+    },
+    {
+      "id": "id-1",
+      "titulo": "ASADO",
+      "descripcion": "finde de comida",
+      "categoria": "Cocina",
+      "aceptada": false
+    }
+  ],
   "reporte": [
     {
       "id": "1",

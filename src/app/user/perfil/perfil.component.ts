@@ -30,11 +30,12 @@ export class PerfilComponent implements OnInit {
         if (usuario) {
           this.usuarioActivo = usuario;
 
+        if(usuario)
+        this.usuarioActivo = usuario; // Almacena la información del usuario
           // Si el usuario existe, cargar sus publicaciones
           this.cargarPublicaciones(usuario.id);
-        } else {
-          alert("No existe el usuario");
         }
+
       },
       error: (err) => {
         console.error('Error al obtener el usuario:', err);

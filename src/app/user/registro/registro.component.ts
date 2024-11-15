@@ -18,7 +18,9 @@ usuarioServicio = inject (UsuarioService)
 
 formularioRegister = this.fb.nonNullable.group({
   nombreUsario: ["",],
-  contraseniaUsuario: [""]
+  contraseniaUsuario: [""],
+  baneado: false,
+  admin: false,
 })
 
 constructor (private router: Router){}
