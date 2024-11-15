@@ -34,13 +34,39 @@ export class PublicacionComponent implements OnInit {
     const usuarioId = this.route.snapshot.paramMap.get('usuarioId') || '';
     console.log('Publicacion ID:', publicacionId);
     console.log('Usuario ID:', usuarioId);
-
+  
     if (publicacionId && usuarioId) {
       this.buscarPublicacionId(publicacionId, usuarioId);
     }
   }
-
+  
   buscarPublicacionId(publicacionId: string, usuarioId: string) {
+    this.servicioPublicacion.getPublicacionById(publicacionId).subscribe({
+      next: (publicacion: Publicacion) => {
+        console.log("Publicacion conseguida correctamente");
+  
+        console.log('ID:', publicacion.id);
+        console.log('ID Usuario:', publicacion.idUsuario);
+        console.log('Link:', publicacion.link);
+        console.log('Descripción:', publicacion.descripcion);
+        console.log('Baneado:', publicacion.baneado);
+        console.log('Nombre Usuario:', publicacion.nombreUsuario);
+  
+        this.publicacion = publicacion;
+      },
+      error: () => {
+        console.log("Error al traer la publicacion");
+      }
+    });
+  }
+  
+
+  /*
+
+  Usa servicio de usuario .-.
+  
+  buscarPublicacionId(publicacionId: string, usuarioId: string) 
+  {
     this.us.getPubliacionbyId(publicacionId).subscribe({
       next: (publicacion: Publicacion) => {
         console.log("Publicacion conseguida correctamente");
@@ -59,6 +85,9 @@ export class PublicacionComponent implements OnInit {
       }
     });
   }
+
+  */
+
 
   reportarPublicacion() {
     const { id, nombreUsuario, link, idUsuario } = this.publicacion;
