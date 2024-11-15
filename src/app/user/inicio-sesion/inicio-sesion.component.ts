@@ -53,7 +53,7 @@ inicioSesion()
     }
   )
   
-
+/*
   //Esto funciona y es otra alternativa para iniciar sesion, lo que no tiene esta forma es el activeUser
   this.usuarioServicio.getUsuarioByName(nombreUsuario, contraseniaUsuario).subscribe({
     next:(usuario : Usuario[]) =>{
@@ -76,7 +76,7 @@ inicioSesion()
       return false;
     }
   })
-  
+  */
 }
 
 // Esta funcion es para que el usuario pueda ver su contrania
