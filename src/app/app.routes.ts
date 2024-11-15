@@ -25,6 +25,6 @@ export const routes: Routes = [
   {path: "publicacion/:publicacionId/usuario/:usuarioId", component: PublicacionComponent},
   {path: "editar-perfil", component: EditarPerfilComponent},
   {path: "formulario-publicacion", component: SubirPublicacionComponent },
-  {path: "perfil/:id", component: PerfilComponent},
+  {path: "perfil/:usuarioId", component: PerfilComponent},
   {path: "resultados-busqueda", component: ResultadosBusquedaComponent}
 ];

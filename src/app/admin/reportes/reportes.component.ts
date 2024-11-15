@@ -25,34 +25,9 @@ us = inject(UsuarioService);
 
   ]
 
-/*
-  aceptarReporte(tipoReporte : string, idAbanear : string|number, idPublicacion : string|null|any)
-  {
-    console.log('tipoReporte:', tipoReporte, 'idAbanear:', idAbanear, 'idPublicacion:', idPublicacion);
 
-    if(tipoReporte.toLowerCase() == 'publicacion')
-    {
-      alert("Se apreto aceptar, tipo reporte: " + tipoReporte);
-      this.banearPublicacion(idAbanear, idPublicacion); //Aca seria de tipo number porque la publicacion tendria un id de tipo number
-    } else if(tipoReporte.toLowerCase() == 'perfil')
-    {
-      this.banearPerfil(idAbanear); //Aca seria de tipo string porque los usuarios tienen un id de tipo String
-    }
-  }
-  */
-
-  aceptarReporte(tipoReporte: string,idReporte : string,  idAbanear: string | number, idPublicacion: string | null) {
-    console.log('tipoReporte:', tipoReporte, 'idAbanear:', idAbanear, 'idPublicacion:', idPublicacion);
-
-    if (tipoReporte.toLowerCase() === 'publicacion' && idPublicacion !== null) {
-      alert("Se apretó aceptar, tipo reporte: " + tipoReporte);
+  aceptarReporte(idReporte : string, idPublicacion: string | null) {
       this.banearPublicacion(idPublicacion, idReporte);
-    } else if (tipoReporte.toLowerCase() === 'perfil') {
-      this.banearPerfil(idAbanear, idReporte);
-     alert("Apretaste banear perfil")
-    } else {
-      console.error('ID de publicación no válido o no especificado');
-    }
   }
 
 
@@ -70,17 +45,6 @@ banearPublicacion(idPublicacion : string|any, idReporte : string)
 }
 
 
-banearPerfil(id: number|any, idReporte : string) {
-  this.us.patchBaneado(id, true).subscribe({
-    next: () => {
-      console.log('Usuario baneado exitosamente');
-      this.terminarReporte(idReporte);
-    },
-    error: () => {
-      console.log("Error en el baneado de perfil");
-    }
-  });
-}
 
 
 rechazarReporte(id:string)

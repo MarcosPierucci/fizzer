@@ -15,14 +15,16 @@
         </div>
       </div>
     </div>
-  
+
     <!-- Publicaciones del usuario -->
     <div class="publicaciones-container">
       <div *ngFor="let publicacion of publicaciones" class="publicacion-item">
-        <a [routerLink]="['/publicacion', publicacion.id, 'usuario', usuarioActivo?.id]">
-          <img [src]="publicacion.urlFoto" alt="Imagen de la publicación" class="publicacion-foto">
-        </a>
+        @if (!publicacion.baneado) {
+          <a [routerLink]="['/publicacion', publicacion.id, 'usuario', usuarioActivo?.id]">
+            <img [src]="publicacion.urlFoto" alt="Imagen de la publicación" class="publicacion-foto">
+          </a>
+        }
+
       </div>
     </div>
   </div>
-  
