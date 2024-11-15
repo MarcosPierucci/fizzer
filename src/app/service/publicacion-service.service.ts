@@ -49,8 +49,13 @@ export class PublicacionServiceService {
     return this.http.get<Publicacion[]>(`${this.urlBase}?idUsuario=${usuarioId}`);
   }
   
+  patchLikes(id : string, idUsuario : string, likes : number): Observable<Publicacion>{
+    return this.http.patch<Publicacion>(`${this.urlBase}/${id}/?idusuario=${idUsuario}`, {likes});
+  }
 
-
+  patchPuntos(id : string, idUsuario : string, puntosFizzer : number): Observable<Publicacion>{
+    return this.http.patch<Publicacion>(`${this.urlBase}/${id}/?idusuario=${idUsuario}`, {puntosFizzer});
+  }
 
   
 }
