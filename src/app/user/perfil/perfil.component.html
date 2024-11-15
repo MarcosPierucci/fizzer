@@ -1,3 +1,28 @@
-
-<div>{{usuarioActivo?.nombre}}</div>
-<div>{{usuarioActivo?.id}}</div>
+<div class="perfil-container">
+    <!-- Información del perfil -->
+    <div class="perfil-header">
+      <div class="perfil-info">
+        <h2>{{ usuarioActivo?.nombre }}</h2>
+        <p>ID: {{ usuarioActivo?.id }}</p>
+        <h3>Colección de logros:</h3>
+        <div class="logros">
+          <div class="logro-item">
+            <span class="logro-icon">10+</span> Primeros 10 puntos ganados
+          </div>
+          <div class="logro-item">
+            <span class="logro-icon">5+</span> Primeros 5 likes
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Publicaciones del usuario -->
+    <div class="publicaciones-container">
+      <div *ngFor="let publicacion of publicaciones" class="publicacion-item">
+        <a [routerLink]="['/publicacion', publicacion.id, 'usuario', usuarioActivo?.id]">
+          <img [src]="publicacion.urlFoto" alt="Imagen de la publicación" class="publicacion-foto">
+        </a>
+      </div>
+    </div>
+  </div>
+  

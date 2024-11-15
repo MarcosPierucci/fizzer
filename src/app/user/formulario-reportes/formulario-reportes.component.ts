@@ -103,8 +103,7 @@ cargarReporte() {
 
   });
 
-  //Si yo hago esto, basicamente no muestra nada porque tamanioArregloReportes trabaja con promesas, entonces tarda
-  console.log("Fuera de promesa ID calculado:", reporteFormulario.id);
+  
 
   //this.router.navigate(['/formulario-reportes']
 this.router.navigate(['/home']);

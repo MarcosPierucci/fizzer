@@ -138,41 +138,9 @@
   "publicaciones": [
     {
       "id": "1",
-      "idUsuario": "3",
-      "link": "https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg",
-      "urlFoto": "",
-      "descripcion": "Publicación de Lucia",
-      "baneado": false,
-      "nombreUsuario": "lucia",
-      "likes": 15,
-      "puntosFizzer": 5
-    },
-    {
-      "id": "",
-      "idUsuario": "3",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg",
-      "descripcion": "La pase muy bien y fue graciosa",
-      "baneado": false,
-      "nombreUsuario": "santi",
-      "likes": 0,
-      "puntosFizzer": 0,
-      "link": ""
-    },
-    {
-      "id": "",
-      "nombreUsuario": "piru",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg",
-      "descripcion": "me aburri",
-      "baneado": false,
-      "likes": 0,
-      "puntosFizzer": 0,
-      "link": ""
-    },
-    {
-      "id": "",
       "idUsuario": "8",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731636356/gyo1vl0duyupq3895ifi.jpg",
-      "descripcion": "Hice este dibujo en media horita",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731651282/ubmcseukcqbmgn23fr4d.jpg",
+      "descripcion": "baneada prueba",
       "baneado": false,
       "nombreUsuario": "facundoroch",
       "likes": 0,
@@ -180,10 +148,43 @@
       "link": ""
     },
     {
-      "id": "",
+      "id": "2",
       "idUsuario": "8",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731636363/kdxjhbn8d7ckgiiqentq.jpg",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731651808/d38ywaaa8uemr0gnp3yr.jpg",
+      "descripcion": "asdasd",
+      "baneado": false,
+      "nombreUsuario": "facundoroch",
+      "likes": 0,
+      "puntosFizzer": 0,
+      "link": ""
+    },
+    {
+      "id": "3",
+      "idUsuario": "8",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731651818/gj6nmsfbvui51dlmuk7x.jpg",
+      "descripcion": "dsadasd",
+      "baneado": false,
+      "nombreUsuario": "facundoroch",
+      "likes": 0,
+      "puntosFizzer": 0,
+      "link": ""
+    },
+    {
+      "id": "4",
+      "idUsuario": "8",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731651825/dwsp320p97js0klnrtby.jpg",
       "descripcion": "",
+      "baneado": false,
+      "nombreUsuario": "facundoroch",
+      "likes": 0,
+      "puntosFizzer": 0,
+      "link": ""
+    },
+    {
+      "id": "5",
+      "idUsuario": "8",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731651842/mjxtjeimecunqlqe81jb.jpg",
+      "descripcion": "fdsfds",
       "baneado": false,
       "nombreUsuario": "facundoroch",
       "likes": 0,
