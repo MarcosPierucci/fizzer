@@ -76,3 +76,9 @@ body {
 .report-button:hover {
   background-color: darkred;
 }
+
+.post-image {
+  max-width: 100%;     /* Limita el ancho al 100% del contenedor */
+  height: auto;        /* Mantiene la proporción de la imagen */
+  object-fit: cover;   /* Asegura que la imagen cubra el área del contenedor sin deformarse */
+}

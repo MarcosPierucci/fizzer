@@ -1,8 +1,8 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { BarraVerdeUsuarioComponent } from "../barra-verde-usuario/barra-verde-usuario.component";
 import { UsuarioService } from '../../service/usuario.service';
 import {Publicacion } from '../../interfaces/publicacion';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, NgFor } from '@angular/common';
 
@@ -10,25 +10,14 @@ import { CommonModule, NgFor } from '@angular/common';
 @Component({
   selector: 'app-publicacion',
   standalone: true,
-  imports: [BarraVerdeUsuarioComponent, FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './publicacion.component.html',
   styleUrls: ['./publicacion.component.css']
 })
+
 export class PublicacionComponent implements OnInit {
 
-  publicacion: Publicacion = {
-    id: '',
-    idUsuario: '',
-    link: '',
-    descripcion: '',
-    baneado: false,
-    nombreUsuario: '',
-    likes: 0,
-    puntosFizzer: 0,
-    urlFoto: ''
-  };
-
-  nuevoComentarioTexto: string = ''; // Nueva propiedad para almacenar el texto del comentario
+  @Input() publicacion: Publicacion = {} as Publicacion;
 
   us = inject(UsuarioService);
   route = inject(ActivatedRoute);
