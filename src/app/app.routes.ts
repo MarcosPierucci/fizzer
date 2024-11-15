@@ -10,6 +10,7 @@ import { PublicacionComponent } from './user/publicacion/publicacion.component';
 import { FormularioTareasComponent } from './user/formulario-tareas/formulario-tareas.component';
 import { EditarPerfilComponent } from './user/editar-perfil/editar-perfil.component';
 import { SubirPublicacionComponent } from './user/subir-publicacion/subir-publicacion.component';
+import { ResultadosBusquedaComponent } from './user/resultados-busqueda/resultados-busqueda.component';
 
 export const routes: Routes = [
   {path: "admin-reportes", component:ReportesComponent},
@@ -20,8 +21,10 @@ export const routes: Routes = [
   {path: "home", component: HomePageComponent},
   {path: "formulario-tareas", component: FormularioTareasComponent},
   {path: "formulario-reportes", component: FormularioReportesComponent},
-  {path:"perfil", component:PerfilComponent},
+  {path: "perfil", component:PerfilComponent},
   {path: "publicacion/:publicacionId/usuario/:usuarioId", component: PublicacionComponent},
   {path: "editar-perfil", component: EditarPerfilComponent},
-  {path: "formulario-publicacion", component: SubirPublicacionComponent }
+  {path: "formulario-publicacion", component: SubirPublicacionComponent },
+  {path: "perfil/:id", component: PerfilComponent},
+  {path: "resultados-busqueda", component: ResultadosBusquedaComponent}
 ];

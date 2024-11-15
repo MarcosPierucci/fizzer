@@ -1,19 +1,25 @@
 <div class="barra-superior">
-  <img src="https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg" alt="Logo-fizzer" class="logo">
+  <img
+    src="https://ih1.redbubble.net/image.2714584457.7441/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+    alt="Logo-fizzer"
+    class="logo"
+  />
   <div class="search-bar">
-      <input type="text" placeholder="Buscar..." />
-      <button class="search-btn">🔍</button>
-    </div>
-    
-  <div class="botones">
-  <button [routerLink]="'/perfil'">Mi Perfil</button>
-  <!-- <button [routerLink]="'/login'">Cerrar Sesion</button> -->
-  <button id="logoutButton" (click)="cerrarSesion()">Cerrar Sesión</button>
+    <input
+      type="text"
+      placeholder="Buscar..."
+      [(ngModel)]="usuarioBuscar"
+      (keyup.enter)="buscar()"
+    />
+    <button class="search-btn" (click)="buscar()">🔍</button>
   </div>
-
+  
+  <div class="botones">
+    <button [routerLink]="'/perfil'">Mi Perfil</button>
+    <button id="logoutButton" (click)="cerrarSesion()">Cerrar Sesión</button>
+  </div>
 </div>
+
 <div class="barra-lateral">
-
-<button class="camera-button" [routerLink]="'/formulario-publicacion'">📷</button>
-
-</div>S
+  <button class="camera-button" [routerLink]="'/formulario-publicacion'">📷</button>
+</div>

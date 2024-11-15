@@ -10,7 +10,7 @@ import { CommonModule, NgFor } from '@angular/common';
 @Component({
   selector: 'app-publicacion',
   standalone: true,
-  imports: [BarraVerdeUsuarioComponent, FormsModule, NgFor, CommonModule],
+  imports: [BarraVerdeUsuarioComponent, FormsModule, CommonModule],
   templateUrl: './publicacion.component.html',
   styleUrls: ['./publicacion.component.css']
 })
@@ -69,6 +69,7 @@ export class PublicacionComponent implements OnInit {
     const { id, nombreUsuario, link, idUsuario } = this.publicacion;
     const linkPublicacion = `/publicacion/${id}/usuario/${idUsuario}`;
 
+    //para pasar datos
     this.router.navigate(['/formulario-reportes'], {
       queryParams: {
         reportado: nombreUsuario,
