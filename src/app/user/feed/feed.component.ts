@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Publicacion } from '../../interfaces/publicacion';
 import { PublicacionServiceService } from '../../service/publicacion-service.service';
-import { CommonModule } from '@angular/common';
 import { PublicacionComponent } from '../publicacion/publicacion.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -13,13 +13,14 @@ import { PublicacionComponent } from '../publicacion/publicacion.component';
   styleUrl: './feed.component.css'
 })
 export class FeedComponent implements OnInit {
-  
+
   publicaciones: Publicacion[] = [];
 
   constructor(private publicacionService: PublicacionServiceService) {}
 
   ngOnInit(): void {
     this.getPublicaciones();
+    console.log("PUBLIS: "+this.publicaciones)
   }
 
   getPublicaciones(): void {
