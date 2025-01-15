@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Categoria } from '../../enums/categoria';
 import { CommonModule, NgFor } from '@angular/common';
-import { TareaService } from '../../service/tarea.service'; 
+import { TareaService } from '../../service/tarea.service';
 import { Tarea } from '../../interfaces/tarea';
 import { Usuario, UsuarioActivo } from '../../interfaces/usuario';
 import { RouterLink } from '@angular/router';
@@ -19,7 +19,7 @@ import { UsuarioService } from '../../service/usuario.service';
 
 export class FormularioTareasComponent implements OnInit {
 
-  usuarioActivo: UsuarioActivo | undefined; 
+  usuarioActivo: UsuarioActivo | undefined;
 
   constructor(private usuarioService: UsuarioService) {}
   ngOnInit(): void {
@@ -35,7 +35,7 @@ export class FormularioTareasComponent implements OnInit {
           console.log('Suscripción completada');
         }
       });
-    
+
   }
 
   formularioTareas = new FormGroup({
@@ -43,7 +43,7 @@ export class FormularioTareasComponent implements OnInit {
     'descripcion': new FormControl('', Validators.required),
     'categoria': new FormControl('', Validators.required)
   })
-  
+
   servicioTarea = inject(TareaService)
 
   // esto se crea para poder referenciar a todas las categorias del enum en el formulario
@@ -52,16 +52,16 @@ export class FormularioTareasComponent implements OnInit {
   agregarTarea(): void {
     if (this.formularioTareas.invalid) return;
     const tareaNueva = this.formularioTareas.getRawValue();
-    
+
     const tarea_nuevos_atributos: Tarea = {
-    id: this.servicioTarea.generarId(),
-    titulo: tareaNueva.titulo ?? '',         
+   // id: this.servicioTarea.generarId(),
+    titulo: tareaNueva.titulo ?? '',
     descripcion: tareaNueva.descripcion ?? '',
     categoria: tareaNueva.categoria as Categoria ?? Categoria.Arte,
     aceptada: false,
     creador: this.usuarioActivo?.nombre //completar con un codigo que retorne el nombre del usuario
-  } 
-    
+  }
+
     this.agregarTareaBD(tarea_nuevos_atributos);
   }
 

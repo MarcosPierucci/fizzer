@@ -26,13 +26,13 @@ us = inject(UsuarioService);
   ]
 
 
-  aceptarReporte(idReporte : string, idPublicacion: string | null) {
+  aceptarReporte(idReporte : string | undefined, idPublicacion: string | null) {
       this.banearPublicacion(idPublicacion, idReporte);
   }
 
 
 
-banearPublicacion(idPublicacion : string|any, idReporte : string)
+banearPublicacion(idPublicacion : string|any, idReporte : string | undefined)
 {
   this.us.patchBaneadoPublicacion(idPublicacion, true).subscribe({
     next:()=>{
@@ -47,14 +47,14 @@ banearPublicacion(idPublicacion : string|any, idReporte : string)
 
 
 
-rechazarReporte(id:string)
+rechazarReporte(id:string | undefined)
 {
   this.terminarReporte(id);
   console.log("Reporte rechazado correctamente!");
 }
 
 
-terminarReporte(id:string|number)
+terminarReporte(id:string|number|undefined)
 {
   this.rs.patchCerrarReporte(id, true).subscribe(
     {

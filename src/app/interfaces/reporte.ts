@@ -1,5 +1,5 @@
 export interface Reporte {
-  id: string,
+  id?: string,
   motivo: string,
   reportado:string,
   link: string,

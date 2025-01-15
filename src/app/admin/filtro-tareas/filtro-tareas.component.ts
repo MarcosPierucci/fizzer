@@ -29,7 +29,7 @@ listaTareasPorFiltar : Tarea[]=[
 ]
 
 
-aceptarTarea(id: string) {
+aceptarTarea(id: string | undefined) {
   this.ts.patchTareaAceptada(id, true).subscribe({next:() => {
     const tarea = this.listaTareasPorFiltar.find(t => t.id === id);
     if (tarea) {
@@ -65,10 +65,11 @@ this.tgs.postTareaGlobal(tareaGlobal).subscribe({
 
 
 
-rechazarTarea(id:string){
+rechazarTarea(id:string | undefined){
   this.ts.deleteTarea(id).subscribe(
     {
       next:()=>{
+        //Esto lo tenemos que borrar
         window.location.reload();
       },
       error:(e:Error)=>{

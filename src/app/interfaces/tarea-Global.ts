@@ -1,6 +1,6 @@
 
 export interface TareaGlobal {
-  id: string,
+  id?: string,
   usada:boolean,
   descripcion: string,
   titulo: string

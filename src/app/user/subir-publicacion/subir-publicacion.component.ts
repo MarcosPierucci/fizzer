@@ -27,7 +27,7 @@ export class SubirPublicacionComponent implements OnInit {
 
   // Formulario para crear la publicación
   formularioPublicacion = this.fb.nonNullable.group({
-    id: "",
+    
     idUsuario: [this.usuarioActivo?.id],
     urlFoto: this.urlImg,
     descripcion: ["", Validators.minLength(5)],
@@ -93,13 +93,15 @@ subirPublicacion() {
       console.log('URL de la imagen subida:', this.urlImg);
 
       //Mover la lógica de `patchValue` dentro del callback para asegurar que `nuevaId` esté disponible
+/*
       this.tamanioArregloPublicaciones((id: number) => {
         const nuevaId = id.toString();
         console.log("Nueva ID: " + nuevaId);
 
+
         //Actualizar los datos del formulario con la URL de la imagen y el nuevo id
         this.formularioPublicacion.patchValue({
-          id: nuevaId,
+          //id: nuevaId,
           urlFoto: this.urlImg,
           idUsuario: this.usuarioActivo?.id,
           nombreUsuario: this.usuarioActivo?.nombre,
@@ -122,6 +124,31 @@ subirPublicacion() {
             alert('Hubo un error al crear la publicación.');
           }
         });
+      }); */
+      //Actualizar los datos del formulario con la URL de la imagen y el nuevo id
+      this.formularioPublicacion.patchValue({
+        //id: nuevaId,
+        urlFoto: this.urlImg,
+        idUsuario: this.usuarioActivo?.id,
+        nombreUsuario: this.usuarioActivo?.nombre,
+        likes: 0,
+        puntosFizzer: 0,
+        baneado: false,
+        link: ""
+      });
+
+      //Enviar la publicación al JSON server usando el método postPublicacion
+      this.servicioPublicacion.postPublicacion(this.formularioPublicacion.value as Publicacion).subscribe({
+        next: (response) => {
+          console.log('Publicación creada con éxito:', response);
+          alert('Publicación subida correctamente.');
+          this.formularioPublicacion.reset(); //Limpiar el formulario
+          this.files = []; //Limpiar los archivos seleccionados
+        },
+        error: (err) => {
+          console.error('Error al crear la publicación:', err);
+          alert('Hubo un error al crear la publicación.');
+        }
       });
     },
     error: (e: Error) => {
