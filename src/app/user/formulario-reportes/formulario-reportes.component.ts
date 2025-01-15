@@ -35,7 +35,7 @@ router = inject(Router);
 
 formulario = this.fb.nonNullable.group(
 {
-  id: [''],
+
   motivo:['', [Validators.required, Validators.minLength(5)]],
   reportado: [''],
   link:[''],
@@ -53,7 +53,7 @@ cargarReporte() {
   const reporteFormulario : Reporte = this.formulario.getRawValue(); // Conserva esta variable para los datos del formulario
 
   //Aca agregar las funciones o lo que sea necesario para cargar el resto de los valores que por el momento estan vacios
-
+/*
   this.tamanioArregloReportes((id: number) => {
     console.log("ID calculado:", id);
     //Aca despues hay que cargarle a nuevoReporte el id, lo tenemos que hacer a lo ultimo porque sino por la promesa no lo llega a cargar
@@ -65,7 +65,8 @@ cargarReporte() {
 
   });
 
-
+*/
+this.addReportedb(reporteFormulario)
 
   //this.router.navigate(['/formulario-reportes']
 this.router.navigate(['/home']);

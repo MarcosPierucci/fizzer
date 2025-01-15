@@ -27,6 +27,20 @@
       "contraseniaUsuario": "santi",
       "baneado": false,
       "admin": false
+    },
+    {
+      "id": "4",
+      "nombreUsario": "usuarioPrueba",
+      "contraseniaUsuario": "hola",
+      "baneado": false,
+      "admin": false
+    },
+    {
+      "id": "f11e",
+      "nombreUsario": "UsuarioPruebaid",
+      "contraseniaUsuario": "pruebaId",
+      "baneado": false,
+      "admin": false
     }
   ],
   "tareas": [
@@ -53,6 +67,22 @@
       "categoria": "Videojuegos",
       "aceptada": false,
       "creador": "santi"
+    },
+    {
+      "id": "3965",
+      "titulo": "tarea de prueba",
+      "descripcion": "Esta tarea es de prueba para ver si se carga el tema del id",
+      "categoria": "Videojuegos",
+      "aceptada": false,
+      "creador": "piru"
+    },
+    {
+      "id": "141a",
+      "titulo": "nueva tarea",
+      "descripcion": "tarea nueva",
+      "categoria": "Deporte",
+      "aceptada": true,
+      "creador": "piru"
     }
   ],
   "reporte": [
@@ -64,6 +94,24 @@
       "idReportado": "3",
       "idPublicacionReportada": "3",
       "reporteTerminado": false
+    },
+    {
+      "id": "2",
+      "motivo": "holareporte",
+      "reportado": "piru",
+      "link": "/publicacion/1/usuario/1",
+      "idReportado": "1",
+      "idPublicacionReportada": "1",
+      "reporteTerminado": true
+    },
+    {
+      "id": "19f3",
+      "motivo": "reporte2",
+      "reportado": "piru",
+      "link": "/publicacion/1/usuario/1",
+      "idReportado": "1",
+      "idPublicacionReportada": "1",
+      "reporteTerminado": true
     }
   ],
   "tareasGlobales": [
@@ -72,6 +120,12 @@
       "usada": false,
       "descripcion": "En esta tarea quiero que la gente dibuje a messi",
       "titulo": "Dibujar a Messi"
+    },
+    {
+      "id": "141a",
+      "usada": false,
+      "descripcion": "tarea nueva",
+      "titulo": "nueva tarea"
     }
   ],
   "publicaciones": [
@@ -80,7 +134,7 @@
       "idUsuario": "1",
       "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731671278/ojbc4xyi6rpz0mnkyxtb.jpg",
       "descripcion": "Este dibujo lo hice en 20 minutos cuando estaba en el colectivo :D",
-      "baneado": false,
+      "baneado": true,
       "nombreUsuario": "piru",
       "likes": 1,
       "puntosFizzer": 1,
@@ -106,6 +160,28 @@
       "nombreUsuario": "santi",
       "likes": 0,
       "puntosFizzer": 1,
+      "link": ""
+    },
+    {
+      "id": "",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1736983065/fvi1csm6n7olkydydflk.jpg",
+      "descripcion": "Foto de prueba para ver como se cargan los id",
+      "baneado": false,
+      "nombreUsuario": "piru",
+      "likes": 0,
+      "puntosFizzer": 0,
+      "link": ""
+    },
+    {
+      "id": "7dbf",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1736983142/wqs6ycu7sukcx2d2q606.png",
+      "descripcion": "Segundo intento para ver como funciona el cargado de las id",
+      "baneado": false,
+      "nombreUsuario": "piru",
+      "likes": 0,
+      "puntosFizzer": 0,
       "link": ""
     }
   ]

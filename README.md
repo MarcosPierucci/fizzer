@@ -1,5 +1,13 @@
 # TpFinal
 
+Integrantes: Pierucci Marcos - Roch Facundo - Roch Santino
+
+Para hacer que ande la app es necesario: 
+-Instalar la libreria Ngxdropzone, con el comando npm i ngx-dropzone
+-Levantar un Json-server, con el comando json-server --watch db/db.json
+-Levantar un servidor con el comando ng s -o
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
 
 ## Development server

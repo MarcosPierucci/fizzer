@@ -1,5 +1,5 @@
 export interface Publicacion {
-  id: string;
+  id?: string;
   idUsuario: string;
   link?: string;
   urlFoto: string,
@@ -7,6 +7,6 @@ export interface Publicacion {
   baneado: boolean;
   nombreUsuario: string;
   likes: number;
-  puntosFizzer: number; 
+  puntosFizzer: number;
 }
 
