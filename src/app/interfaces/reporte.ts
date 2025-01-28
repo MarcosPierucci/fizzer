@@ -5,5 +5,5 @@ export interface Reporte {
   link: string,
   idReportado: string|number
   idPublicacionReportada?: string
-  reporteTerminado:boolean
+  //reporteTerminado:boolean
   }

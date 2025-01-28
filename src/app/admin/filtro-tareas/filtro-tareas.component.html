@@ -3,7 +3,7 @@
 <h2>FILTRAR TAREAS</h2>
 
 @for (item of listaTareasPorFiltar; track $index) {
-  @if (!item.aceptada) {
+
     <div class="tarea">
     <p><strong>ID:</strong> {{item.id}}</p>
       <p><strong>Titulo:</strong> {{item.titulo}}</p>
@@ -11,11 +11,11 @@
       <p><strong>Descripcion:</strong> {{item.descripcion}}</p>
       <p><strong>Creador:</strong> {{item.creador}}</p>
 
-      <button class="aceptar" (click)="aceptarTarea(item.id)">Aceptar</button>
-      <button class="rechazar" (click)="rechazarTarea(item.id)">Rechazar</button>
+      <button class="aceptar" (click)="aceptarTarea(item)">Aceptar</button>
+      <button class="rechazar" (click)="borrarTarea(item.id)">Rechazar</button>
     </div>
 
-  }
+  
 
 }
 </div>

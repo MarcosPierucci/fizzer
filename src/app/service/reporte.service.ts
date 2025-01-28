@@ -19,7 +19,7 @@ export class ReporteService {
     return this.http.get<Reporte[]>(this.urlBase);
   }
 
-  deleteReporte(id: string|number): Observable<void>{
+  deleteReporte(id: string|undefined): Observable<void>{
     return this.http.delete<void>(`${this.urlBase}/${id}`);
   }
 

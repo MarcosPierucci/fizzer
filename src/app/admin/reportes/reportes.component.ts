@@ -25,14 +25,14 @@ us = inject(UsuarioService);
 
   ]
 
-
+/*
   aceptarReporte(idReporte : string | undefined, idPublicacion: string | null) {
       this.banearPublicacion(idPublicacion, idReporte);
   }
+*/
 
 
-
-banearPublicacion(idPublicacion : string|any, idReporte : string | undefined)
+banearPublicacion(idReporte : string | undefined, idPublicacion : string|any)
 {
   this.us.patchBaneadoPublicacion(idPublicacion, true).subscribe({
     next:()=>{
@@ -46,16 +46,25 @@ banearPublicacion(idPublicacion : string|any, idReporte : string | undefined)
 
 
 
-
+/*
 rechazarReporte(id:string | undefined)
 {
   this.terminarReporte(id);
   console.log("Reporte rechazado correctamente!");
 }
+*/
 
-
-terminarReporte(id:string|number|undefined)
+terminarReporte(id:string|undefined)
 {
+  this.rs.deleteReporte(id).subscribe({
+    next:()=>{
+      console.log("Reporte terminado correctamente!")
+    }, error: ()=>{
+      console.log("Error en el terminar reporte")
+    }
+  })
+
+  /*
   this.rs.patchCerrarReporte(id, true).subscribe(
     {
       next:()=>{
@@ -67,6 +76,7 @@ terminarReporte(id:string|number|undefined)
       }
     }
   )
+  */
 }
 
 mostrarListaReportes()

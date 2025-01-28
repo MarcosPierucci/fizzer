@@ -29,26 +29,19 @@ listaTareasPorFiltar : Tarea[]=[
 ]
 
 
-aceptarTarea(id: string | undefined) {
-  this.ts.patchTareaAceptada(id, true).subscribe({next:() => {
-    const tarea = this.listaTareasPorFiltar.find(t => t.id === id);
-    if (tarea) {
-      console.log("Tarea aceptada")
-      tarea.aceptada = true;
+aceptarTarea(tarea : Tarea) {
 
-      const tareaGlobal :TareaGlobal = {
-        id: tarea.id,
-        usada: false,
-        descripcion: tarea.descripcion,
-        titulo: tarea.titulo
-      };
+  const tareaGlobal :TareaGlobal = {
+    id: tarea.id,
+    usada: false,
+    descripcion: tarea.descripcion,
+    titulo: tarea.titulo
+  };
 
-      this.mandarAglobales(tareaGlobal);
-    }}, error:(e:Error) =>
-    {
-      console.log(e.message)
-    }
-  });
+  this.mandarAglobales(tareaGlobal);
+
+  this.borrarTarea(tarea.id);
+
 }
 
 mandarAglobales(tareaGlobal : TareaGlobal)
@@ -65,7 +58,10 @@ this.tgs.postTareaGlobal(tareaGlobal).subscribe({
 
 
 
-rechazarTarea(id:string | undefined){
+
+
+borrarTarea(id : string | undefined)
+{
   this.ts.deleteTarea(id).subscribe(
     {
       next:()=>{
@@ -78,7 +74,6 @@ rechazarTarea(id:string | undefined){
     }
   )
 }
-
 
 mostrarListadoTareas()
 {

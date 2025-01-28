@@ -53,6 +53,8 @@ export class PerfilComponent implements OnInit {
     this.publicacionService.getPublicacionesByUsuarioId(usuarioId).subscribe({
       next: (publicaciones: Publicacion[]) => {
         this.publicaciones = publicaciones;
+        this.calcularCantLikes();
+        this.calcularCantPuntos();
       },
       error: (err) => {
         console.error('Error al cargar publicaciones:', err);
@@ -60,6 +62,17 @@ export class PerfilComponent implements OnInit {
     });
   }
 
+cantLikes : number=0;
+cantPuntos : number =0;
 
+calcularCantLikes()
+{
+  //la funcion reduce permite recorrer el arreglo y acumular un valor, en este caso, la suma de likes, en una sola operación.
+  this.cantLikes = this.publicaciones.reduce((total, publicacion) => total + (publicacion.likes || 0), 0);
+}
+
+calcularCantPuntos() {
+  this.cantPuntos = this.publicaciones.reduce((total, publicacion) => total + (publicacion.puntosFizzer || 0), 0);
+}
 
 }
