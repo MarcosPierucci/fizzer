@@ -69,19 +69,18 @@
       "creador": "santi"
     },
     {
-      "id": "3965",
-      "titulo": "tarea de prueba",
-      "descripcion": "Esta tarea es de prueba para ver si se carga el tema del id",
-      "categoria": "Videojuegos",
-      "aceptada": false,
-      "creador": "piru"
-    },
-    {
       "id": "141a",
       "titulo": "nueva tarea",
       "descripcion": "tarea nueva",
       "categoria": "Deporte",
       "aceptada": true,
+      "creador": "piru"
+    },
+    {
+      "id": "6187",
+      "titulo": "tarea prueba",
+      "descripcion": "ghola",
+      "categoria": "Deporte",
       "creador": "piru"
     }
   ],
@@ -96,22 +95,12 @@
       "reporteTerminado": false
     },
     {
-      "id": "2",
-      "motivo": "holareporte",
-      "reportado": "piru",
-      "link": "/publicacion/1/usuario/1",
-      "idReportado": "1",
-      "idPublicacionReportada": "1",
-      "reporteTerminado": true
-    },
-    {
-      "id": "19f3",
-      "motivo": "reporte2",
-      "reportado": "piru",
-      "link": "/publicacion/1/usuario/1",
-      "idReportado": "1",
-      "idPublicacionReportada": "1",
-      "reporteTerminado": true
+      "id": "b711",
+      "motivo": "prueba reporte",
+      "reportado": "facu",
+      "link": "/publicacion/2/usuario/2",
+      "idReportado": "2",
+      "idPublicacionReportada": "2"
     }
   ],
   "tareasGlobales": [
@@ -126,6 +115,12 @@
       "usada": false,
       "descripcion": "tarea nueva",
       "titulo": "nueva tarea"
+    },
+    {
+      "id": "ece1",
+      "usada": false,
+      "descripcion": "Prueba para ver si funciona el borrar",
+      "titulo": "PruebaLoca"
     }
   ],
   "publicaciones": [
@@ -134,7 +129,7 @@
       "idUsuario": "1",
       "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731671278/ojbc4xyi6rpz0mnkyxtb.jpg",
       "descripcion": "Este dibujo lo hice en 20 minutos cuando estaba en el colectivo :D",
-      "baneado": true,
+      "baneado": false,
       "nombreUsuario": "piru",
       "likes": 1,
       "puntosFizzer": 1,
@@ -163,14 +158,14 @@
       "link": ""
     },
     {
-      "id": "",
+      "id": "bbv",
       "idUsuario": "1",
       "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1736983065/fvi1csm6n7olkydydflk.jpg",
       "descripcion": "Foto de prueba para ver como se cargan los id",
       "baneado": false,
       "nombreUsuario": "piru",
-      "likes": 0,
-      "puntosFizzer": 0,
+      "likes": 6,
+      "puntosFizzer": 1,
       "link": ""
     },
     {
@@ -180,8 +175,8 @@
       "descripcion": "Segundo intento para ver como funciona el cargado de las id",
       "baneado": false,
       "nombreUsuario": "piru",
-      "likes": 0,
-      "puntosFizzer": 0,
+      "likes": 8,
+      "puntosFizzer": 8,
       "link": ""
     }
   ]

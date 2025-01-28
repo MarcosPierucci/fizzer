@@ -58,7 +58,7 @@ export class FormularioTareasComponent implements OnInit {
     titulo: tareaNueva.titulo ?? '',
     descripcion: tareaNueva.descripcion ?? '',
     categoria: tareaNueva.categoria as Categoria ?? Categoria.Arte,
-    aceptada: false,
+   // aceptada: false,
     creador: this.usuarioActivo?.nombre //completar con un codigo que retorne el nombre del usuario
   }
 
