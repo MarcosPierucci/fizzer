@@ -1,154 +1,182 @@
 {
   "usuario": [
     {
-      "id": "3",
-      "nombreUsario": "santi",
-      "contraseniaUsuario": "123456"
+      "id": "9",
+      "nombreUsario": "santiAdmin",
+      "contraseniaUsuario": "admin123",
+      "baneado": false,
+      "admin": true
     },
     {
-      "id": "4",
-      "nombreUsario": "noestoyregistrado",
-      "contraseniaUsuario": "1234567"
+      "id": "1",
+      "nombreUsario": "piru",
+      "contraseniaUsuario": "hola123",
+      "baneado": false,
+      "admin": false
     },
     {
       "id": "2",
-      "nombreUsario": "piru",
-      "contraseniaUsuario": "pepe123"
+      "nombreUsario": "facu",
+      "contraseniaUsuario": "contraseña",
+      "baneado": false,
+      "admin": false
     },
     {
       "id": "3",
-      "nombreUsario": "facu",
-      "contraseniaUsuario": "facu123"
+      "nombreUsario": "santi",
+      "contraseniaUsuario": "santi",
+      "baneado": false,
+      "admin": false
     },
     {
       "id": "4",
-      "nombreUsario": "juan",
-      "contraseniaUsuario": "125478"
+      "nombreUsario": "usuarioPrueba",
+      "contraseniaUsuario": "hola",
+      "baneado": false,
+      "admin": false
     },
     {
-      "id": "5",
-      "nombreUsario": "aaa",
-      "contraseniaUsuario": "aaaaaa"
-    },
-    {
-      "id": "6",
-      "nombreUsario": "sasasas",
-      "contraseniaUsuario": "sasasasa"
-    },
-    {
-      "id": "7",
-      "nombreUsario": "piraniaMalevola",
-      "contraseniaUsuario": "piru123"
-    },
-    {
-      "id": "8",
-      "nombreUsario": "facundoroch",
-      "contraseniaUsuario": "facu12345"
+      "id": "f11e",
+      "nombreUsario": "UsuarioPruebaid",
+      "contraseniaUsuario": "pruebaId",
+      "baneado": false,
+      "admin": false
     }
   ],
-  "tareas": [],
+  "tareas": [
+    {
+      "id": "id-1",
+      "titulo": "Dibujar a Messi",
+      "descripcion": "En esta tarea quiero que la gente dibuje a messi",
+      "categoria": "Arte",
+      "aceptada": true,
+      "creador": "piru"
+    },
+    {
+      "id": "id-1",
+      "titulo": "Preparar unos buenos choripanes",
+      "descripcion": "Anda a tu carnicero de confianza y conseguí lo necesario para un buen asado en familia",
+      "categoria": "Cocina",
+      "aceptada": false,
+      "creador": "facu"
+    },
+    {
+      "id": "id-1",
+      "titulo": "Completa hasta el primer castillo de bowser en el Super Mario bros.",
+      "descripcion": "Quiero ver cuanto tardan las personas en pasarse el primer mundo del super mario",
+      "categoria": "Videojuegos",
+      "aceptada": false,
+      "creador": "santi"
+    },
+    {
+      "id": "141a",
+      "titulo": "nueva tarea",
+      "descripcion": "tarea nueva",
+      "categoria": "Deporte",
+      "aceptada": true,
+      "creador": "piru"
+    },
+    {
+      "id": "6187",
+      "titulo": "tarea prueba",
+      "descripcion": "ghola",
+      "categoria": "Deporte",
+      "creador": "piru"
+    }
+  ],
   "reporte": [
     {
       "id": "1",
-      "motivo": "publicacion inapropiada",
-      "reportado": "santino",
-      "link": "http://youtube.com",
-      "tipoReporte": "publicacion",
-      "idReportado": 1,
-      "idPublicacionReportada": "2",
-      "reporteTerminado": false
-    },
-    {
-      "id": "2",
-      "motivo": "spam",
-      "reportado": "marcos",
-      "link": "http://youtube.com",
-      "tipoReporte": "perfil",
-      "idReportado": 2,
-      "reporteTerminado": false
-    },
-    {
-      "id": "3",
-      "motivo": "Spam",
-      "reportado": "Marcos",
-      "link": "Oferta de trabajo",
-      "tipoReporte": "publicacion",
-      "idReportado": "2",
+      "motivo": "Esto no es un dibujo de messi es una foto de google",
+      "reportado": "santi",
+      "link": "/publicacion/3/usuario/3",
+      "idReportado": "3",
       "idPublicacionReportada": "3",
       "reporteTerminado": false
     },
     {
-      "id": "4",
-      "motivo": "mala onda",
-      "reportado": "lucia",
-      "link": "/publicacion/1/usuario/3",
-      "tipoReporte": "publicacion",
-      "idReportado": "3",
-      "idPublicacionReportada": "1",
-      "reporteTerminado": false
+      "id": "b711",
+      "motivo": "prueba reporte",
+      "reportado": "facu",
+      "link": "/publicacion/2/usuario/2",
+      "idReportado": "2",
+      "idPublicacionReportada": "2"
     }
   ],
   "tareasGlobales": [
     {
-      "id": "1",
+      "id": "id-1",
       "usada": false,
-      "descripcion": "En esta tarea vamos a dibujar a messi",
+      "descripcion": "En esta tarea quiero que la gente dibuje a messi",
       "titulo": "Dibujar a Messi"
+    },
+    {
+      "id": "141a",
+      "usada": false,
+      "descripcion": "tarea nueva",
+      "titulo": "nueva tarea"
+    },
+    {
+      "id": "ece1",
+      "usada": false,
+      "descripcion": "Prueba para ver si funciona el borrar",
+      "titulo": "PruebaLoca"
     }
   ],
   "publicaciones": [
     {
       "id": "1",
-      "idUsuario": "3",
-      "link": "https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg",
-      "urlFoto": "",
-      "descripcion": "Publicación de Lucia",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731671278/ojbc4xyi6rpz0mnkyxtb.jpg",
+      "descripcion": "Este dibujo lo hice en 20 minutos cuando estaba en el colectivo :D",
       "baneado": false,
-      "nombreUsuario": "lucia",
-      "likes": 15,
-      "puntosFizzer": 5
+      "nombreUsuario": "piru",
+      "likes": 1,
+      "puntosFizzer": 1,
+      "link": ""
     },
     {
-      "id": "",
+      "id": "2",
+      "idUsuario": "2",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731671515/qp4yvov2jarnhf9qp5bv.jpg",
+      "descripcion": "Este dibujo me llevo 3 dias y me dejo mi novia por mi obsesion :(",
+      "baneado": false,
+      "nombreUsuario": "facu",
+      "likes": 1,
+      "puntosFizzer": 1,
+      "link": ""
+    },
+    {
+      "id": "3",
       "idUsuario": "3",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg",
-      "descripcion": "La pase muy bien y fue graciosa",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731671711/bts4qcsngbnkip437dba.jpg",
+      "descripcion": "Bueno, aca lo hice con los ojos cerrados, de espalda y con unicamente lapices verdes (NO ES UNA FOTO DE GOOGLE)",
       "baneado": false,
       "nombreUsuario": "santi",
       "likes": 0,
-      "puntosFizzer": 0,
+      "puntosFizzer": 1,
       "link": ""
     },
     {
-      "id": "",
+      "id": "bbv",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1736983065/fvi1csm6n7olkydydflk.jpg",
+      "descripcion": "Foto de prueba para ver como se cargan los id",
+      "baneado": false,
       "nombreUsuario": "piru",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg",
-      "descripcion": "me aburri",
-      "baneado": false,
-      "likes": 0,
-      "puntosFizzer": 0,
+      "likes": 6,
+      "puntosFizzer": 1,
       "link": ""
     },
     {
-      "id": "",
-      "idUsuario": "8",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731636356/gyo1vl0duyupq3895ifi.jpg",
-      "descripcion": "Hice este dibujo en media horita",
+      "id": "7dbf",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1736983142/wqs6ycu7sukcx2d2q606.png",
+      "descripcion": "Segundo intento para ver como funciona el cargado de las id",
       "baneado": false,
-      "nombreUsuario": "facundoroch",
-      "likes": 0,
-      "puntosFizzer": 0,
-      "link": ""
-    },
-    {
-      "id": "",
-      "idUsuario": "8",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731636363/kdxjhbn8d7ckgiiqentq.jpg",
-      "descripcion": "",
-      "baneado": false,
-      "nombreUsuario": "facundoroch",
-      "likes": 0,
-      "puntosFizzer": 0,
+      "nombreUsuario": "piru",
+      "likes": 8,
+      "puntosFizzer": 8,
       "link": ""
     }
   ]

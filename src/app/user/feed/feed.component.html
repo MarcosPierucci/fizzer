@@ -1,19 +1,12 @@
 <div class="feed">
     <div *ngFor="let publicacion of publicaciones" class="post">
-      <div class="post-header">
-        <h3>{{ publicacion.nombreUsuario }}</h3>
-      </div>
-      <div class="post-body">
-        <img *ngIf="publicacion.link || publicacion.urlFoto" 
-             [src]="publicacion.link || publicacion.urlFoto" 
-             alt="Imagen de la publicación" 
-             class="post-image" />
-        <p>{{ publicacion.descripcion }}</p>
-      </div>
-      <div class="post-footer">
-        <span>Likes: {{ publicacion.likes }}</span>
-        <span>Puntos Fizzer: {{ publicacion.puntosFizzer }}</span>
-      </div>
+      @if (!publicacion.baneado) {
+
+        <app-publicacion
+        [publicacion]="publicacion">
+      </app-publicacion>
+      }
+
     </div>
-  </div>
-  
+</div>
+

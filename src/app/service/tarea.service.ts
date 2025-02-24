@@ -17,7 +17,7 @@ export class TareaService {
     return this.http.get<Tarea[]>(this.urlBase);
   }
 
-  deleteTarea(id: string): Observable<void>{
+  deleteTarea(id: string | undefined): Observable<void>{
     return this.http.delete<void>(`${this.urlBase}/${id}`);
   }
 
@@ -30,7 +30,7 @@ export class TareaService {
   }
 
 
-  patchTareaAceptada(id: string, aceptada: boolean): Observable<Tarea> {
+  patchTareaAceptada(id: string | undefined, aceptada: boolean): Observable<Tarea> {
     return this.http.patch<Tarea>(`${this.urlBase}/${id}`, { aceptada });
   }
 

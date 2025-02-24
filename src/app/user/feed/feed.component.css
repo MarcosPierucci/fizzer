@@ -1,7 +1,8 @@
 .feed {
     padding: 16px;
     max-width:400px; /* Ajusta el ancho máximo */
-    margin: 0 auto; /* Centra el contenido */
+    margin: 0 auto;
+    margin-top: 30px; /* Centra el contenido */
   }
   
   .post {
@@ -10,16 +11,18 @@
     padding: 12px;
     margin-bottom: 12px;
     background-color: #fff;
+
   }
   
   .post-header h3 {
     margin: 0;
     color: #333;
-    font-size: 32px; /* Reduce el tamaño de la fuente */
+    font-size: 32px;
+    margin-top: 10px; /* Reduce el tamaño de la fuente */
   }
   
   .post-body {
-    margin-top: 8px;
+    margin-top: 30px;
   }
   
   .post-image {

@@ -1,9 +1,12 @@
 <div class="barra-superior">
+
+  <a [routerLink]="'/home'">
   <img
-    src="https://ih1.redbubble.net/image.2714584457.7441/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+    src="https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg"
     alt="Logo-fizzer"
     class="logo"
   />
+  </a>
   <div class="search-bar">
     <input
       type="text"
@@ -22,4 +25,6 @@
 
 <div class="barra-lateral">
   <button class="camera-button" [routerLink]="'/formulario-publicacion'">📷</button>
+  <button class="tarea-button" [routerLink]="'/ver-tarea'">📂</button>
+  <button class="tarea-button" [routerLink]="'/formulario-tareas'">⚒</button>
 </div>

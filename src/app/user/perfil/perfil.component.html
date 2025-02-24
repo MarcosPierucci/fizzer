@@ -1,3 +1,68 @@
+<div class="perfil-container">
+    <!-- Información del perfil -->
+    <div class="perfil-header">
+      <div class="perfil-info">
+        <h2>{{ usuarioActivo?.nombre }}</h2>
+        <p>ID: {{ usuarioActivo?.id }}</p>
+        <h3>Colección de logros:</h3>
 
-<div>{{usuarioActivo?.nombre}}</div>
-<div>{{usuarioActivo?.id}}</div>
+        <div class="logros">
+
+          @if (cantLikes >= 100) {
+            <div class="logro-item">
+              <span class="logro-icon">100+</span> 100 likes conseguidos!
+            </div>
+          } @else if (cantLikes >= 50) {
+            <div class="logro-item">
+              <span class="logro-icon">50+</span> 50 likes conseguidos!
+            </div>
+          }
+          @else if (cantLikes >= 10) {
+            <div class="logro-item">
+              <span class="logro-icon">10+</span> 10 likes conseguidos!
+            </div>
+          }
+          @else if (cantLikes >= 1) {
+            <div class="logro-item">
+              <span class="logro-icon">1+</span> Primer Like conseguido!
+            </div>
+          }
+
+
+          @if (cantPuntos >= 100) {
+            <div class="logro-item">
+              <span class="logro-icon">100+</span> 100 puntos conseguidos!
+            </div>
+          } @else if (cantPuntos >= 50) {
+            <div class="logro-item">
+              <span class="logro-icon">50+</span> 50 puntos conseguidos!
+            </div>
+          }
+          @else if (cantPuntos >= 10) {
+            <div class="logro-item">
+              <span class="logro-icon">10+</span> 10 puntos conseguidos!
+            </div>
+          }
+          @else if (cantPuntos >= 1) {
+            <div class="logro-item">
+              <span class="logro-icon">1+</span> Primer punto conseguido!
+            </div>
+          }
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Publicaciones del usuario -->
+    <div class="publicaciones-container">
+      <div *ngFor="let publicacion of publicaciones" class="publicacion-item">
+        @if (!publicacion.baneado) {
+          <a [routerLink]="['/publicacion', publicacion.id, 'usuario', usuarioActivo?.id]">
+            <img [src]="publicacion.urlFoto" alt="Imagen de la publicación" class="publicacion-foto">
+          </a>
+        }
+
+      </div>
+    </div>
+  </div>

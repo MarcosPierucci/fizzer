@@ -35,55 +35,17 @@ router = inject(Router);
 
 formulario = this.fb.nonNullable.group(
 {
-  id: [''],
+
   motivo:['', [Validators.required, Validators.minLength(5)]],
   reportado: [''],
   link:[''],
-  tipoReporte: ['', [Validators.required]],
   idReportado: [''],
   idPublicacionReportada: [''],
-  reporteTerminado: [false]
+  //reporteTerminado: [false]
 }
 )
 
-/*
-cargarReporte()
-{
-  if(this.formulario.invalid) return;
 
-
-
-  const reporteFormulario = this.formulario.getRawValue(); /*aca conseguimos que los datos cargados en el formulario queden guardado en reporte formulario, despues hay que pasar los
-  datos de reporteFormulaio a una variable que aun no creamos llamada nuevoReporte, que es la que mandariamos al JSON*/
-/*
-  const id : number = 0 /*con esto conseguimos el id del reporte, con el largo del arreglo de reportes*/
- /*  this.tamanioArregloReportes(id);
-
-  console.log("id: " + id);
-}
-*/
-
-/*
-tamanioArregloReportes(id:number)
-{
-
-  this.rs.getReportes().subscribe(
-    {
-      next:(reporte : Reporte[]) =>
-      {
-        const listaReportes = reporte;
-
-         id = listaReportes.length;
-         console.log("id en fun: " + id);
-      },
-      error:()=>{
-        console.log("Error al traer el arreglo de reportes");
-      }
-    }
-  )
-
-}
-*/
 
 cargarReporte() {
   if (this.formulario.invalid) return alert("Formulario Invalido");
@@ -91,7 +53,7 @@ cargarReporte() {
   const reporteFormulario : Reporte = this.formulario.getRawValue(); // Conserva esta variable para los datos del formulario
 
   //Aca agregar las funciones o lo que sea necesario para cargar el resto de los valores que por el momento estan vacios
-
+/*
   this.tamanioArregloReportes((id: number) => {
     console.log("ID calculado:", id);
     //Aca despues hay que cargarle a nuevoReporte el id, lo tenemos que hacer a lo ultimo porque sino por la promesa no lo llega a cargar
@@ -103,13 +65,14 @@ cargarReporte() {
 
   });
 
-  //Si yo hago esto, basicamente no muestra nada porque tamanioArregloReportes trabaja con promesas, entonces tarda
-  console.log("Fuera de promesa ID calculado:", reporteFormulario.id);
+*/
+this.addReportedb(reporteFormulario)
 
   //this.router.navigate(['/formulario-reportes']
 this.router.navigate(['/home']);
 }
 
+/*
 tamanioArregloReportes(callback: (id: number) => void) {
   this.rs.getReportes().subscribe({
     next: (reporte: Reporte[]) => {
@@ -121,7 +84,7 @@ tamanioArregloReportes(callback: (id: number) => void) {
       console.log("Error al traer el arreglo de reportes");
     }
   });
-}
+}*/
 
 addReportedb(reporte : Reporte)
 {

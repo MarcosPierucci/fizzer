@@ -1,22 +1,31 @@
-
-<app-barra-verde-usuario></app-barra-verde-usuario>
-
-<div class="contenido">
-  <h2 ngIf="publicacion.baneado">ESTA PUBLICACION ESTA BANEADA</h2>
-  <ng-container ngIf="!publicacion.baneado">
-    <h2>Publicación</h2>
-    <div class="profile-container">
-      <div class="image-container">
-        <img [src]="publicacion.link" alt="Foto de usuario">
-      </div>
-      <div class="description-container">
-        <h2>{{publicacion.nombreUsuario}}</h2>
-        <p>{{publicacion.descripcion}}</p>
-
-        <button class="report-button" (click)="reportarPublicacion()">REPORTAR</button>
-        <button (click)="agregarLike()">Like ({{publicacion.likes}})</button>
-        <button (click)="agregarPuntoFizzer()">Punto Fizzer ({{publicacion.puntosFizzer}})</button>
-      </div>
+@if (!publicacion.baneado) {
+  <div class="publicacion-card">
+    <div class="usuario-nombre">
+      <span> {{ publicacion.nombreUsuario }}</span>
     </div>
-  </ng-container>
-</div>
+    <div class="image-container">
+      <img [src]="publicacion.urlFoto" alt="Foto de usuario">
+    </div>
+
+    <div class="likes-info">
+      <p>{{publicacion.descripcion}} </p>
+    </div>
+
+    <div class="likes-info">
+      <p>LIKES: {{ publicacion.likes }}</p>
+      <p>PUNTOS FIZZER: {{ publicacion.puntosFizzer }}</p>
+    </div>
+    <div class="buttons-container">
+      <button (click)="agregarLike()" [disabled]="likeAgregado">Like</button>
+      <button (click)="agregarPuntoFizzer()" [disabled]="puntoFizzerAgregado">Punto Fizzer</button>
+    </div>
+    <div class="report-container">
+      <button class="report-button" (click)="reportarPublicacion()">REPORTAR</button>
+    </div>
+  </div>
+
+} @else {
+<h2>PUBLICACION BANEADA</h2>
+}
+
+

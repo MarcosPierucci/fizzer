@@ -47,7 +47,7 @@ patchBaneado(id: number, baneado: boolean): Observable<any> {
   return this.http.patch(`${this.urlBase}/${id}`, { baneado });
 }
 
-patchBaneadoPublicacion(id: string, baneado: boolean): Observable<any> {
+patchBaneadoPublicacion(id: string|any, baneado: boolean): Observable<any> {
   return this.http.patch(`${this.urlBase2}/${id}`, { baneado });
 }
 
@@ -63,7 +63,7 @@ loginn(username: string, password: string): Observable<boolean> {
     const user = users.at(0);
     if (user && user.nombreUsario == username && user.contraseniaUsuario == password){
      // this.activeUser = { username: user.username, id: user.id! };
-    this.activeUserSubject.next({ nombre: user.nombreUsario, id: user.id! });
+    this.activeUserSubject.next({ nombre: user.nombreUsario, id: user.id!,admin: user.admin});
     return true;
     }
 
@@ -85,10 +85,10 @@ return of(true);
 
 signup(usuario: Usuario): Observable<boolean> {
 return this.http.post<UsuarioActivo>(this.urlBase, usuario).pipe(
-    map(({ id, nombre }) => {
+    map(({ id, nombre, admin}) => {
       if (id) {
         /* this.activeUser = { id, username }; */
-        this.activeUserSubject.next({id, nombre});
+        this.activeUserSubject.next({id, nombre,admin });
         return true;
       }
     return false;

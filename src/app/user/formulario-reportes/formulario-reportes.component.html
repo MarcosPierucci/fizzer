@@ -17,23 +17,6 @@
     </div>
 
 
-    <div class="form-group">
-      <label for="tipoReporte">Tipo de Reporte</label>
-      <div class="radio-group">
-        <div>
-          <input type="radio" id="opcion1" formControlName="tipoReporte" value="perfil">
-          <label for="opcion1">Perfil</label>
-        </div>
-        <div>
-          <input type="radio" id="opcion2" formControlName="tipoReporte" value="publicacion">
-          <label for="opcion2">Publicación</label>
-        </div>
-      </div>
-      @if (formulario.controls['tipoReporte'].getError('required') && formulario.controls['tipoReporte'].touched) {
-        <div class="error-message">Seleccione una opción</div>
-      }
-    </div>
-
     <button class="submit-btn" (click)="cargarReporte()">Enviar Reporte</button>
   </form>
 </div>

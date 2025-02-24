@@ -45,9 +45,17 @@ export class PublicacionServiceService {
     );
   }
 
+  getPublicacionesByUsuarioId(usuarioId: string): Observable<Publicacion[]> {
+    return this.http.get<Publicacion[]>(`${this.urlBase}?idUsuario=${usuarioId}`);
+  }
+
+  patchLikes(id : string | undefined, idUsuario : string, likes : number): Observable<Publicacion>{
+    return this.http.patch<Publicacion>(`${this.urlBase}/${id}/?idusuario=${idUsuario}`, {likes});
+  }
+
+  patchPuntos(id : string | undefined, idUsuario : string, puntosFizzer : number): Observable<Publicacion>{
+    return this.http.patch<Publicacion>(`${this.urlBase}/${id}/?idusuario=${idUsuario}`, {puntosFizzer});
+  }
 
 
-
-
-  
 }
