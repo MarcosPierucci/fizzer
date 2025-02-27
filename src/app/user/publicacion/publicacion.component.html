@@ -1,7 +1,9 @@
 @if (!publicacion.baneado) {
   <div class="publicacion-card">
     <div class="usuario-nombre">
-      <span> {{ publicacion.nombreUsuario }}</span>
+      <span>
+        <a [routerLink]="['/perfil', publicacion.idUsuario]"> {{publicacion.nombreUsuario}}</a>
+      </span>
     </div>
     <div class="image-container">
       <img [src]="publicacion.urlFoto" alt="Foto de usuario">

@@ -15,7 +15,7 @@
       "admin": false
     },
     {
-      "id": "2",
+      "id": "342432",
       "nombreUsario": "facu",
       "contraseniaUsuario": "contraseña",
       "baneado": false,
@@ -175,8 +175,19 @@
       "descripcion": "Segundo intento para ver como funciona el cargado de las id",
       "baneado": false,
       "nombreUsuario": "piru",
-      "likes": 8,
+      "likes": 9,
       "puntosFizzer": 8,
+      "link": ""
+    },
+    {
+      "id": "4889",
+      "idUsuario": "342432",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1740666894/ti0nqqsgugqt1edpda16.jpg",
+      "descripcion": "Dibuje a Messi mientras codeaba la tesis",
+      "baneado": false,
+      "nombreUsuario": "facu",
+      "likes": 0,
+      "puntosFizzer": 0,
       "link": ""
     }
   ]

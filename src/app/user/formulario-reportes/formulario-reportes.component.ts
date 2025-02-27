@@ -41,7 +41,7 @@ formulario = this.fb.nonNullable.group(
   link:[''],
   idReportado: [''],
   idPublicacionReportada: [''],
-  //reporteTerminado: [false]
+  reporteTerminado: [false]
 }
 )
 
@@ -72,7 +72,6 @@ this.addReportedb(reporteFormulario)
 this.router.navigate(['/home']);
 }
 
-/*
 tamanioArregloReportes(callback: (id: number) => void) {
   this.rs.getReportes().subscribe({
     next: (reporte: Reporte[]) => {
@@ -84,7 +83,7 @@ tamanioArregloReportes(callback: (id: number) => void) {
       console.log("Error al traer el arreglo de reportes");
     }
   });
-}*/
+}
 
 addReportedb(reporte : Reporte)
 {

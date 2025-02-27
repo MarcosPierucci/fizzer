@@ -1,10 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { UsuarioActivo } from '../../interfaces/usuario';
+import { Usuario, UsuarioActivo } from '../../interfaces/usuario';
 import { UsuarioService } from '../../service/usuario.service';
 import { PublicacionServiceService } from '../../service/publicacion-service.service';
 import { Publicacion } from '../../interfaces/publicacion';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -15,64 +15,47 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class PerfilComponent implements OnInit {
 
-  usuarioActivo: UsuarioActivo | undefined;
+  usuarioActivo: Usuario | undefined;
   publicaciones: Publicacion[] = [];
+  router = inject(Router);
+  route = inject(ActivatedRoute);
 
   constructor(
     private usuarioService: UsuarioService,
     private publicacionService: PublicacionServiceService
   ) {}
 
-  router = inject(Router);
-
   ngOnInit(): void {
-    // Obtener el usuario activo
-    this.usuarioService.auth().subscribe({
-      next: (usuario: UsuarioActivo | undefined) => {
-        if (usuario) {
+    // Obtener el usuarioId desde la URL
+    const usuarioId = this.route.snapshot.paramMap.get('id');
+
+    if (usuarioId) {
+      this.usuarioService.getUsuarioById(usuarioId).subscribe({
+        next: (usuario: Usuario) => {
           this.usuarioActivo = usuario;
-
-        if(usuario)
-        this.usuarioActivo = usuario; // Almacena la información del usuario
-          // Si el usuario existe, cargar sus publicaciones
-          this.cargarPublicaciones(usuario.id);
+            if (usuario.id) {  // Verificamos que usuario.id no sea undefined
+    this.cargarPublicaciones(usuario.id);
+  } else {
+    console.error("El usuario no tiene un ID válido.");
+  }
+        },
+        error: (err) => {
+          console.error('Error al obtener el usuario:', err);
         }
-
-      },
-      error: (err) => {
-        console.error('Error al obtener el usuario:', err);
-      },
-      complete: () => {
-        console.log('Suscripción completada');
-      }
-    });
+      });
+    } else {
+      console.error('No se encontró el usuarioId en la URL.');
+    }
   }
 
   cargarPublicaciones(usuarioId: string): void {
-    // Obtener publicaciones del usuario por su id
     this.publicacionService.getPublicacionesByUsuarioId(usuarioId).subscribe({
       next: (publicaciones: Publicacion[]) => {
         this.publicaciones = publicaciones;
-        this.calcularCantLikes();
-        this.calcularCantPuntos();
       },
       error: (err) => {
         console.error('Error al cargar publicaciones:', err);
       }
     });
   }
-
-cantLikes : number=0;
-cantPuntos : number =0;
-
-calcularCantLikes()
-{
-  //la funcion reduce permite recorrer el arreglo y acumular un valor, en este caso, la suma de likes, en una sola operación.
-  this.cantLikes = this.publicaciones.reduce((total, publicacion) => total + (publicacion.likes || 0), 0);
-}
-
-calcularCantPuntos() {
-  this.cantPuntos = this.publicaciones.reduce((total, publicacion) => total + (publicacion.puntosFizzer || 0), 0);
-}
-
 }
