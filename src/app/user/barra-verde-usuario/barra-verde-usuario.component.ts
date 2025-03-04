@@ -3,7 +3,7 @@ import { Router, RouterModule } from '@angular/router';
 import { CommonModule, NgFor } from '@angular/common';
 import { FormsModule, NgModel } from '@angular/forms';
 import { UsuarioService } from '../../service/usuario.service';
-import { UsuarioActivo } from '../../interfaces/usuario';
+import { Usuario, UsuarioActivo } from '../../interfaces/usuario';
 
 @Component({
   selector: 'app-barra-verde-usuario',
@@ -24,6 +24,7 @@ export class BarraVerdeUsuarioComponent implements OnInit{
     this.usuarioService.auth().subscribe(usuario => {
       if (usuario) {
         this.usuarioActivo = usuario;
+        console.log("USUARIO ACTIVO - ID: "+this.usuarioActivo.id)
       } else {
         console.warn('No hay usuario activo.');
       }

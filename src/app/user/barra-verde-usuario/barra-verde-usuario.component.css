@@ -147,3 +147,43 @@ margin-right: 30px;
   background-color: #8ed68e;
   border-radius: 50%;
 }
+
+.barra-lateral {
+  overflow: visible; /* Permite que los tooltips se vean */
+}
+
+.barra-lateral button {
+  position: relative;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.barra-lateral button::after {
+  content: attr(data-title);
+  position: absolute;
+  left: 100%; /* Mueve el tooltip hacia la derecha */
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+  margin-left: 10px; /* Separación del botón */
+}
+
+.barra-lateral button:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(5px); /* Hace que el tooltip aparezca con un ligero movimiento */
+}

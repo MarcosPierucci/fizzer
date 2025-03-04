@@ -73,6 +73,8 @@ export class FormularioTareasComponent implements OnInit {
       descripcion: tareaNueva.descripcion ?? '',
       categorias: this.categoriasSeleccionadas, // Usa las categorías seleccionadas
       aceptada: false,
+      votaciones: 0,
+      idsVotadores: [],
       creador: this.usuarioActivo?.nombre ?? 'Anónimo', // Retorna el nombre del usuario
     };
 

@@ -24,7 +24,9 @@
 </div>
 
 <div class="barra-lateral">
-  <button class="camera-button" [routerLink]="'/formulario-publicacion'">📷</button>
-  <button class="tarea-button" [routerLink]="'/ver-tarea'">📂</button>
-  <button class="tarea-button" [routerLink]="'/formulario-tareas'">⚒</button>
+  <button class="camera-button" [routerLink]="'/formulario-publicacion'" data-title="Publicar foto">📷</button>
+  <button class="tarea-button" [routerLink]="'/ver-tarea'" data-title="Ver tareas">📂</button>
+  <button class="tarea-button" [routerLink]="'/formulario-tareas'" data-title="Proponer tarea">💡</button>
+  <button class="tarea-button" [routerLink]="'/votaciones'" data-title="Votaciones">🗳️</button>
 </div>
+
