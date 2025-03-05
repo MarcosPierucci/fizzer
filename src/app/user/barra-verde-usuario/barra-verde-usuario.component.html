@@ -1,32 +1,47 @@
 <div class="barra-superior">
-
-  <a [routerLink]="'/home'">
-  <img
-    src="https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg"
-    alt="Logo-fizzer"
-    class="logo"
-  />
+  <a [routerLink]="'/home'" (click)="activarInteractividadLogo()">
+    <div class="logo-container">
+      <img
+        src="https://res.cloudinary.com/dolip28nf/image/upload/v1731625859/fu6ncb41kczf8eaawwrc.jpg"
+        alt="Logo-fizzer"
+        class="logo"
+      />
+    </div>
   </a>
-  <div class="search-bar">
-    <input
-      type="text"
-      placeholder="Buscar..."
-      [(ngModel)]="usuarioBuscar"
-      (keyup.enter)="buscar()"
+
+  <div class="barra-busqueda">
+    <input 
+      type="text" 
+      [(ngModel)]="usuarioBuscar" 
+      placeholder="Buscar..." 
+      (keydown.enter)="buscar()" 
     />
-    <button class="search-btn" (click)="buscar()">🔍</button>
+    <button class="buscar-btn" (click)="buscar()">
+      🔍
+    </button>
   </div>
   
-  <div class="botones">
-    <button (click)="miPerfil()">Mi Perfil</button>
-    <button id="logoutButton" (click)="cerrarSesion()">Cerrar Sesión</button>
+
+  <div class="barra-superior-derecha">
+  <button class="perfil-btn" (click)="miPerfil()">
+    <img src="https://res.cloudinary.com/dyoyopzyb/image/upload/v1741192020/tmzllwfsugioqyaabckl.webp" alt="Perfil" class="perfil-img" />
+    <span class="perfil-text">Mi Perfil</span>
+  </button>
+  <button id="logoutButton" (click)="cerrarSesion()">Cerrar Sesión</button>
   </div>
-</div>
 
+</div>
 <div class="barra-lateral">
-  <button class="camera-button" [routerLink]="'/formulario-publicacion'" data-title="Publicar foto">📷</button>
-  <button class="tarea-button" [routerLink]="'/ver-tarea'" data-title="Ver tareas">📂</button>
-  <button class="tarea-button" [routerLink]="'/formulario-tareas'" data-title="Proponer tarea">💡</button>
-  <button class="tarea-button" [routerLink]="'/votaciones'" data-title="Votaciones">🗳️</button>
+  <button class="icon-button" [routerLink]="'/formulario-publicacion'" data-title="Publicar foto">
+    <img src="https://res.cloudinary.com/dyoyopzyb/image/upload/v1741190711/b7jl3stbp1zaxjc6qjqf.webp" alt="Publicar foto" class="icon-img" />
+  </button>
+  <button class="icon-button" [routerLink]="'/ver-tarea'" data-title="Ver tareas">
+    <img src="https://res.cloudinary.com/dyoyopzyb/image/upload/v1741191109/xqorpp79qxsbsb3zwk9p.png" alt="Ver tareas" class="icon-img" />
+  </button>
+  <button class="icon-button" [routerLink]="'/formulario-tareas'" data-title="Proponer tarea">
+    <img src="https://res.cloudinary.com/dyoyopzyb/image/upload/v1741190693/mdfilaxdszvtmg3g4ot0.png" alt="Proponer tarea" class="icon-img" />
+  </button>
+  <button class="icon-button" [routerLink]="'/votaciones'" data-title="Votaciones">
+    <img src="https://res.cloudinary.com/dyoyopzyb/image/upload/v1741190931/uudcwxc5tjskttxrzfnw.png" alt="Votaciones" class="icon-img" />
+  </button>
 </div>
-

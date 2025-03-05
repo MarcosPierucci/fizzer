@@ -18,7 +18,6 @@ export class BarraVerdeUsuarioComponent implements OnInit{
 
   constructor(private router: Router, private usuarioService: UsuarioService) {}
 
-
   ngOnInit(): void {
     // Nos suscribimos para obtener el usuario activo
     this.usuarioService.auth().subscribe(usuario => {
@@ -30,7 +29,7 @@ export class BarraVerdeUsuarioComponent implements OnInit{
       }
     });
   }
-  
+
   cerrarSesion() {
     const logoutButton = document.getElementById('logoutButton');
     if (logoutButton) {
@@ -44,19 +43,16 @@ export class BarraVerdeUsuarioComponent implements OnInit{
 
   buscar() {
     console.log("El usuario que se esta buscando es: "+this.usuarioBuscar)
-    if (this.usuarioBuscar.trim()) { //el trim elimina los espacios en blanco
+    if (this.usuarioBuscar.trim()) {
       this.usuarioService.getUsuarios().subscribe(
         {
           next: (usuarios) => {
-            //traigo todos los usuarios y los filtro en esta linea porque si uso el servicio getByName, me devuleve unicamente el usuario EXACTO y no resultados similares. 
-            //es para una busqueda mas flexible, si quiero buscar a FacuGamer, puedo escribir solo "Facu" y el filtro se encarga de enconrtar relaciones
-            console.log("Filtro")
             const resultadosFiltrados = usuarios.filter(usuario => usuario.nombreUsario.toLowerCase().includes(this.usuarioBuscar.toLowerCase()))
             console.log("Resultados filtrados: ")
             resultadosFiltrados.forEach(resultado => console.log(resultado.nombreUsario))
 
-            this.usuarioService.resultadosSubject.next(resultadosFiltrados); // esta linea actualiza los datos de "usuarios"
-            this.router.navigate(['/resultados-busqueda']); // se redirige a la página de resultados
+            this.usuarioService.resultadosSubject.next(resultadosFiltrados); 
+            this.router.navigate(['/resultados-busqueda']); 
           },
           error: () => console.error('Error al buscar usuarios')
         }
@@ -71,6 +67,10 @@ export class BarraVerdeUsuarioComponent implements OnInit{
       console.error('No hay usuario activo.');
     }
   }
-  
 
+  // Nueva función para activar interactividad con el logo
+  activarInteractividadLogo() {
+    console.log('Logo clickeado!');
+    // Aquí puedes agregar una animación o algo divertido cuando el usuario haga clic en el logo
+  }
 }
