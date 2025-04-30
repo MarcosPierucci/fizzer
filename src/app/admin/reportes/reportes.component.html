@@ -4,16 +4,16 @@
 <div class="contenido-reportes">
   <h2>REPORTES</h2>
 @for (item of listaReportes; track $index) {
-  
+  @if (!item.reporteTerminado) {
     <div class="reporte">
       <p><strong>ID:</strong> {{item.id}}</p>
       <p><strong>Motivo:</strong> {{item.motivo}}</p>
       <p><strong>Reportado:</strong> {{item.reportado}}</p>
       <a href={{item.link}}><p><strong>Link</strong> </p></a> <!--En el json tiene que ir http://localhost:4200/publicacion, osea tiene que ir asi el link de la publicacion que sea para poder ingresar directamente con este link-->
-      <button class="aceptar" (click)="banearPublicacion(item.id, item.idPublicacionReportada ? item.idPublicacionReportada : null)">Aceptar</button>
-      <button class="rechazar" (click)="terminarReporte(item.id)" >Rechazar</button>
+      <button class="aceptar" (click)="aceptarReporte(item.id, item.idPublicacionReportada ? item.idPublicacionReportada : null)">Aceptar</button>
+      <button class="rechazar" (click)="rechazarReporte(item.id)" >Rechazar</button>
     </div>
-
+  }
 
 
 }

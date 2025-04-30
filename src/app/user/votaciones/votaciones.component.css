@@ -1,0 +1,146 @@
+.votaciones-container {
+    margin: 20px;
+  }
+  
+  .tarea-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+  }
+  
+  .tarea-card h3 {
+    margin: 0 0 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .votado {
+    color: red;
+    font-weight: bold;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .votaciones-container {
+    width: 80%;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .tarea-card {
+    background: #ecf0f1;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tarea-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .tarea-card h3 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #34495e;
+  }
+  
+  .tarea-card p {
+    font-size: 1em;
+    color: #7f8c8d;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  
+  .tarea-card p strong {
+    color: #2c3e50;
+  }
+  
+  .votado {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 10px;
+  }
+  
+  button {
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    background: #1f6397;
+    transform: translateY(1px);
+  }
+  
+  .tareas-vacias {
+    text-align: center;
+    font-size: 1.5em;
+    color: #e74c3c;
+  }
+  
+  @media (max-width: 768px) {
+    .votaciones-container {
+      width: 95%;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 2em;
+    }
+  
+    .tarea-card {
+      padding: 15px;
+    }
+  
+    button {
+      font-size: 1em;
+    }
+  }
+  
+  

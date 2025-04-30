@@ -33,8 +33,6 @@ export class PublicacionComponent implements OnInit {
   ngOnInit(): void {
     const publicacionId = this.route.snapshot.paramMap.get('publicacionId') || '';
     const usuarioId = this.route.snapshot.paramMap.get('usuarioId') || '';
-    console.log('Publicacion ID:', publicacionId);
-    console.log('Usuario ID:', usuarioId);
   
     if (publicacionId && usuarioId) {
       this.buscarPublicacionId(publicacionId, usuarioId);

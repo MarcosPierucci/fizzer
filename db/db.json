@@ -15,7 +15,7 @@
       "admin": false
     },
     {
-      "id": "2",
+      "id": "342432",
       "nombreUsario": "facu",
       "contraseniaUsuario": "contraseña",
       "baneado": false,
@@ -45,42 +45,61 @@
   ],
   "tareas": [
     {
-      "id": "id-1",
-      "titulo": "Dibujar a Messi",
-      "descripcion": "En esta tarea quiero que la gente dibuje a messi",
-      "categoria": "Arte",
-      "aceptada": true,
-      "creador": "piru"
-    },
-    {
-      "id": "id-1",
-      "titulo": "Preparar unos buenos choripanes",
-      "descripcion": "Anda a tu carnicero de confianza y conseguí lo necesario para un buen asado en familia",
-      "categoria": "Cocina",
+      "id": "0e50",
+      "titulo": "Jugar Minercaft",
+      "descripcion": "Conectate a un servidor multijugador con mas de 4 amigos y disfruta los minijuegos!",
+      "categorias": [
+        "Videojuegos",
+        "Social",
+        "Entretenimiento"
+      ],
       "aceptada": false,
+      "votaciones": 2,
+      "idsVotadores": [
+        "3",
+        "1"
+      ],
       "creador": "facu"
     },
     {
-      "id": "id-1",
-      "titulo": "Completa hasta el primer castillo de bowser en el Super Mario bros.",
-      "descripcion": "Quiero ver cuanto tardan las personas en pasarse el primer mundo del super mario",
-      "categoria": "Videojuegos",
+      "id": "10ff",
+      "titulo": "Cocinar un buen pastel de papa",
+      "descripcion": "Arranca a cocinar a las 10:30 e invita a la familia a comer alto pastel de papa",
+      "categorias": [
+        "Cocina",
+        "Social"
+      ],
       "aceptada": false,
+      "votaciones": 0,
+      "idsVotadores": [],
+      "creador": "facu"
+    },
+    {
+      "id": "27eb",
+      "titulo": "Pelicula: Fight Club",
+      "descripcion": "Toca mirar una peli, prepara los pochoclos y busca Fight Club, disponible en Netflix",
+      "categorias": [
+        "Arte",
+        "Entretenimiento"
+      ],
+      "aceptada": false,
+      "votaciones": 1,
+      "idsVotadores": [
+        "1"
+      ],
       "creador": "santi"
     },
     {
-      "id": "141a",
-      "titulo": "nueva tarea",
-      "descripcion": "tarea nueva",
-      "categoria": "Deporte",
-      "aceptada": true,
-      "creador": "piru"
-    },
-    {
-      "id": "6187",
-      "titulo": "tarea prueba",
-      "descripcion": "ghola",
-      "categoria": "Deporte",
+      "id": "6cc2",
+      "titulo": "Huevos fritos divertidos",
+      "descripcion": "Prepara unos huevos fritos con diferentes formas, corazon, estrella, rombo, etc.",
+      "categorias": [
+        "Cocina",
+        "Entretenimiento"
+      ],
+      "aceptada": false,
+      "votaciones": 0,
+      "idsVotadores": [],
       "creador": "piru"
     }
   ],
@@ -131,19 +150,8 @@
       "descripcion": "Este dibujo lo hice en 20 minutos cuando estaba en el colectivo :D",
       "baneado": false,
       "nombreUsuario": "piru",
-      "likes": 1,
-      "puntosFizzer": 1,
-      "link": ""
-    },
-    {
-      "id": "2",
-      "idUsuario": "2",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731671515/qp4yvov2jarnhf9qp5bv.jpg",
-      "descripcion": "Este dibujo me llevo 3 dias y me dejo mi novia por mi obsesion :(",
-      "baneado": false,
-      "nombreUsuario": "facu",
-      "likes": 1,
-      "puntosFizzer": 1,
+      "likes": 2,
+      "puntosFizzer": 2,
       "link": ""
     },
     {
@@ -175,8 +183,19 @@
       "descripcion": "Segundo intento para ver como funciona el cargado de las id",
       "baneado": false,
       "nombreUsuario": "piru",
-      "likes": 8,
+      "likes": 9,
       "puntosFizzer": 8,
+      "link": ""
+    },
+    {
+      "id": "4889",
+      "idUsuario": "342432",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1740666894/ti0nqqsgugqt1edpda16.jpg",
+      "descripcion": "Dibuje a Messi mientras codeaba la tesis",
+      "baneado": false,
+      "nombreUsuario": "facu",
+      "likes": 0,
+      "puntosFizzer": 0,
       "link": ""
     }
   ]

@@ -2,55 +2,17 @@
     <!-- Información del perfil -->
     <div class="perfil-header">
       <div class="perfil-info">
-        <h2>{{ usuarioActivo?.nombre }}</h2>
+        <h2>{{ usuarioActivo?.nombreUsario }}</h2>
         <p>ID: {{ usuarioActivo?.id }}</p>
         <h3>Colección de logros:</h3>
-
         <div class="logros">
-
-          @if (cantLikes >= 100) {
-            <div class="logro-item">
-              <span class="logro-icon">100+</span> 100 likes conseguidos!
-            </div>
-          } @else if (cantLikes >= 50) {
-            <div class="logro-item">
-              <span class="logro-icon">50+</span> 50 likes conseguidos!
-            </div>
-          }
-          @else if (cantLikes >= 10) {
-            <div class="logro-item">
-              <span class="logro-icon">10+</span> 10 likes conseguidos!
-            </div>
-          }
-          @else if (cantLikes >= 1) {
-            <div class="logro-item">
-              <span class="logro-icon">1+</span> Primer Like conseguido!
-            </div>
-          }
-
-
-          @if (cantPuntos >= 100) {
-            <div class="logro-item">
-              <span class="logro-icon">100+</span> 100 puntos conseguidos!
-            </div>
-          } @else if (cantPuntos >= 50) {
-            <div class="logro-item">
-              <span class="logro-icon">50+</span> 50 puntos conseguidos!
-            </div>
-          }
-          @else if (cantPuntos >= 10) {
-            <div class="logro-item">
-              <span class="logro-icon">10+</span> 10 puntos conseguidos!
-            </div>
-          }
-          @else if (cantPuntos >= 1) {
-            <div class="logro-item">
-              <span class="logro-icon">1+</span> Primer punto conseguido!
-            </div>
-          }
-
+          <div class="logro-item">
+            <span class="logro-icon">10+</span> Primeros 10 puntos ganados
+          </div>
+          <div class="logro-item">
+            <span class="logro-icon">5+</span> Primeros 5 likes
+          </div>
         </div>
-
       </div>
     </div>
 

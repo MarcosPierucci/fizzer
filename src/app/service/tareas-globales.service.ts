@@ -18,7 +18,7 @@ export class TareasGlobalesService {
     return this.http.post<TareaGlobal>(this.urlBase, tarea);
   }
 
-  getTareaGlobal(): Observable<TareaGlobal[]>{
+  getTareasGlobales(): Observable<TareaGlobal[]>{
     return this.http.get<TareaGlobal[]>(this.urlBase);
     }
 

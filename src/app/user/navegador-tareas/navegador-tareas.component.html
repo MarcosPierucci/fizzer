@@ -1,0 +1,26 @@
+<div class="filtros">
+      <label>Filtrar por categoría:</label>
+      <div *ngFor="let categoria of categorias">
+        <input
+          type="checkbox"
+          [value]="categoria"
+          (change)="eventoCheckboxCategoria($event)"
+        />
+        {{ categoria }}
+      </div>
+      <button (click)="buscar()">Buscar</button>
+    </div>
+    
+  
+  <div class="tareas-lista">
+    <h2>Tareas</h2>
+    <div *ngIf="tareas.length === 0">No hay tareas para mostrar.</div>
+    <ul *ngIf="tareas.length > 0">
+      <li *ngFor="let tarea of tareas">
+        <h3>{{ tarea.titulo }}</h3>
+        <p>{{ tarea.descripcion }}</p>
+        <span>Categorías: {{ tarea.categorias.join(', ') }}</span>
+      </li>
+    </ul>
+  </div>
+  

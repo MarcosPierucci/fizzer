@@ -12,6 +12,8 @@ import { EditarPerfilComponent } from './user/editar-perfil/editar-perfil.compon
 import { SubirPublicacionComponent } from './user/subir-publicacion/subir-publicacion.component';
 import { ResultadosBusquedaComponent } from './user/resultados-busqueda/resultados-busqueda.component';
 import { VerTareaComponent } from './user/ver-tarea/ver-tarea.component';
+import { NavegadorTareasComponent } from './user/navegador-tareas/navegador-tareas.component';
+import { VotacionesComponent } from './user/votaciones/votaciones.component';
 
 export const routes: Routes = [
   {path: "admin-reportes", component:ReportesComponent},
@@ -29,6 +31,8 @@ export const routes: Routes = [
   {path: "perfil/:id", component: PerfilComponent},
   {path: "resultados-busqueda", component: ResultadosBusquedaComponent},
   {path: "ver-tarea" , component: VerTareaComponent},
+  {path: 'navegar-tareas-individuales', component: NavegadorTareasComponent},
+  {path: "votaciones", component: VotacionesComponent}
   
 
 ];
