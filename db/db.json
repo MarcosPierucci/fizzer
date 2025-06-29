@@ -54,10 +54,11 @@
         "Entretenimiento"
       ],
       "aceptada": false,
-      "votaciones": 2,
+      "votaciones": 3,
       "idsVotadores": [
         "3",
-        "1"
+        "1",
+        "342432"
       ],
       "creador": "facu"
     },
@@ -70,8 +71,10 @@
         "Social"
       ],
       "aceptada": false,
-      "votaciones": 0,
-      "idsVotadores": [],
+      "votaciones": 1,
+      "idsVotadores": [
+        "1"
+      ],
       "creador": "facu"
     },
     {
@@ -98,8 +101,10 @@
         "Entretenimiento"
       ],
       "aceptada": false,
-      "votaciones": 0,
-      "idsVotadores": [],
+      "votaciones": 1,
+      "idsVotadores": [
+        "1"
+      ],
       "creador": "piru"
     }
   ],
@@ -144,58 +149,22 @@
   ],
   "publicaciones": [
     {
-      "id": "1",
+      "id": "d02f",
       "idUsuario": "1",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731671278/ojbc4xyi6rpz0mnkyxtb.jpg",
-      "descripcion": "Este dibujo lo hice en 20 minutos cuando estaba en el colectivo :D",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751162168/dxy0nyvuklrmc4suigoj.png",
+      "descripcion": "Prueba Likes",
       "baneado": false,
       "nombreUsuario": "piru",
-      "likes": 2,
-      "puntosFizzer": 2,
-      "link": ""
-    },
-    {
-      "id": "3",
-      "idUsuario": "3",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731671711/bts4qcsngbnkip437dba.jpg",
-      "descripcion": "Bueno, aca lo hice con los ojos cerrados, de espalda y con unicamente lapices verdes (NO ES UNA FOTO DE GOOGLE)",
-      "baneado": false,
-      "nombreUsuario": "santi",
-      "likes": 0,
-      "puntosFizzer": 1,
-      "link": ""
-    },
-    {
-      "id": "bbv",
-      "idUsuario": "1",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1736983065/fvi1csm6n7olkydydflk.jpg",
-      "descripcion": "Foto de prueba para ver como se cargan los id",
-      "baneado": false,
-      "nombreUsuario": "piru",
-      "likes": 6,
-      "puntosFizzer": 1,
-      "link": ""
-    },
-    {
-      "id": "7dbf",
-      "idUsuario": "1",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1736983142/wqs6ycu7sukcx2d2q606.png",
-      "descripcion": "Segundo intento para ver como funciona el cargado de las id",
-      "baneado": false,
-      "nombreUsuario": "piru",
-      "likes": 9,
-      "puntosFizzer": 8,
-      "link": ""
-    },
-    {
-      "id": "4889",
-      "idUsuario": "342432",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1740666894/ti0nqqsgugqt1edpda16.jpg",
-      "descripcion": "Dibuje a Messi mientras codeaba la tesis",
-      "baneado": false,
-      "nombreUsuario": "facu",
-      "likes": 0,
-      "puntosFizzer": 0,
+      "likes": [
+        "342432",
+        "3",
+        "1"
+      ],
+      "puntosFizzer": [
+        "342432",
+        "3",
+        "1"
+      ],
       "link": ""
     }
   ]

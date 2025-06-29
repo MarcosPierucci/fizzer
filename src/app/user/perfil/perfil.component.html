@@ -6,12 +6,24 @@
         <p>ID: {{ usuarioActivo?.id }}</p>
         <h3>Colección de logros:</h3>
         <div class="logros">
-          <div class="logro-item">
-            <span class="logro-icon">10+</span> Primeros 10 puntos ganados
-          </div>
-          <div class="logro-item">
-            <span class="logro-icon">5+</span> Primeros 5 likes
-          </div>
+           <div *ngIf="logroPunto !== null" class="logro-item">
+     <span class="logro-icon">{{ logroPunto }}+</span>
+    {{ logroPunto === 3 ? '3 Puntos conseguidos!'
+      : logroPunto === 10 ? '10 Puntos conseguidos!'
+      : logroPunto === 20 ? '20 Puntos conseguidos!'
+      : logroPunto === 50 ? '50 Puntos conseguidos!'
+      : '100 Puntos conseguidos!' }}
+  </div>
+
+  <!-- Logro de likes -->
+  <div *ngIf="logroLike !== null" class="logro-item">
+    <span class="logro-icon">{{ logroLike }}+</span>
+    {{ logroLike === 3 ? '3 Likes conseguidos!'
+      : logroLike === 10 ? '10 Likes conseguidos!'
+      : logroLike === 20 ? '20 Likes conseguidos!'
+      : logroLike === 50 ? '50 Likes conseguidos!'
+      : '100 Likes conseguidos!' }}
+  </div>
         </div>
       </div>
     </div>

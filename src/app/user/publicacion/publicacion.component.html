@@ -14,12 +14,17 @@
     </div>
 
     <div class="likes-info">
-      <p>LIKES: {{ publicacion.likes }}</p>
-      <p>PUNTOS FIZZER: {{ publicacion.puntosFizzer }}</p>
+      <p>LIKES: {{ publicacion.likes.length }}</p>
+      <p>PUNTOS FIZZER: {{ publicacion.puntosFizzer.length }}</p>
     </div>
     <div class="buttons-container">
-      <button (click)="agregarLike()" [disabled]="likeAgregado">Like</button>
-      <button (click)="agregarPuntoFizzer()" [disabled]="puntoFizzerAgregado">Punto Fizzer</button>
+
+      <button class="like-button" [ngClass]="{ 'activo': likeAgregado }" (click)="toggleLike()"> Like </button>
+
+
+      <button class="punto-button" [ngClass]="{ 'activo': puntoFizzerAgregado }" (click)="togglePuntoFizzer()" > Punto Fizzer </button>
+
+
     </div>
     <div class="report-container">
       <button class="report-button" (click)="reportarPublicacion()">REPORTAR</button>
