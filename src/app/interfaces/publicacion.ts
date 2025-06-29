@@ -6,7 +6,7 @@ export interface Publicacion {
   descripcion: string;
   baneado: boolean;
   nombreUsuario: string;
-  likes: number;
-  puntosFizzer: number;
+  likes: string[];
+  puntosFizzer: string[];
 }
 

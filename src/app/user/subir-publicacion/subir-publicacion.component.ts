@@ -27,16 +27,21 @@ export class SubirPublicacionComponent implements OnInit {
 
   // Formulario para crear la publicación
   formularioPublicacion = this.fb.nonNullable.group({
-    
+
     idUsuario: [this.usuarioActivo?.id],
     urlFoto: this.urlImg,
     descripcion: ["", Validators.minLength(5)],
     baneado: false,
     nombreUsuario: [this.usuarioActivo?.nombre],
-    likes: 0,
-    puntosFizzer: 0,
+    likes: this.fb.control<string[]>([], { nonNullable: true }) ,
+    puntosFizzer : this.fb.control<string[]>([], { nonNullable: true }),
     link : ''
   });
+
+  //Linea 36 y 37
+  // fb.control<string[]>: crea un control de formulario que maneja un arreglo de strings (tipo seguro)
+// []: valor inicial, aquí un arreglo vacío
+// { nonNullable: true }: indica que el valor nunca será null ni undefined, siempre tiene valor válido
 
   constructor() {}
 
@@ -131,8 +136,8 @@ subirPublicacion() {
         urlFoto: this.urlImg,
         idUsuario: this.usuarioActivo?.id,
         nombreUsuario: this.usuarioActivo?.nombre,
-        likes: 0,
-        puntosFizzer: 0,
+        likes: [],
+        puntosFizzer: [],
         baneado: false,
         link: ""
       });
