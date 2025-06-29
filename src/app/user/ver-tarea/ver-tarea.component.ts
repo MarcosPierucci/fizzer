@@ -21,7 +21,7 @@ export class VerTareaComponent  implements OnInit{
   }
 
   obtenerTareasGlobales(): void {
-    this.tareasGlobalesService.getTareaGlobal().subscribe({
+    this.tareasGlobalesService.getTareasGlobales().subscribe({
       next: (data) => {
         this.tareasGlobales = data;
       },

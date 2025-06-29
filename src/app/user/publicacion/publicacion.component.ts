@@ -1,5 +1,5 @@
 import { Component, inject, Injector, Input, OnInit } from '@angular/core';
-
+import { UsuarioActivo } from '../../interfaces/usuario'
 import { UsuarioService } from '../../service/usuario.service';
 import {Publicacion } from '../../interfaces/publicacion';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
@@ -22,37 +22,48 @@ export class PublicacionComponent implements OnInit {
 
 
   likeAgregado = false; // Variable para controlar si el usuario ya dio Like
-  puntoFizzerAgregado = false; 
+  puntoFizzerAgregado = false;
 
+  usuarioActivo: UsuarioActivo | undefined;
 
   us = inject(UsuarioService);
   route = inject(ActivatedRoute);
   router = inject(Router);
   servicioPublicacion = inject(PublicacionServiceService)
 
+
+
   ngOnInit(): void {
     const publicacionId = this.route.snapshot.paramMap.get('publicacionId') || '';
     const usuarioId = this.route.snapshot.paramMap.get('usuarioId') || '';
-    console.log('Publicacion ID:', publicacionId);
-    console.log('Usuario ID:', usuarioId);
-  
+
     if (publicacionId && usuarioId) {
       this.buscarPublicacionId(publicacionId, usuarioId);
     }
+
+  this.us.auth().subscribe(usuario => {
+  if (!usuario) return;
+  this.usuarioActivo = usuario;
+  this.likeAgregado = this.publicacion.likes.includes(usuario.id);
+  this.puntoFizzerAgregado = this.publicacion.puntosFizzer.includes(usuario.id);
+});
   }
-  
+
+
+
+
   buscarPublicacionId(publicacionId: string, usuarioId: string) {
     this.servicioPublicacion.getPublicacionById(publicacionId).subscribe({
       next: (publicacion: Publicacion) => {
         console.log("Publicacion conseguida correctamente");
-  
+
         console.log('ID:', publicacion.id);
         console.log('ID Usuario:', publicacion.idUsuario);
         console.log('Link:', publicacion.link);
         console.log('Descripción:', publicacion.descripcion);
         console.log('Baneado:', publicacion.baneado);
         console.log('Nombre Usuario:', publicacion.nombreUsuario);
-  
+
         this.publicacion = publicacion;
       },
       error: () => {
@@ -60,13 +71,13 @@ export class PublicacionComponent implements OnInit {
       }
     });
   }
-  
+
 
   /*
 
   Usa servicio de usuario .-.
-  
-  buscarPublicacionId(publicacionId: string, usuarioId: string) 
+
+  buscarPublicacionId(publicacionId: string, usuarioId: string)
   {
     this.us.getPubliacionbyId(publicacionId).subscribe({
       next: (publicacion: Publicacion) => {
@@ -105,40 +116,92 @@ export class PublicacionComponent implements OnInit {
     });
   }
 
-  agregarLike() {
-    if (!this.likeAgregado) {
-      this.publicacion.likes++;
-      this.likeAgregado = true; // Desactivar el botón después de dar Like
 
+/*
+agregarLike() {
+  const userId = this.usuarioActivo?.id;
+  if (!userId || this.likeAgregado) return;
 
-      this.servicioPublicacion.patchLikes(this.publicacion.id, this.publicacion.idUsuario, this.publicacion.likes).subscribe({
-        next:()=>{
-          console.log("Like agregado correctamente")
-        }, error:()=>{
-          console.log("Error en el agregar likes")
-        }
-      })
+  this.publicacion.likes.push(userId);
+  this.likeAgregado = true;
 
-    }
+  this.servicioPublicacion.patchLikes(
+    this.publicacion.id!,
+    this.publicacion.likes
+  ).subscribe();
+}
+*/
 
+toggleLike() {
+  const userId = this.usuarioActivo?.id;
+  if (!userId) return;
 
+  const idx = this.publicacion.likes.indexOf(userId);
+  if (idx > -1) {
+    // si ya estaba, lo saco
+    this.publicacion.likes.splice(idx, 1);
+    this.likeAgregado = false;
+  } else {
+    // si no estaba, lo agrego
+    this.publicacion.likes.push(userId);
+    this.likeAgregado = true;
   }
 
-  agregarPuntoFizzer() {
-    if (!this.puntoFizzerAgregado) {
-      this.publicacion.puntosFizzer++;
-      this.puntoFizzerAgregado = true; // Desactiva el botón después de dar Punto Fizzer
-    
-      this.servicioPublicacion.patchPuntos(this.publicacion.id, this.publicacion.idUsuario, this.publicacion.puntosFizzer).subscribe({
-        next:()=>{
-          console.log("Like agregado correctamente")
-        }, error:()=>{
-          console.log("Error en el agregar likes")
-        }
-      })
-    }
-    
+  // siempre patch con el array completo
+  this.servicioPublicacion.patchLikes(
+    this.publicacion.id!,
+    this.publicacion.likes
+  ).subscribe({
+    next: (updated) =>
+      {
+        this.publicacion = updated;
+        console.log("Like toggled correctamente")
+      },
+    error: () => console.log("Error al togglear like")
+  });
+}
+
+
+/*
+agregarPuntoFizzer() {
+  const userId = this.usuarioActivo?.id;
+  if (!userId || this.puntoFizzerAgregado) return;
+
+  this.publicacion.puntosFizzer.push(userId);
+  this.puntoFizzerAgregado = true;
+
+  this.servicioPublicacion.patchPuntosFizzer(
+    this.publicacion.id!,
+    this.publicacion.puntosFizzer
+  ).subscribe();
+}
+*/
+
+togglePuntoFizzer() {
+  const userId = this.usuarioActivo?.id;
+  if (!userId) return;
+
+  const idx = this.publicacion.puntosFizzer.indexOf(userId);
+  if (idx > -1) {
+    this.publicacion.puntosFizzer.splice(idx, 1);
+    this.puntoFizzerAgregado = false;
+  } else {
+    this.publicacion.puntosFizzer.push(userId);
+    this.puntoFizzerAgregado = true;
   }
+
+  this.servicioPublicacion.patchPuntosFizzer(
+    this.publicacion.id!,
+    this.publicacion.puntosFizzer
+  ).subscribe({
+    next: (updated) => {
+      this.publicacion = updated;
+    console.log("Punto Fizzer toggled correctamente")
+    }
+    ,
+    error: () => console.log("Error al togglear Punto Fizzer")
+  });
+}
 
 }
 

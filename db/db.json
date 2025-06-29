@@ -101,8 +101,10 @@
         "Entretenimiento"
       ],
       "aceptada": false,
-      "votaciones": 0,
-      "idsVotadores": [],
+      "votaciones": 1,
+      "idsVotadores": [
+        "1"
+      ],
       "creador": "piru"
     }
   ],

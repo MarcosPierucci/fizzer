@@ -16,11 +16,9 @@ private activeUserSubject = new BehaviorSubject<UsuarioActivo | undefined>(undef
 
 // `resultadosSubject` es un BehaviorSubject que almacena los resultados de la búsqueda de usuarios. Lo arranco con un arreglo vacio.
 public resultadosSubject = new BehaviorSubject<any[]>([]);
-
-//
 resultadoObservable = this.resultadosSubject.asObservable();
 
-constructor(private http: HttpClient) { }
+constructor(private http: HttpClient,) { }
 
 /*Che, hay que ver porque pusimos en todos con tarea si estamos en usuario, y ver que no se rompa nada cuando lo cambiemos*/
 getUsuarios(): Observable<Usuario[]>{
@@ -104,6 +102,10 @@ getUsersCount(): Observable<string> {
   return this.http.get<any[]>(this.urlBase).pipe(
   map(users => (users.length).toString()) // Mapear a la longitud del arreglo de usuarios
 );
+}
+
+getUsuarioActivo(): Observable<Usuario> {
+  return this.http.get<Usuario>(`${this.urlBase}/activo`);
 }
 
 

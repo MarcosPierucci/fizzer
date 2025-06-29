@@ -32,12 +32,15 @@
 
         <div class="form-group">
           <label for="category">Posible Categoría:</label>
-          <select id="category" formControlName="categoria" class="dropdown">
-            <option value="" disabled selected>Selecciona una opción</option>
-            <option *ngFor="let categoria of categorias" [value]="categoria">
-              {{ categoria }}
-            </option>
-          </select>
+
+          <label *ngFor="let categoria of categorias">
+            <input 
+              type="checkbox" 
+              [value]="categoria" 
+              (change)="onCategoriaChange($event)" 
+            />
+            {{ categoria }}
+          </label>
           <div *ngIf="formularioTareas.get('categoria')?.touched && formularioTareas.get('categoria')?.invalid">
             <small class="error">Debes seleccionar una categoría.</small>
           </div>
