@@ -59,8 +59,17 @@
       "baneado": false,
       "admin": false,
       "seguidores": [
-        "1"
+        "1",
+        "d410"
       ]
+    },
+    {
+      "id": "d410",
+      "nombreUsario": "facurochhh",
+      "contraseniaUsuario": "facu1212",
+      "baneado": false,
+      "admin": false,
+      "seguidores": []
     }
   ],
   "tareas": [
