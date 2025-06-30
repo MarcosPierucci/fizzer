@@ -21,6 +21,7 @@ formularioRegister = this.fb.nonNullable.group({
   contraseniaUsuario: [""],
   baneado: false,
   admin: false,
+  seguidores: this.fb.control<string[]>([], { nonNullable: true })
 })
 
 constructor (private router: Router){}

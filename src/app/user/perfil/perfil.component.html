@@ -2,8 +2,8 @@
     <!-- Información del perfil -->
     <div class="perfil-header">
       <div class="perfil-info">
-        <h2>{{ usuarioActivo?.nombreUsario }}</h2>
-        <p>ID: {{ usuarioActivo?.id }}</p>
+        <h2>{{ perfilUsuario.nombreUsario }}</h2>
+        <p>ID: {{ perfilUsuario.id }}</p>
         <h3>Colección de logros:</h3>
         <div class="logros">
            <div *ngIf="logroPunto !== null" class="logro-item">
@@ -26,6 +26,18 @@
   </div>
         </div>
       </div>
+
+      <div class="buttons-follow">
+  <button
+  class="follow-button"
+  [ngClass]="{ 'siguiendo': isFollowing }"
+  (click)="toggleFollow()"
+  [disabled]="usuarioActual.id === perfilUsuario.id"
+>
+  {{ isFollowing ? 'Siguiendo' : 'Seguir' }}
+</button>
+</div>
+
     </div>
 
     <!-- Publicaciones del usuario -->
