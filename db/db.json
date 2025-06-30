@@ -41,6 +41,13 @@
       "contraseniaUsuario": "pruebaId",
       "baneado": false,
       "admin": false
+    },
+    {
+      "id": "6859",
+      "nombreUsario": "facujulioCambionombre",
+      "contraseniaUsuario": "facu1212",
+      "baneado": false,
+      "admin": false
     }
   ],
   "tareas": [
@@ -150,7 +157,7 @@
       "descripcion": "Este dibujo lo hice en 20 minutos cuando estaba en el colectivo :D",
       "baneado": false,
       "nombreUsuario": "piru",
-      "likes": 2,
+      "likes": 4,
       "puntosFizzer": 2,
       "link": ""
     },

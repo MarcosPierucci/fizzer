@@ -5,11 +5,12 @@ import { PublicacionServiceService } from '../../service/publicacion-service.ser
 import { Publicacion } from '../../interfaces/publicacion';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-perfil',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, FormsModule],
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.css']
 })
@@ -19,6 +20,9 @@ export class PerfilComponent implements OnInit {
   publicaciones: Publicacion[] = [];
   router = inject(Router);
   route = inject(ActivatedRoute);
+  //editar perfil - facu julio
+  mostrarEditor: boolean = false;
+  nuevoNombre: string = '';
 
   constructor(
     private usuarioService: UsuarioService,
@@ -57,5 +61,23 @@ export class PerfilComponent implements OnInit {
         console.error('Error al cargar publicaciones:', err);
       }
     });
+  }
+
+  // editar perfil - guardar cambios
+  guardarCambios(): void {
+    if (this.usuarioActivo && this.nuevoNombre.trim()) {
+      const usuarioActualizado = { ...this.usuarioActivo, nombreUsario: this.nuevoNombre.trim() };
+  
+      this.usuarioService.putUsuario(usuarioActualizado, this.usuarioActivo.id!).subscribe({
+        next: (usuarioActualizado) => {
+          this.usuarioActivo = usuarioActualizado;
+          this.mostrarEditor = false;
+          console.log('Nombre actualizado correctamente');
+        },
+        error: (err) => {
+          console.error('Error al actualizar el nombre:', err);
+        }
+      });
+    }
   }
 }
