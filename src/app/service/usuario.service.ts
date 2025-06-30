@@ -54,6 +54,14 @@ getPubliacionbyId(publicacionId: string): Observable<Publicacion> {
   return this.http.get<Publicacion>(`${this.urlBase2}/${publicacionId}`);
 }
 
+patchFollowers(userId: string, seguidores: string[]): Observable<Usuario> {
+    return this.http.patch<Usuario>(
+      `${this.urlBase}/${userId}`,
+      { seguidores }
+    );
+  }
+
+
 
 loginn(username: string, password: string): Observable<boolean> {
   return this.http.get<Usuario[]>(`${this.urlBase}?nombreUsario=${username}`).pipe(

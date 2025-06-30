@@ -2,42 +2,43 @@
     padding: 20px;
     background-color: #a8db4f;
   }
-  
+
   .perfil-header {
     display: flex;
-    align-items: center;
-    background-color: #fdd836;
-    padding: 20px;
-    border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fdd836;
+  padding: 20px;
+  border-radius: 10px;
   }
-  
+
   .perfil-foto {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     margin-right: 20px;
   }
-  
+
   .perfil-info {
     font-family: Arial, sans-serif;
   }
-  
+
   .perfil-info h2 {
     color: #2c2c2c;
     font-weight: bold;
   }
-  
+
   .logros {
     margin-top: 10px;
   }
-  
+
   .logro-item {
     display: flex;
     align-items: center;
     font-size: 14px;
     color: #2c2c2c;
   }
-  
+
   .logro-icon {
     background-color: #8e44ad;
     color: #fff;
@@ -46,24 +47,56 @@
     border-radius: 4px;
     margin-right: 10px;
   }
-  
+
   .publicaciones-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
     margin-top: 20px;
   }
-  
+
   .publicacion-item {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   .publicacion-foto {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
   }
-  
+
+  .follow-button {
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.3s;
+}
+
+.follow-button.siguiendo {
+  background-color: #4caf50;
+  color: white;
+}
+
+.follow-button:not(.siguiendo):hover {
+  background-color: #e0ffe0; /
+}
+
+.follow-button.siguiendo:hover {
+  background-color: #66bb6a;
+}
+
+.buttons-follow {
+  margin-left: auto;
+}
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #a8db4f;
+}

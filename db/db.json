@@ -5,42 +5,62 @@
       "nombreUsario": "santiAdmin",
       "contraseniaUsuario": "admin123",
       "baneado": false,
-      "admin": true
+      "admin": true,
+      "seguidores": []
     },
     {
       "id": "1",
       "nombreUsario": "piru",
       "contraseniaUsuario": "hola123",
       "baneado": false,
-      "admin": false
+      "admin": false,
+      "seguidores": [
+        "342432"
+      ]
     },
     {
       "id": "342432",
       "nombreUsario": "facu",
       "contraseniaUsuario": "contraseña",
       "baneado": false,
-      "admin": false
+      "admin": false,
+      "seguidores": [
+        "1"
+      ]
     },
     {
       "id": "3",
       "nombreUsario": "santi",
       "contraseniaUsuario": "santi",
       "baneado": false,
-      "admin": false
+      "admin": false,
+      "seguidores": []
     },
     {
       "id": "4",
       "nombreUsario": "usuarioPrueba",
       "contraseniaUsuario": "hola",
       "baneado": false,
-      "admin": false
+      "admin": false,
+      "seguidores": []
     },
     {
       "id": "f11e",
       "nombreUsario": "UsuarioPruebaid",
       "contraseniaUsuario": "pruebaId",
       "baneado": false,
-      "admin": false
+      "admin": false,
+      "seguidores": []
+    },
+    {
+      "id": "324a",
+      "nombreUsario": "usuario",
+      "contraseniaUsuario": "12345",
+      "baneado": false,
+      "admin": false,
+      "seguidores": [
+        "1"
+      ]
     }
   ],
   "tareas": [
@@ -86,7 +106,7 @@
         "Entretenimiento"
       ],
       "aceptada": false,
-      "votaciones": 1,
+      "votaciones": 2,
       "idsVotadores": [
         "1"
       ],
@@ -99,6 +119,20 @@
       "categorias": [
         "Cocina",
         "Entretenimiento"
+      ],
+      "aceptada": false,
+      "votaciones": 1,
+      "idsVotadores": [
+        "1"
+      ],
+      "creador": "piru"
+    },
+    {
+      "id": "4214",
+      "titulo": "Sale ese cs?",
+      "descripcion": "Pinta Cs con los pibes en lugar de programar? Seh!",
+      "categorias": [
+        "Videojuegos"
       ],
       "aceptada": false,
       "votaciones": 1,
@@ -165,6 +199,30 @@
         "3",
         "1"
       ],
+      "link": ""
+    },
+    {
+      "id": "f363",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751221202/xutd59rzriijv81fbiqu.png",
+      "descripcion": "Prueba Loca de los crotos xd",
+      "baneado": false,
+      "nombreUsuario": "piru",
+      "likes": [],
+      "puntosFizzer": [
+        "1"
+      ],
+      "link": ""
+    },
+    {
+      "id": "29b8",
+      "idUsuario": "324a",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751298370/jlbgc7dw2ch3el5emfnc.png",
+      "descripcion": "Petito",
+      "baneado": false,
+      "nombreUsuario": "usuario",
+      "likes": [],
+      "puntosFizzer": [],
       "link": ""
     }
   ]

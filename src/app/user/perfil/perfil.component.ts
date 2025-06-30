@@ -19,12 +19,17 @@ export class PerfilComponent implements OnInit {
   publicaciones: Publicacion[] = [];
   router = inject(Router);
   route = inject(ActivatedRoute);
+  perfilUsuario!: Usuario;
+  usuarioActual!: UsuarioActivo;
+  isFollowing = false;
 
   constructor(
     private usuarioService: UsuarioService,
     private publicacionService: PublicacionServiceService
   ) {}
 
+
+  /*
   ngOnInit(): void {
     // Obtener el usuarioId desde la URL
     const usuarioId = this.route.snapshot.paramMap.get('id');
@@ -47,6 +52,27 @@ export class PerfilComponent implements OnInit {
       console.error('No se encontró el usuarioId en la URL.');
     }
   }
+    */
+   ngOnInit(): void {
+  const perfilId = this.route.snapshot.paramMap.get('id')!;
+  // 1) Cargo el usuario cuyo perfil se está viendo
+  this.usuarioService.getUsuarioById(perfilId).subscribe(u => {
+    this.perfilUsuario = u;
+
+    // 2) Cargo quién está logueado
+    this.usuarioService.auth().subscribe(act => {
+      if (!act) return;
+      this.usuarioActual = act;
+
+      // 3) Compruebo si ya sigo a ese usuario
+      this.isFollowing = this.perfilUsuario.seguidores.includes(act.id);
+
+      // 4) Ya con todo listo, cargo sus publicaciones y logros
+      this.cargarPublicaciones(perfilId);
+    });
+  },
+  err => console.error('Error al obtener perfil:', err));
+}
 
   cargarPublicaciones(usuarioId: string): void {
     this.publicacionService.getPublicacionesByUsuarioId(usuarioId).subscribe({
@@ -82,4 +108,36 @@ totalPuntos = 0;
 // cantidad de alcanzado por puntos y likes (null si ninguno)
 logroLike: number | null = null;
 logroPunto: number | null = null;
+
+toggleFollow() {
+  const myId = this.usuarioActual.id;
+  const arr = this.perfilUsuario.seguidores;
+  const idx = arr.indexOf(myId);
+
+  if (idx > -1) {
+    // Si ya seguías, lo quito
+    arr.splice(idx, 1);
+    this.isFollowing = false;
+  } else {
+    // Si no seguías, lo agrego
+    arr.push(myId);
+    this.isFollowing = true;
+  }
+
+  // Patcheo la BD con el array actualizado
+  this.usuarioService
+    .patchFollowers(this.perfilUsuario.id!, arr)
+    .subscribe({
+      next: updated => {
+        this.perfilUsuario = updated;
+        console.log('Followers actualizados:', updated.seguidores);
+      },
+      error: err => console.error('Error al togglear follow:', err)
+    });
 }
+
+
+
+}
+
+
