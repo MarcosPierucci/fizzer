@@ -18,7 +18,13 @@ private activeUserSubject = new BehaviorSubject<UsuarioActivo | undefined>(undef
 public resultadosSubject = new BehaviorSubject<any[]>([]);
 resultadoObservable = this.resultadosSubject.asObservable();
 
-constructor(private http: HttpClient,) { }
+constructor(private http: HttpClient,) {
+  const savedUser = localStorage.getItem('activeUser');
+  if (savedUser) {
+    const activo: UsuarioActivo = JSON.parse(savedUser);
+    this.activeUserSubject.next(activo);
+  }
+ }
 
 /*Che, hay que ver porque pusimos en todos con tarea si estamos en usuario, y ver que no se rompa nada cuando lo cambiemos*/
 getUsuarios(): Observable<Usuario[]>{
@@ -69,7 +75,20 @@ loginn(username: string, password: string): Observable<boolean> {
     const user = users.at(0);
     if (user && user.nombreUsario == username && user.contraseniaUsuario == password){
      // this.activeUser = { username: user.username, id: user.id! };
-    this.activeUserSubject.next({ nombre: user.nombreUsario, id: user.id!,admin: user.admin});
+    //this.activeUserSubject.next({ nombre: user.nombreUsario, id: user.id!,admin: user.admin});
+
+const activo: UsuarioActivo = {
+          nombre: user.nombreUsario,
+          id: user.id!,
+          admin: user.admin
+        };
+
+        // 1. Emitimos el usuario al observable
+        this.activeUserSubject.next(activo);
+
+        // 2. Guardamos el usuario en localStorage para mantener la sesión
+        localStorage.setItem('activeUser', JSON.stringify(activo));
+
     return true;
     }
 
@@ -84,9 +103,10 @@ getUsuarioByName(username: string): Observable<Usuario[]> {
 }
 
 logout(): Observable<boolean> {
-/* this.activeUser = undefined; */
-this.activeUserSubject.next(undefined);
-return of(true);
+  this.activeUserSubject.next(undefined);
+  localStorage.removeItem('activeUser');
+  console.log("Se cerro sesion post removeItem");
+  return of(true);
 }
 
 signup(usuario: Usuario): Observable<boolean> {

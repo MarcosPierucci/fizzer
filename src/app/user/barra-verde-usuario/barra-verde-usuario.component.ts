@@ -37,7 +37,9 @@ export class BarraVerdeUsuarioComponent implements OnInit{
       logoutButton.setAttribute('disabled', 'true');
     }
     setTimeout(() => {
-      this.router.navigate(['/login']);
+      this.usuarioService.logout().subscribe(() => {
+    this.router.navigate(['/login']);
+  });
     }, 1000);
   }
 
@@ -51,8 +53,8 @@ export class BarraVerdeUsuarioComponent implements OnInit{
             console.log("Resultados filtrados: ")
             resultadosFiltrados.forEach(resultado => console.log(resultado.nombreUsario))
 
-            this.usuarioService.resultadosSubject.next(resultadosFiltrados); 
-            this.router.navigate(['/resultados-busqueda']); 
+            this.usuarioService.resultadosSubject.next(resultadosFiltrados);
+            this.router.navigate(['/resultados-busqueda']);
           },
           error: () => console.error('Error al buscar usuarios')
         }
