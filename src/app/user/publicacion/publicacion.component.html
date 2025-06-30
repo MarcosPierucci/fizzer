@@ -1,24 +1,38 @@
-<div class="publicacion-card">
-  <div class="usuario-nombre">
-    <span> {{ publicacion.nombreUsuario }}</span>
-  </div>
-  <div class="image-container">
-    <img [src]="publicacion.urlFoto" alt="Foto de usuario">
+@if (!publicacion.baneado) {
+  <div class="publicacion-card">
+    <div class="usuario-nombre">
+      <span>
+        <a [routerLink]="['/perfil', publicacion.idUsuario]"> {{publicacion.nombreUsuario}}</a>
+      </span>
+    </div>
+    <div class="image-container">
+      <img [src]="publicacion.urlFoto" alt="Foto de usuario">
+    </div>
+
+    <div class="likes-info">
+      <p>{{publicacion.descripcion}} </p>
+    </div>
+
+    <div class="likes-info">
+      <p>LIKES: {{ publicacion.likes.length }}</p>
+      <p>PUNTOS FIZZER: {{ publicacion.puntosFizzer.length }}</p>
+    </div>
+    <div class="buttons-container">
+
+      <button class="like-button" [ngClass]="{ 'activo': likeAgregado }" (click)="toggleLike()"> Like </button>
+
+
+      <button class="punto-button" [ngClass]="{ 'activo': puntoFizzerAgregado }" (click)="togglePuntoFizzer()" > Punto Fizzer </button>
+
+
+    </div>
+    <div class="report-container">
+      <button class="report-button" (click)="reportarPublicacion()">REPORTAR</button>
+    </div>
   </div>
 
-  <div class="likes-info">
-    <p>{{publicacion.descripcion}} </p>
-  </div>
+} @else {
+<h2>PUBLICACION BANEADA</h2>
+}
 
-  <div class="likes-info">
-    <p>LIKES: {{ publicacion.likes }}</p>
-    <p>PUNTOS FIZZER: {{ publicacion.puntosFizzer }}</p>
-  </div>
-  <div class="buttons-container">
-    <button (click)="agregarLike()" [disabled]="likeAgregado">Like</button>
-    <button (click)="agregarPuntoFizzer()" [disabled]="puntoFizzerAgregado">Punto Fizzer</button>
-  </div>
-  <div class="report-container">
-    <button class="report-button" (click)="reportarPublicacion()">REPORTAR</button>
-  </div>
-</div>
+

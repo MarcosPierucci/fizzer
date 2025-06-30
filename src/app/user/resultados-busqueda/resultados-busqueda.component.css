@@ -1,0 +1,27 @@
+.resultados-container {
+    background-color: #ffff99; /* Amarillo claro */
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px dashed #008000; /* Borde punteado verde */
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .resultado-item {
+    display: block;
+    background-color: #008000; /* Verde fuerte */
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px auto;
+    width: 80%;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+  
+  .resultado-item:hover {
+    background-color: #005700; /* Verde más oscuro */
+  }
+  

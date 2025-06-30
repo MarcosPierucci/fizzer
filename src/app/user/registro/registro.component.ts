@@ -21,6 +21,7 @@ formularioRegister = this.fb.nonNullable.group({
   contraseniaUsuario: [""],
   baneado: false,
   admin: false,
+  seguidores: this.fb.control<string[]>([], { nonNullable: true })
 })
 
 constructor (private router: Router){}
@@ -28,6 +29,9 @@ constructor (private router: Router){}
 onSubmit() {
   if (this.formularioRegister.invalid) return;
   // Obtener la longitud del arreglo de usuarios para asignar el ID en formato string
+  const user = this.formularioRegister.getRawValue() as unknown as Usuario;
+
+  /*
   this.usuarioServicio.getUsersCount().subscribe({
     next: (count) => {
         // Crear el nuevo usuario con el ID basado en la longitud como string
@@ -52,6 +56,22 @@ onSubmit() {
       error: (error) => {
         console.error('Error al obtener la cantidad de usuarios:', error);
         alert('Hubo un problema al registrar el usuario');
+      }
+    });
+*/
+
+     // Registrar al usuario
+     this.usuarioServicio.signup(user).subscribe({
+      next: () => {
+        alert('Usuario agregado');
+        this.router.navigate(['/']);
+      },
+      error: (error) => {
+        console.error(error);
+        console.log('Redirecting to Home');
+        setTimeout(() => {
+          this.router.navigate(['/']);
+        }, 1500);
       }
     });
 }

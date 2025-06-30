@@ -48,9 +48,24 @@ export class PublicacionServiceService {
   getPublicacionesByUsuarioId(usuarioId: string): Observable<Publicacion[]> {
     return this.http.get<Publicacion[]>(`${this.urlBase}?idUsuario=${usuarioId}`);
   }
-  
 
+/*
+  patchLikes(id: string, likesArray: string[]) {
+  return this.http.patch(`${this.urlBase}/${id}`, {
+    likes: likesArray
+  });
+}
+*/
+patchLikes(idPublicacion: string, likesArray: string[]): Observable<Publicacion> {
+  return this.http.patch<Publicacion>(`${this.urlBase}/${idPublicacion}`, {
+    likes: likesArray
+  });
+}
 
+patchPuntosFizzer(idPublicacion: string, puntosArray: string[]): Observable<Publicacion>{
+  return this.http.patch<Publicacion>(`${this.urlBase}/${idPublicacion}`, {
+    puntosFizzer: puntosArray
+  });
+}
 
-  
 }

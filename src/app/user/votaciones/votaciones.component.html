@@ -1,0 +1,21 @@
+<div class="votaciones-container">
+    <h1>Tareas Propuestas</h1>
+
+    <div *ngIf="tareas.length === 0">No hay tareas disponibles para votar.</div>
+
+    <div *ngFor="let tarea of tareas">"
+      <div class="tarea-card">
+        <h3>{{ tarea.titulo }}</h3>
+        <p><strong>Descripción:</strong> {{ tarea.descripcion }}</p>
+        <p><strong>Creador:</strong> {{ tarea.creador || 'Desconocido' }}</p>
+        <p><strong>Categorías:</strong> {{ tarea.categorias }}</p>
+        <p><strong>Votaciones:</strong> {{ tarea.votaciones }}</p>
+        <button *ngIf="!hasVoted(tarea.id!)" (click)="votar(tarea.id!)">Votar</button>
+        <span *ngIf="hasVoted(tarea.id!)" class="votado">¡Ya votaste!</span>
+
+      </div>
+    </div>
+  </div>
+
+
+

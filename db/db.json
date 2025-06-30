@@ -1,223 +1,237 @@
 {
   "usuario": [
     {
-      "id": "3",
-      "nombreUsario": "santi",
-      "contraseniaUsuario": "123456"
-    },
-    {
-      "id": "4",
-      "nombreUsario": "noestoyregistrado",
-      "contraseniaUsuario": "1234567"
-    },
-    {
-      "id": "2",
-      "nombreUsario": "piru",
-      "contraseniaUsuario": "pepe123"
-    },
-    {
-      "id": "3",
-      "nombreUsario": "facu",
-      "contraseniaUsuario": "facu123"
-    },
-    {
-      "id": "4",
-      "nombreUsario": "juan",
-      "contraseniaUsuario": "125478"
-    },
-    {
-      "id": "5",
-      "nombreUsario": "aaa",
-      "contraseniaUsuario": "aaaaaa"
-    },
-    {
-      "id": "6",
-      "nombreUsario": "sasasas",
-      "contraseniaUsuario": "sasasasa"
-    },
-    {
-      "id": "7",
-      "nombreUsario": "piraniaMalevola",
-      "contraseniaUsuario": "piru123"
-    },
-    {
-      "id": "8",
-      "nombreUsario": "facundoroch",
-      "contraseniaUsuario": "facu12345"
-    },
-    {
       "id": "9",
       "nombreUsario": "santiAdmin",
       "contraseniaUsuario": "admin123",
       "baneado": false,
-      "admin": true
+      "admin": true,
+      "seguidores": []
+    },
+    {
+      "id": "1",
+      "nombreUsario": "piru",
+      "contraseniaUsuario": "hola123",
+      "baneado": false,
+      "admin": false,
+      "seguidores": [
+        "342432"
+      ]
+    },
+    {
+      "id": "342432",
+      "nombreUsario": "facu",
+      "contraseniaUsuario": "contraseña",
+      "baneado": false,
+      "admin": false,
+      "seguidores": [
+        "1"
+      ]
+    },
+    {
+      "id": "3",
+      "nombreUsario": "santi",
+      "contraseniaUsuario": "santi",
+      "baneado": false,
+      "admin": false,
+      "seguidores": []
+    },
+    {
+      "id": "4",
+      "nombreUsario": "usuarioPrueba",
+      "contraseniaUsuario": "hola",
+      "baneado": false,
+      "admin": false,
+      "seguidores": []
+    },
+    {
+      "id": "f11e",
+      "nombreUsario": "UsuarioPruebaid",
+      "contraseniaUsuario": "pruebaId",
+      "baneado": false,
+      "admin": false,
+      "seguidores": []
+    },
+    {
+      "id": "324a",
+      "nombreUsario": "usuario",
+      "contraseniaUsuario": "12345",
+      "baneado": false,
+      "admin": false,
+      "seguidores": [
+        "1",
+        "d410"
+      ]
+    },
+    {
+      "id": "d410",
+      "nombreUsario": "facurochhh",
+      "contraseniaUsuario": "facu1212",
+      "baneado": false,
+      "admin": false,
+      "seguidores": []
     }
   ],
   "tareas": [
     {
-      "id": "id-1",
-      "titulo": "Salir a caminar",
-      "descripcion": "tenes que salir a caminar con tus amigos en la tarde",
-      "categoria": "Social",
-      "aceptada": true,
-      "creador": ""
+      "id": "0e50",
+      "titulo": "Jugar Minercaft",
+      "descripcion": "Conectate a un servidor multijugador con mas de 4 amigos y disfruta los minijuegos!",
+      "categorias": [
+        "Videojuegos",
+        "Social",
+        "Entretenimiento"
+      ],
+      "aceptada": false,
+      "votaciones": 3,
+      "idsVotadores": [
+        "3",
+        "1",
+        "342432"
+      ],
+      "creador": "facu"
     },
     {
-      "id": "id-2",
-      "titulo": "Salir a caminar",
-      "descripcion": "tenes que salir a caminar con tus amigos en la tarde",
-      "categoria": "Social",
+      "id": "10ff",
+      "titulo": "Cocinar un buen pastel de papa",
+      "descripcion": "Arranca a cocinar a las 10:30 e invita a la familia a comer alto pastel de papa",
+      "categorias": [
+        "Cocina",
+        "Social"
+      ],
       "aceptada": false,
-      "creador": ""
+      "votaciones": 1,
+      "idsVotadores": [
+        "1"
+      ],
+      "creador": "facu"
     },
     {
-      "id": "id-1",
-      "titulo": "selfi",
-      "descripcion": "salfie con friends",
-      "categoria": "Social",
+      "id": "27eb",
+      "titulo": "Pelicula: Fight Club",
+      "descripcion": "Toca mirar una peli, prepara los pochoclos y busca Fight Club, disponible en Netflix",
+      "categorias": [
+        "Arte",
+        "Entretenimiento"
+      ],
       "aceptada": false,
+      "votaciones": 2,
+      "idsVotadores": [
+        "1"
+      ],
       "creador": "santi"
     },
     {
-      "id": "id-1",
-      "titulo": "ASADO",
-      "descripcion": "finde de comida",
-      "categoria": "Cocina",
-      "aceptada": false
+      "id": "6cc2",
+      "titulo": "Huevos fritos divertidos",
+      "descripcion": "Prepara unos huevos fritos con diferentes formas, corazon, estrella, rombo, etc.",
+      "categorias": [
+        "Cocina",
+        "Entretenimiento"
+      ],
+      "aceptada": false,
+      "votaciones": 1,
+      "idsVotadores": [
+        "1"
+      ],
+      "creador": "piru"
+    },
+    {
+      "id": "4214",
+      "titulo": "Sale ese cs?",
+      "descripcion": "Pinta Cs con los pibes en lugar de programar? Seh!",
+      "categorias": [
+        "Videojuegos"
+      ],
+      "aceptada": false,
+      "votaciones": 1,
+      "idsVotadores": [
+        "1"
+      ],
+      "creador": "piru"
     }
   ],
   "reporte": [
     {
       "id": "1",
-      "motivo": "publicacion inapropiada",
-      "reportado": "santino",
-      "link": "http://youtube.com",
-      "tipoReporte": "publicacion",
-      "idReportado": 1,
-      "idPublicacionReportada": "2",
-      "reporteTerminado": false
-    },
-    {
-      "id": "2",
-      "motivo": "spam",
-      "reportado": "marcos",
-      "link": "http://youtube.com",
-      "tipoReporte": "perfil",
-      "idReportado": 2,
-      "reporteTerminado": false
-    },
-    {
-      "id": "3",
-      "motivo": "Spam",
-      "reportado": "Marcos",
-      "link": "Oferta de trabajo",
-      "tipoReporte": "publicacion",
-      "idReportado": "2",
+      "motivo": "Esto no es un dibujo de messi es una foto de google",
+      "reportado": "santi",
+      "link": "/publicacion/3/usuario/3",
+      "idReportado": "3",
       "idPublicacionReportada": "3",
       "reporteTerminado": false
     },
     {
-      "id": "4",
-      "motivo": "mala onda",
-      "reportado": "lucia",
-      "link": "/publicacion/1/usuario/3",
-      "tipoReporte": "publicacion",
-      "idReportado": "3",
-      "idPublicacionReportada": "1",
-      "reporteTerminado": false
+      "id": "b711",
+      "motivo": "prueba reporte",
+      "reportado": "facu",
+      "link": "/publicacion/2/usuario/2",
+      "idReportado": "2",
+      "idPublicacionReportada": "2"
     }
   ],
   "tareasGlobales": [
     {
-      "id": "1",
+      "id": "id-1",
       "usada": false,
-      "descripcion": "En esta tarea vamos a dibujar a messi",
+      "descripcion": "En esta tarea quiero que la gente dibuje a messi",
       "titulo": "Dibujar a Messi"
     },
     {
-      "id": "id-1",
+      "id": "141a",
       "usada": false,
-      "descripcion": "tenes que salir a caminar con tus amigos en la tarde",
-      "titulo": "Salir a caminar"
+      "descripcion": "tarea nueva",
+      "titulo": "nueva tarea"
     },
     {
-      "id": "id-1",
+      "id": "ece1",
       "usada": false,
-      "descripcion": "tenes que salir a caminar con tus amigos en la tarde",
-      "titulo": "Salir a caminar"
-    },
-    {
-      "id": "id-1",
-      "usada": false,
-      "descripcion": "tenes que salir a caminar con tus amigos en la tarde",
-      "titulo": "Salir a caminar"
+      "descripcion": "Prueba para ver si funciona el borrar",
+      "titulo": "PruebaLoca"
     }
   ],
   "publicaciones": [
     {
-      "id": "1",
-      "idUsuario": "8",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731651282/ubmcseukcqbmgn23fr4d.jpg",
-      "descripcion": "baneada prueba",
+      "id": "d02f",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751162168/dxy0nyvuklrmc4suigoj.png",
+      "descripcion": "Prueba Likes",
       "baneado": false,
-      "nombreUsuario": "facundoroch",
-      "likes": 0,
-      "puntosFizzer": 0,
+      "nombreUsuario": "piru",
+      "likes": [
+        "342432",
+        "3",
+        "1"
+      ],
+      "puntosFizzer": [
+        "342432",
+        "3",
+        "1"
+      ],
       "link": ""
     },
     {
-      "id": "2",
-      "idUsuario": "8",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731651808/d38ywaaa8uemr0gnp3yr.jpg",
-      "descripcion": "asdasd",
+      "id": "f363",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751221202/xutd59rzriijv81fbiqu.png",
+      "descripcion": "Prueba Loca de los crotos xd",
       "baneado": false,
-      "nombreUsuario": "facundoroch",
-      "likes": 0,
-      "puntosFizzer": 0,
+      "nombreUsuario": "piru",
+      "likes": [],
+      "puntosFizzer": [
+        "1"
+      ],
       "link": ""
     },
     {
-      "id": "3",
-      "idUsuario": "8",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731651818/gj6nmsfbvui51dlmuk7x.jpg",
-      "descripcion": "dsadasd",
+      "id": "29b8",
+      "idUsuario": "324a",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751298370/jlbgc7dw2ch3el5emfnc.png",
+      "descripcion": "Petito",
       "baneado": false,
-      "nombreUsuario": "facundoroch",
-      "likes": 0,
-      "puntosFizzer": 0,
-      "link": ""
-    },
-    {
-      "id": "4",
-      "idUsuario": "8",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731651825/dwsp320p97js0klnrtby.jpg",
-      "descripcion": "",
-      "baneado": false,
-      "nombreUsuario": "facundoroch",
-      "likes": 0,
-      "puntosFizzer": 0,
-      "link": ""
-    },
-    {
-      "id": "5",
-      "idUsuario": "8",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731651842/mjxtjeimecunqlqe81jb.jpg",
-      "descripcion": "fdsfds",
-      "baneado": false,
-      "nombreUsuario": "facundoroch",
-      "likes": 0,
-      "puntosFizzer": 0,
-      "link": ""
-    },
-    {
-      "id": "6",
-      "idUsuario": "3",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1731654295/dxcdjrbqrxamgwleemyv.webp",
-      "descripcion": "messi",
-      "baneado": false,
-      "nombreUsuario": "santi",
-      "likes": 0,
-      "puntosFizzer": 0,
+      "nombreUsuario": "usuario",
+      "likes": [],
+      "puntosFizzer": [],
       "link": ""
     }
   ]

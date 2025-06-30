@@ -1,13 +1,12 @@
-<div *ngIf="resultados.length; else noResults">
-    <h2>Resultados de búsqueda:</h2>
-    <ul>
-      <li *ngFor="let usuario of resultados">
-        {{ usuario.nombreUsario }}
-      </li>
-    </ul>
-  </div>
-  
-  <ng-template #noResults>
-    <p>No se encontraron resultados para esta búsqueda.</p>
-  </ng-template>
-  
+<div *ngIf="resultados.length; else noResults" class="resultados-container">
+  <h2>Resultados de Búsqueda:</h2>
+  <ul>
+    <li *ngFor="let usuario of resultados">
+      <a [routerLink]="['/perfil', usuario.id]" class="resultado-item">{{ usuario.nombreUsario }}</a>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noResults>
+  <p class="no-resultados">No se encontraron resultados para esta búsqueda.</p>
+</ng-template>

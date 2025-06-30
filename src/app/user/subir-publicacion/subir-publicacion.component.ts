@@ -27,16 +27,21 @@ export class SubirPublicacionComponent implements OnInit {
 
   // Formulario para crear la publicación
   formularioPublicacion = this.fb.nonNullable.group({
-    id: "",
+
     idUsuario: [this.usuarioActivo?.id],
     urlFoto: this.urlImg,
     descripcion: ["", Validators.minLength(5)],
     baneado: false,
     nombreUsuario: [this.usuarioActivo?.nombre],
-    likes: 0,
-    puntosFizzer: 0,
+    likes: this.fb.control<string[]>([], { nonNullable: true }) ,
+    puntosFizzer : this.fb.control<string[]>([], { nonNullable: true }),
     link : ''
   });
+
+  //Linea 36 y 37
+  // fb.control<string[]>: crea un control de formulario que maneja un arreglo de strings (tipo seguro)
+// []: valor inicial, aquí un arreglo vacío
+// { nonNullable: true }: indica que el valor nunca será null ni undefined, siempre tiene valor válido
 
   constructor() {}
 
@@ -93,13 +98,15 @@ subirPublicacion() {
       console.log('URL de la imagen subida:', this.urlImg);
 
       //Mover la lógica de `patchValue` dentro del callback para asegurar que `nuevaId` esté disponible
+/*
       this.tamanioArregloPublicaciones((id: number) => {
         const nuevaId = id.toString();
         console.log("Nueva ID: " + nuevaId);
 
+
         //Actualizar los datos del formulario con la URL de la imagen y el nuevo id
         this.formularioPublicacion.patchValue({
-          id: nuevaId,
+          //id: nuevaId,
           urlFoto: this.urlImg,
           idUsuario: this.usuarioActivo?.id,
           nombreUsuario: this.usuarioActivo?.nombre,
@@ -122,6 +129,31 @@ subirPublicacion() {
             alert('Hubo un error al crear la publicación.');
           }
         });
+      }); */
+      //Actualizar los datos del formulario con la URL de la imagen y el nuevo id
+      this.formularioPublicacion.patchValue({
+        //id: nuevaId,
+        urlFoto: this.urlImg,
+        idUsuario: this.usuarioActivo?.id,
+        nombreUsuario: this.usuarioActivo?.nombre,
+        likes: [],
+        puntosFizzer: [],
+        baneado: false,
+        link: ""
+      });
+
+      //Enviar la publicación al JSON server usando el método postPublicacion
+      this.servicioPublicacion.postPublicacion(this.formularioPublicacion.value as Publicacion).subscribe({
+        next: (response) => {
+          console.log('Publicación creada con éxito:', response);
+          alert('Publicación subida correctamente.');
+          this.formularioPublicacion.reset(); //Limpiar el formulario
+          this.files = []; //Limpiar los archivos seleccionados
+        },
+        error: (err) => {
+          console.error('Error al crear la publicación:', err);
+          alert('Hubo un error al crear la publicación.');
+        }
       });
     },
     error: (e: Error) => {
