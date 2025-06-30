@@ -1,54 +1,96 @@
 <div class="perfil-container">
-    <!-- Información del perfil -->
-    <div class="perfil-header">
-      <div class="perfil-info">
-        <h2>{{ perfilUsuario.nombreUsario }}</h2>
-        <p>ID: {{ perfilUsuario.id }}</p>
-        <h3>Colección de logros:</h3>
-        <div class="logros">
-           <div *ngIf="logroPunto !== null" class="logro-item">
-     <span class="logro-icon">{{ logroPunto }}+</span>
-    {{ logroPunto === 3 ? '3 Puntos conseguidos!'
-      : logroPunto === 10 ? '10 Puntos conseguidos!'
-      : logroPunto === 20 ? '20 Puntos conseguidos!'
-      : logroPunto === 50 ? '50 Puntos conseguidos!'
-      : '100 Puntos conseguidos!' }}
-  </div>
+  <!-- Información del perfil -->
+  <div class="perfil-header">
+    <div class="perfil-info">
+      <h2>{{ perfilUsuario.nombreUsario }}</h2>
+      <p>ID: {{ perfilUsuario.id }}</p>
 
-  <!-- Logro de likes -->
-  <div *ngIf="logroLike !== null" class="logro-item">
-    <span class="logro-icon">{{ logroLike }}+</span>
-    {{ logroLike === 3 ? '3 Likes conseguidos!'
-      : logroLike === 10 ? '10 Likes conseguidos!'
-      : logroLike === 20 ? '20 Likes conseguidos!'
-      : logroLike === 50 ? '50 Likes conseguidos!'
-      : '100 Likes conseguidos!' }}
-  </div>
+      <!-- Botones de edición solo si el usuario logueado ve su propio perfil -->
+      <div *ngIf="perfilUsuario?.id === usuarioActual?.id">
+        <button class="editar-btn" (click)="mostrarEditarNombre = !mostrarEditarNombre">
+          {{ mostrarEditarNombre ? 'Cancelar' : 'Editar nombre de usuario' }}
+        </button>
+
+        <div class="editor-container" *ngIf="mostrarEditarNombre">
+          <input
+            type="text"
+            [(ngModel)]="nuevoNombre"
+            placeholder="Nuevo nombre de usuario"
+            class="editor-input"
+          />
+          <button class="guardar-btn" (click)="guardarNuevoNombre()">Guardar nombre</button>
+        </div>
+
+        <button class="editar-btn" (click)="mostrarEditarPassword = !mostrarEditarPassword">
+          {{ mostrarEditarPassword ? 'Cancelar' : 'Cambiar contraseña' }}
+        </button>
+
+        <div class="editor-container" *ngIf="mostrarEditarPassword">
+          <input
+            type="password"
+            [(ngModel)]="nuevaContrasenia"
+            placeholder="Nueva contraseña"
+            class="editor-input"
+          />
+          <input
+            type="password"
+            [(ngModel)]="confirmarContrasenia"
+            placeholder="Confirmar contraseña"
+            class="editor-input"
+          />
+          <button class="guardar-btn" (click)="guardarNuevaContrasenia()">Guardar contraseña</button>
         </div>
       </div>
 
-      <div class="buttons-follow">
-  <button
-  class="follow-button"
-  [ngClass]="{ 'siguiendo': isFollowing }"
-  (click)="toggleFollow()"
-  [disabled]="usuarioActual.id === perfilUsuario.id"
->
-  {{ isFollowing ? 'Siguiendo' : 'Seguir' }}
-</button>
-</div>
+      <!-- Botón seguir/no seguir si no es su propio perfil -->
+      <div class="buttons-follow" *ngIf="perfilUsuario?.id !== usuarioActual?.id">
+        <button
+          class="follow-button"
+          [ngClass]="{ 'siguiendo': isFollowing }"
+          (click)="toggleFollow()"
+        >
+          {{ isFollowing ? 'Siguiendo' : 'Seguir' }}
+        </button>
+      </div>
 
-    </div>
+      <!-- Logros -->
+      <h3>Colección de logros:</h3>
+      <div class="logros">
+        <!-- Logro de puntos -->
+        <div *ngIf="logroPunto !== null" class="logro-item">
+          <span class="logro-icon">{{ logroPunto }}+</span>
+          {{ logroPunto === 3 ? '3 Puntos conseguidos!'
+            : logroPunto === 10 ? '10 Puntos conseguidos!'
+            : logroPunto === 20 ? '20 Puntos conseguidos!'
+            : logroPunto === 50 ? '50 Puntos conseguidos!'
+            : '100 Puntos conseguidos!' }}
+        </div>
 
-    <!-- Publicaciones del usuario -->
-    <div class="publicaciones-container">
-      <div *ngFor="let publicacion of publicaciones" class="publicacion-item">
-        @if (!publicacion.baneado) {
-          <a [routerLink]="['/publicacion', publicacion.id, 'usuario', usuarioActivo?.id]">
-            <img [src]="publicacion.urlFoto" alt="Imagen de la publicación" class="publicacion-foto">
-          </a>
-        }
-
+        <!-- Logro de likes -->
+        <div *ngIf="logroLike !== null" class="logro-item">
+          <span class="logro-icon">{{ logroLike }}+</span>
+          {{ logroLike === 3 ? '3 Likes conseguidos!'
+            : logroLike === 10 ? '10 Likes conseguidos!'
+            : logroLike === 20 ? '20 Likes conseguidos!'
+            : logroLike === 50 ? '50 Likes conseguidos!'
+            : '100 Likes conseguidos!' }}
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Publicaciones del usuario -->
+  <div class="publicaciones-container">
+    <div *ngFor="let publicacion of publicaciones" class="publicacion-item">
+      @if (!publicacion.baneado) {
+        <a [routerLink]="['/publicacion', publicacion.id, 'usuario', perfilUsuario.id]">
+          <img
+            [src]="publicacion.urlFoto"
+            alt="Imagen de la publicación"
+            class="publicacion-foto"
+          />
+        </a>
+      }
+    </div>
+  </div>
+</div>
