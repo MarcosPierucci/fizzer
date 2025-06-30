@@ -21,7 +21,9 @@ export class BarraVerdeAdminComponent {
       logoutButton.setAttribute('disabled', 'true');
     }
     setTimeout(() => {
-      this.router.navigate(['/login']);
+     this.busquedaUsuariosService.logout().subscribe(() => {
+    this.router.navigate(['/login']);
+  });
     }, 1000);
   }
 

@@ -59,8 +59,8 @@
       "baneado": false,
       "admin": false,
       "seguidores": [
-        "1",
-        "d410"
+        "d410",
+        "1"
       ]
     },
     {
@@ -230,6 +230,19 @@
       "descripcion": "Petito",
       "baneado": false,
       "nombreUsuario": "usuario",
+      "likes": [
+        "1"
+      ],
+      "puntosFizzer": [],
+      "link": ""
+    },
+    {
+      "id": "ca2c",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751323448/tbiyb219oll3nul1yofc.jpg",
+      "descripcion": "Pruba",
+      "baneado": false,
+      "nombreUsuario": "marcos",
       "likes": [],
       "puntosFizzer": [],
       "link": ""
