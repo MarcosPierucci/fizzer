@@ -19,12 +19,19 @@ import { AuthGuard } from './guards/auth.guard';
 export const routes: Routes = [
   {path: 'admin-reportes',
   canActivate: [AuthGuard],
-  data: { soloAdmin: true }, // esto le dice al guard que requiere admin
+
+
+  data: { soloAdmin: true }, //  esto le dice al guard que requiere admin
+
   loadComponent: () => import('./admin/reportes/reportes.component').then(c => c.ReportesComponent)},
 
   {path: 'filtro-tareas',
   canActivate: [AuthGuard],
-  data: { soloAdmin: true }, // esto le dice al guard que requiere admin
+
+  
+
+  data: { soloAdmin: true }, //  esto le dice al guard que requiere admin
+
   loadComponent: () => import('./admin/filtro-tareas/filtro-tareas.component').then(c => c.FiltroTareasComponent)},
 
   {path: '', component: InicioSesionComponent},
@@ -44,6 +51,7 @@ export const routes: Routes = [
   {path: "votaciones", component: VotacionesComponent},
   { path: 'editar-publicacion/:id', component: SubirPublicacionComponent },
   { path: 'formulario-publicacion',    component: SubirPublicacionComponent },
+
 
 
 ];
