@@ -32,11 +32,11 @@ export class VerTareaComponent implements OnInit {
 definirTareaDelDia(): void {
   const ahora = new Date();
 
-  // Convertimos la hora local del navegador a Buenos Aires (UTC-3)
+  //  esto pasa la hora local del navegador a Buenos Aires (UTC-3)
   const offsetBuenosAires = -3 * 60; // en minutos
   const ahoraBuenosAires = new Date(ahora.getTime() + (offsetBuenosAires - ahora.getTimezoneOffset()) * 60000);
 
-  // Si aún no son las 15 hs en Buenos Aires, usamos la tarea de AYER
+  // si no son las 15 hs en Buenos Aires, usamos la tarea de AYER
   if (ahoraBuenosAires.getHours() < 15) {
     ahoraBuenosAires.setDate(ahoraBuenosAires.getDate() - 1);
   }
