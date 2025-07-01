@@ -138,3 +138,5 @@ getUsuarioActivo(): Observable<Usuario> {
 
 
 }
+
+export type { UsuarioActivo };

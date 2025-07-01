@@ -1,24 +1,26 @@
+<form [formGroup]="formularioPublicacion" (ngSubmit)="subirPublicacion()">
+  <p>¡Genial! 🌟 No todos se animan a compartir su creatividad…</p>
 
-<body>
-<form class="formulario-container" [formGroup]="formularioPublicacion" (ngSubmit)="subirPublicacion()">
-   <p>¡Genial! 🌟 No todos se animan a compartir su creatividad y esfuerzo, pero aquí estás, dando un paso adelante. Cada tarea que subes es una inspiración para otros y una oportunidad para mostrar tu talento y entusiasmo. 🎉 ¡Recuerda que tus ideas pueden motivar a toda la comunidad! Gracias por compartir tu pasión con nosotros. 🙌</p>
-    <div class="campo">
-        <label for="descripcion">Descripción:</label>
-        <textarea id="descripcion" formControlName="descripcion" placeholder="Describi tu experiencia con la actividad..."></textarea>
-    </div>
+  <div class="campo">
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" formControlName="descripcion"
+      placeholder="Describí tu experiencia…"></textarea>
+  </div>
 
-    <ngx-dropzone (change)="onSelect($event)">
-        <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
-        <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
-        </ngx-dropzone-preview>
-    </ngx-dropzone>
+  <ngx-dropzone (change)="onSelect($event)">
+    <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+    <ngx-dropzone-preview
+      *ngFor="let f of files"
+      [removable]="true"
+      (removed)="onRemove(f)">
+    </ngx-dropzone-preview>
+  </ngx-dropzone>
 
-    <div class="sidebar">
-        <a [routerLink]="'/home'">
-        🏠
-        </a>
-    </div>
-    <button type="submit" style="background-color: rgb(26, 239, 26);">PUBLICAR</button>
+  <div class="sidebar">
+    <a [routerLink]="'/home'">🏠</a>
+  </div>
+
+  <button type="submit" class="btn btn-success">
+    {{ isEditing ? 'Guardar cambios' : 'PUBLICAR' }}
+  </button>
 </form>
-
-</body>
