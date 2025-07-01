@@ -78,6 +78,14 @@
       "baneado": false,
       "admin": false,
       "seguidores": []
+    },
+    {
+      "id": "c355",
+      "nombreUsario": "pedroNuevo",
+      "contraseniaUsuario": "agua1212",
+      "baneado": false,
+      "admin": false,
+      "seguidores": []
     }
   ],
   "tareas": [
@@ -176,71 +184,112 @@
       "link": "/publicacion/2/usuario/2",
       "idReportado": "2",
       "idPublicacionReportada": "2"
+    },
+    {
+      "id": "face",
+      "motivo": "vergonzoso",
+      "reportado": "pedrousuario",
+      "link": "/publicacion//usuario/c355",
+      "idReportado": "c355",
+      "idPublicacionReportada": "",
+      "reporteTerminado": false
     }
   ],
   "tareasGlobales": [
-  {
-    "id": "id-1",
-    "usada": false,
-    "descripcion": "En esta tarea quiero que la gente dibuje a Messi",
-    "titulo": "Dibujar a Messi"
-  },
-  {
-    "id": "141a",
-    "usada": false,
-    "descripcion": "tarea nueva",
-    "titulo": "nueva tarea"
-  },
-  {
-    "id": "ece1",
-    "usada": false,
-    "descripcion": "Prueba para ver si funciona el borrar",
-    "titulo": "PruebaLoca"
-  },
-  {
-    "id": "t-001",
-    "usada": false,
-    "descripcion": "Dibujar un paisaje que mezcle naturaleza y ciudad.",
-    "titulo": "Naturaleza urbana"
-  },
-  {
-    "id": "t-002",
-    "usada": false,
-    "descripcion": "Hacer un retrato de alguien usando solo líneas rectas.",
-    "titulo": "Retrato geométrico"
-  },
-  {
-    "id": "t-003",
-    "usada": false,
-    "descripcion": "Inventar un personaje de fantasía y dibujarlo en una pose de acción.",
-    "titulo": "Personaje fantástico"
-  },
-  {
-    "id": "t-004",
-    "usada": false,
-    "descripcion": "Dibujar una escena cotidiana en estilo caricatura.",
-    "titulo": "Vida caricaturizada"
-  },
-  {
-    "id": "t-005",
-    "usada": false,
-    "descripcion": "Rediseñar la portada de un libro que te guste.",
-    "titulo": "Portada reimaginada"
-  },
-  {
-    "id": "t-006",
-    "usada": false,
-    "descripcion": "Ilustrar un objeto común como si fuera parte de una civilización alienígena.",
-    "titulo": "Objeto alienígena"
-  },
-  {
-    "id": "t-007",
-    "usada": false,
-    "descripcion": "Crear una escena que mezcle dos estaciones del año en un mismo lugar.",
-    "titulo": "Fusión de estaciones"
-  }
-],
+    {
+      "id": "id-1",
+      "usada": false,
+      "descripcion": "En esta tarea quiero que la gente dibuje a Messi",
+      "titulo": "Dibujar a Messi"
+    },
+    {
+      "id": "141a",
+      "usada": false,
+      "descripcion": "tarea nueva",
+      "titulo": "nueva tarea"
+    },
+    {
+      "id": "ece1",
+      "usada": false,
+      "descripcion": "Prueba para ver si funciona el borrar",
+      "titulo": "PruebaLoca"
+    },
+    {
+      "id": "t-001",
+      "usada": false,
+      "descripcion": "Dibujar un paisaje que mezcle naturaleza y ciudad.",
+      "titulo": "Naturaleza urbana"
+    },
+    {
+      "id": "t-002",
+      "usada": false,
+      "descripcion": "Hacer un retrato de alguien usando solo líneas rectas.",
+      "titulo": "Retrato geométrico"
+    },
+    {
+      "id": "t-003",
+      "usada": false,
+      "descripcion": "Inventar un personaje de fantasía y dibujarlo en una pose de acción.",
+      "titulo": "Personaje fantástico"
+    },
+    {
+      "id": "t-004",
+      "usada": false,
+      "descripcion": "Dibujar una escena cotidiana en estilo caricatura.",
+      "titulo": "Vida caricaturizada"
+    },
+    {
+      "id": "t-005",
+      "usada": false,
+      "descripcion": "Rediseñar la portada de un libro que te guste.",
+      "titulo": "Portada reimaginada"
+    },
+    {
+      "id": "t-006",
+      "usada": false,
+      "descripcion": "Ilustrar un objeto común como si fuera parte de una civilización alienígena.",
+      "titulo": "Objeto alienígena"
+    },
+    {
+      "id": "t-007",
+      "usada": false,
+      "descripcion": "Crear una escena que mezcle dos estaciones del año en un mismo lugar.",
+      "titulo": "Fusión de estaciones"
+    }
+  ],
   "publicaciones": [
+    {
+      "id": "d02f",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751162168/dxy0nyvuklrmc4suigoj.png",
+      "descripcion": "MAÑANA SE RINDE",
+      "baneado": false,
+      "nombreUsuario": "piru",
+      "likes": [
+        "342432",
+        "3",
+        "1"
+      ],
+      "puntosFizzer": [
+        "342432",
+        "3",
+        "1"
+      ],
+      "link": ""
+    },
+    {
+      "id": "f363",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751221202/xutd59rzriijv81fbiqu.png",
+      "descripcion": "Prueba Loca de los crotos xd",
+      "baneado": false,
+      "nombreUsuario": "piru",
+      "likes": [],
+      "puntosFizzer": [
+        "1"
+      ],
+      "link": ""
+    },
     {
       "id": "29b8",
       "idUsuario": "324a",
@@ -279,6 +328,61 @@
         "1"
       ],
       "link": ""
+    },
+    {
+      "id": "",
+      "idUsuario": "c355",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751334796/mbu70gapko3y2vl69ixr.jpg",
+      "descripcion": "HERMOSA",
+      "baneado": false,
+      "nombreUsuario": "pedrousuario",
+      "likes": [],
+      "puntosFizzer": [],
+      "link": ""
+    },
+    {
+      "id": "",
+      "idUsuario": "3",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751336026/rlnpo9dqrzujdx9v9iia.jpg",
+      "descripcion": "sss",
+      "baneado": false,
+      "nombreUsuario": "santi",
+      "likes": [],
+      "puntosFizzer": [],
+      "link": ""
+    },
+    {
+      "id": "",
+      "idUsuario": "3",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751336031/edctyfeljtjqqeciktwm.jpg",
+      "descripcion": "sss",
+      "baneado": false,
+      "nombreUsuario": "santi",
+      "likes": [],
+      "puntosFizzer": [],
+      "link": ""
+    },
+    {
+      "id": "",
+      "idUsuario": "3",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751336121/eahcrsidoeld6fr7m9vh.jpg",
+      "descripcion": "sssdasdasd",
+      "baneado": false,
+      "nombreUsuario": "santi",
+      "likes": [],
+      "puntosFizzer": [],
+      "link": ""
+    },
+    {
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751336399/o9ugpslcanyqy3luqbm7.jpg",
+      "descripcion": "sasa",
+      "baneado": false,
+      "nombreUsuario": "piru",
+      "likes": [],
+      "puntosFizzer": [],
+      "link": "",
+      "id": "b53f"
     }
   ]
 }

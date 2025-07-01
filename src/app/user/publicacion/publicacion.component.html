@@ -16,7 +16,16 @@
     <div class="likes-info">
       <p>LIKES: {{ publicacion.likes.length }}</p>
       <p>PUNTOS FIZZER: {{ publicacion.puntosFizzer.length }}</p>
+      <div *ngIf="currentUserId && publicacion.idUsuario.toString() === currentUserId && publicacion.id" class="actions">
+      <button class="btn-editar" (click)="onEditar(publicacion.id.toString())">
+        🖉 Editar
+      </button>
+      <button class="btn-borrar" (click)="onBorrar(publicacion.id.toString())">
+        🗑️ Borrar
+      </button>
     </div>
+    </div>
+
     <div class="buttons-container">
 
       <button class="like-button" [ngClass]="{ 'activo': likeAgregado }" (click)="toggleLike()"> Like </button>
@@ -29,6 +38,7 @@
     <div class="report-container">
       <button class="report-button" (click)="reportarPublicacion()">REPORTAR</button>
     </div>
+
   </div>
 
 } @else {

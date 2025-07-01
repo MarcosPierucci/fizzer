@@ -35,7 +35,7 @@ export class SubirPublicacionComponent implements OnInit {
   private router = inject(Router);
 
   formularioPublicacion = this.fb.nonNullable.group({
-    id: [''],
+    //id: [''],
     idUsuario: [''],
     urlFoto: ['', Validators.required],
     descripcion: ['', Validators.minLength(5)],

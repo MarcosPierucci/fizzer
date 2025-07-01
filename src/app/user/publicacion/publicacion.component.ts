@@ -6,6 +6,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, NgFor } from '@angular/common';
 import { PublicacionServiceService } from '../../service/publicacion-service.service';
+import { Subscription, take } from 'rxjs';
 
 
 @Component({
@@ -29,7 +30,14 @@ export class PublicacionComponent implements OnInit {
   us = inject(UsuarioService);
   route = inject(ActivatedRoute);
   router = inject(Router);
+  usuarioService = inject(UsuarioService)
   servicioPublicacion = inject(PublicacionServiceService)
+  publicacionService = inject(PublicacionServiceService)
+  publicaciones: Publicacion[] = [];
+  currentUserId = '';      
+  private sub = new Subscription();
+      // valor por defecto
+  
 
 
 
@@ -37,16 +45,31 @@ export class PublicacionComponent implements OnInit {
     const publicacionId = this.route.snapshot.paramMap.get('publicacionId') || '';
     const usuarioId = this.route.snapshot.paramMap.get('usuarioId') || '';
 
+
     if (publicacionId && usuarioId) {
       this.buscarPublicacionId(publicacionId, usuarioId);
     }
+
+  
 
   this.us.auth().subscribe(usuario => {
   if (!usuario) return;
   this.usuarioActivo = usuario;
   this.likeAgregado = this.publicacion.likes.includes(usuario.id);
   this.puntoFizzerAgregado = this.publicacion.puntosFizzer.includes(usuario.id);
+
+  
+
 });
+
+this.sub.add(
+      this.usuarioService
+        .auth()
+        .pipe(take(1))
+        .subscribe((user: UsuarioActivo | undefined) => {
+          this.currentUserId = user ? user.id.toString() : '';
+        })
+    );
   }
 
 
@@ -202,6 +225,27 @@ togglePuntoFizzer() {
     error: () => console.log("Error al togglear Punto Fizzer")
   });
 }
+
+//ultimos
+
+  loadPublicaciones(): void {
+    this.publicacionService.getPublicacion()
+      .subscribe(data => this.publicaciones = data);
+  }
+
+  onEditar(id: string): void {
+    this.router.navigate(['/editar-publicacion', id]);
+  }
+
+  onBorrar(id: string): void {
+    if (!confirm('¿Querés eliminar esta publicación?')) return;
+    this.publicacionService.deletePublicacion(id)
+      .subscribe(() => this.loadPublicaciones());
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
 
 }
 

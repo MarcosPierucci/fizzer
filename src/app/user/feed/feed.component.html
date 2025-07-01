@@ -1,14 +1,5 @@
 <div class="feed">
   <div *ngFor="let pub of publicaciones" class="post">
     <app-publicacion [publicacion]="pub"></app-publicacion>
-
-    <div *ngIf="currentUserId && pub.idUsuario.toString() === currentUserId && pub.id" class="actions">
-      <button class="btn-editar" (click)="onEditar(pub.id.toString())">
-        🖉 Editar
-      </button>
-      <button class="btn-borrar" (click)="onBorrar(pub.id.toString())">
-        🗑️ Borrar
-      </button>
-    </div>
   </div>
 </div>
