@@ -246,6 +246,21 @@
       "likes": [],
       "puntosFizzer": [],
       "link": ""
+    },
+    {
+      "id": "833d",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751328242/h7vn3mvh0ocf3su4o0jn.png",
+      "descripcion": "re loco",
+      "baneado": false,
+      "nombreUsuario": "piru",
+      "likes": [
+        "1"
+      ],
+      "puntosFizzer": [
+        "1"
+      ],
+      "link": ""
     }
   ]
 }
