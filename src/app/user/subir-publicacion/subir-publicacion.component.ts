@@ -1,179 +1,125 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { PublicacionServiceService } from '../../service/publicacion-service.service';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { UsuarioActivo } from '../../interfaces/usuario';
-import { Publicacion } from '../../interfaces/publicacion';
-import { UsuarioService } from '../../service/usuario.service';
-import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { of, switchMap, take } from 'rxjs';
 import { NgxDropzoneModule } from 'ngx-dropzone';
-import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+import { PublicacionServiceService } from '../../service/publicacion-service.service';
+import { UsuarioService, UsuarioActivo } from '../../service/usuario.service';
+import { Publicacion } from '../../interfaces/publicacion';
 
 @Component({
   selector: 'app-subir-publicacion',
   standalone: true,
-  imports: [NgxDropzoneModule, ReactiveFormsModule, CommonModule,RouterLink],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    NgxDropzoneModule,
+    RouterLink
+  ],
   templateUrl: './subir-publicacion.component.html',
   styleUrls: ['./subir-publicacion.component.css']
 })
 export class SubirPublicacionComponent implements OnInit {
-
-  usuarioActivo: UsuarioActivo | undefined = undefined;
+  usuarioActivo?: UsuarioActivo;
   files: File[] = [];
-  urlImg: string = "";
+  urlImg = '';
+  isEditing = false;
+  editingId?: string;
 
-  fb = inject(FormBuilder);
-  servicioPublicacion = inject(PublicacionServiceService);
-  usuarioService = inject(UsuarioService);
+  private fb = inject(FormBuilder);
+  private servicioPublicacion = inject(PublicacionServiceService);
+  private usuarioService = inject(UsuarioService);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
 
-  // Formulario para crear la publicación
   formularioPublicacion = this.fb.nonNullable.group({
-
-    idUsuario: [this.usuarioActivo?.id],
-    urlFoto: this.urlImg,
-    descripcion: ["", Validators.minLength(5)],
+    id: [''],
+    idUsuario: [''],
+    urlFoto: ['', Validators.required],
+    descripcion: ['', Validators.minLength(5)],
     baneado: false,
-    nombreUsuario: [this.usuarioActivo?.nombre],
-    likes: this.fb.control<string[]>([], { nonNullable: true }) ,
-    puntosFizzer : this.fb.control<string[]>([], { nonNullable: true }),
-    link : ''
+    nombreUsuario: [''],
+    likes: [[] as string[]],
+    puntosFizzer: [[] as string[]],
+    link: ['']
   });
 
-  //Linea 36 y 37
-  // fb.control<string[]>: crea un control de formulario que maneja un arreglo de strings (tipo seguro)
-// []: valor inicial, aquí un arreglo vacío
-// { nonNullable: true }: indica que el valor nunca será null ni undefined, siempre tiene valor válido
-
-  constructor() {}
-
   ngOnInit(): void {
-    this.usuarioService.auth().subscribe({
-      next: (usuario: UsuarioActivo | undefined) => {
-        if (usuario) {
-          this.usuarioActivo = usuario;
-        } else {
-          alert("Usuario no encontrado");
-        }
-      },
-      error: (err) => {
-        console.error('Error al obtener el usuario:', err);
-      },
-      complete: () => {
-        console.log('Autenticación completada');
+    // Cargo usuario activo
+    this.usuarioService.auth().pipe(take(1)).subscribe(u => {
+      if (u) {
+        this.usuarioActivo = u;
+        this.formularioPublicacion.patchValue({
+          idUsuario: u.id,
+          nombreUsuario: u.nombre
+        });
       }
     });
 
-
-
+    // Compruebo si es edición
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.isEditing = true;
+      this.editingId = id;
+      this.servicioPublicacion.getPublicacionById(id)
+        .subscribe(pub => {
+          this.formularioPublicacion.patchValue({
+            ...pub
+          });
+        });
+    }
   }
 
-
-  onSelect(event: any) {
-    console.log('Archivos seleccionados:', event);
+  onSelect(event: any): void {
     this.files.push(...event.addedFiles);
   }
 
-
-  onRemove(event: any) {
-    console.log('Archivo removido:', event);
-    this.files.splice(this.files.indexOf(event), 1);
+  onRemove(file: File): void {
+    this.files = this.files.filter(f => f !== file);
   }
 
+  subirPublicacion(): void {
+    // Fallback a URL existente
+    const currentUrl = this.formularioPublicacion.value.urlFoto!;
+    const upload$ = this.files.length
+      ? this.servicioPublicacion.getUrl(this.buildFormData())
+      : of(currentUrl);
 
-subirPublicacion() {
-
-  if (this.files.length === 0) {
-    alert('Por favor, selecciona una imagen para tu publicación.');
-    return;
-  }
-  const fileData = this.files[0];
-  const data = new FormData();
-
-  data.append('file', fileData);
-  data.append('upload_preset', 'cloudinary-fizzer');
-  data.append('cloud_name', 'dolip28nf');
-
-  this.servicioPublicacion.getUrl(data).subscribe({
-    next: (url: string) => {
-      this.urlImg = url; // Asignar la URL obtenida al atributo urlImg
-      console.log('URL de la imagen subida:', this.urlImg);
-
-      //Mover la lógica de `patchValue` dentro del callback para asegurar que `nuevaId` esté disponible
-/*
-      this.tamanioArregloPublicaciones((id: number) => {
-        const nuevaId = id.toString();
-        console.log("Nueva ID: " + nuevaId);
-
-
-        //Actualizar los datos del formulario con la URL de la imagen y el nuevo id
-        this.formularioPublicacion.patchValue({
-          //id: nuevaId,
+    upload$.pipe(
+      switchMap((url: string) => {
+        this.urlImg = url;
+        // Construyo el objeto Publicacion con casting seguro
+        const datosForm = this.formularioPublicacion.value;
+        const pub = {
+          ...datosForm,
           urlFoto: this.urlImg,
-          idUsuario: this.usuarioActivo?.id,
-          nombreUsuario: this.usuarioActivo?.nombre,
-          likes: 0,
-          puntosFizzer: 0,
-          baneado: false,
-          link: ""
-        });
+          idUsuario: this.usuarioActivo!.id,
+          nombreUsuario: this.usuarioActivo!.nombre
+        } as unknown as Publicacion;
 
-        //Enviar la publicación al JSON server usando el método postPublicacion
-        this.servicioPublicacion.postPublicacion(this.formularioPublicacion.value as Publicacion).subscribe({
-          next: (response) => {
-            console.log('Publicación creada con éxito:', response);
-            alert('Publicación subida correctamente.');
-            this.formularioPublicacion.reset(); //Limpiar el formulario
-            this.files = []; //Limpiar los archivos seleccionados
-          },
-          error: (err) => {
-            console.error('Error al crear la publicación:', err);
-            alert('Hubo un error al crear la publicación.');
-          }
-        });
-      }); */
-      //Actualizar los datos del formulario con la URL de la imagen y el nuevo id
-      this.formularioPublicacion.patchValue({
-        //id: nuevaId,
-        urlFoto: this.urlImg,
-        idUsuario: this.usuarioActivo?.id,
-        nombreUsuario: this.usuarioActivo?.nombre,
-        likes: [],
-        puntosFizzer: [],
-        baneado: false,
-        link: ""
-      });
-
-      //Enviar la publicación al JSON server usando el método postPublicacion
-      this.servicioPublicacion.postPublicacion(this.formularioPublicacion.value as Publicacion).subscribe({
-        next: (response) => {
-          console.log('Publicación creada con éxito:', response);
-          alert('Publicación subida correctamente.');
-          this.formularioPublicacion.reset(); //Limpiar el formulario
-          this.files = []; //Limpiar los archivos seleccionados
-        },
-        error: (err) => {
-          console.error('Error al crear la publicación:', err);
-          alert('Hubo un error al crear la publicación.');
-        }
-      });
-    },
-    error: (e: Error) => {
-      console.error('Error al subir la imagen:', e);
-      alert('Error al subir la imagen. Inténtalo de nuevo.');
-    }
-  });
-}
-
-  tamanioArregloPublicaciones(callback: (id: number) => void) {
-    this.servicioPublicacion.getPublicacion().subscribe({
-      next: (publicacion: Publicacion[]) => {
-        const listaPublicaciones = publicacion;
-        const id = listaPublicaciones.length + 1; // Calcula el id como tamaño del arreglo + 1
-        callback(id); // Llama al callback pasando el id calculado
+        return this.isEditing
+          ? this.servicioPublicacion.putPublicacion(pub, this.editingId!)
+          : this.servicioPublicacion.postPublicacion(pub);
+      })
+    ).subscribe({
+      next: () => {
+        alert(this.isEditing ? 'Publicado actualizado.' : 'Publicado creado.');
+        this.router.navigate(['/home']);
       },
-      error: () => {
-        console.log("Error al traer el arreglo de reportes");
+      error: e => {
+        console.error(e);
+        alert('Hubo un error al guardar la publicación.');
       }
     });
   }
 
+  private buildFormData(): FormData {
+    const data = new FormData();
+    data.append('file', this.files[0]);
+    data.append('upload_preset', 'cloudinary-fizzer');
+    data.append('cloud_name', 'dolip28nf');
+    return data;
+  }
 }

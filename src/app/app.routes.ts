@@ -14,10 +14,19 @@ import { ResultadosBusquedaComponent } from './user/resultados-busqueda/resultad
 import { VerTareaComponent } from './user/ver-tarea/ver-tarea.component';
 import { NavegadorTareasComponent } from './user/navegador-tareas/navegador-tareas.component';
 import { VotacionesComponent } from './user/votaciones/votaciones.component';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-  {path: "admin-reportes", component:ReportesComponent},
-  {path: "filtro-tareas", component: FiltroTareasComponent},
+  {path: 'admin-reportes',
+  canActivate: [AuthGuard],
+  data: { soloAdmin: true }, // esto le dice al guard que requiere admin
+  loadComponent: () => import('./admin/reportes/reportes.component').then(c => c.ReportesComponent)},
+
+  {path: 'filtro-tareas',
+  canActivate: [AuthGuard],
+  data: { soloAdmin: true }, // esto le dice al guard que requiere admin
+  loadComponent: () => import('./admin/filtro-tareas/filtro-tareas.component').then(c => c.FiltroTareasComponent)},
+
   {path: '', component: InicioSesionComponent},
   {path: "login", component: InicioSesionComponent},
   {path: "register", component: RegistroComponent},
@@ -32,7 +41,9 @@ export const routes: Routes = [
   {path: "resultados-busqueda", component: ResultadosBusquedaComponent},
   {path: "ver-tarea" , component: VerTareaComponent},
   {path: 'navegar-tareas-individuales', component: NavegadorTareasComponent},
-  {path: "votaciones", component: VotacionesComponent}
-  
+  {path: "votaciones", component: VotacionesComponent},
+  { path: 'editar-publicacion/:id', component: SubirPublicacionComponent },
+  { path: 'formulario-publicacion',    component: SubirPublicacionComponent },
+
 
 ];

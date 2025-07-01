@@ -59,8 +59,8 @@
       "baneado": false,
       "admin": false,
       "seguidores": [
-        "1",
-        "d410"
+        "d410",
+        "1"
       ]
     },
     {
@@ -192,46 +192,42 @@
   ],
   "publicaciones": [
     {
-      "id": "d02f",
-      "idUsuario": "1",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751162168/dxy0nyvuklrmc4suigoj.png",
-      "descripcion": "Prueba Likes",
-      "baneado": false,
-      "nombreUsuario": "piru",
-      "likes": [
-        "342432",
-        "3",
-        "1"
-      ],
-      "puntosFizzer": [
-        "342432",
-        "3",
-        "1"
-      ],
-      "link": ""
-    },
-    {
-      "id": "f363",
-      "idUsuario": "1",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751221202/xutd59rzriijv81fbiqu.png",
-      "descripcion": "Prueba Loca de los crotos xd",
-      "baneado": false,
-      "nombreUsuario": "piru",
-      "likes": [],
-      "puntosFizzer": [
-        "1"
-      ],
-      "link": ""
-    },
-    {
       "id": "29b8",
       "idUsuario": "324a",
       "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751298370/jlbgc7dw2ch3el5emfnc.png",
       "descripcion": "Petito",
       "baneado": false,
       "nombreUsuario": "usuario",
+      "likes": [
+        "1"
+      ],
+      "puntosFizzer": [],
+      "link": ""
+    },
+    {
+      "id": "ca2c",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751323448/tbiyb219oll3nul1yofc.jpg",
+      "descripcion": "Pruba",
+      "baneado": false,
+      "nombreUsuario": "marcos",
       "likes": [],
       "puntosFizzer": [],
+      "link": ""
+    },
+    {
+      "id": "833d",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751328242/h7vn3mvh0ocf3su4o0jn.png",
+      "descripcion": "re loco",
+      "baneado": false,
+      "nombreUsuario": "piru",
+      "likes": [
+        "1"
+      ],
+      "puntosFizzer": [
+        "1"
+      ],
       "link": ""
     }
   ]
