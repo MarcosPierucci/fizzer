@@ -21,9 +21,6 @@ import { UsuarioService, UsuarioActivo } from '../../service/usuario.service';
 })
 export class FeedComponent implements OnInit, OnDestroy {
   publicaciones: Publicacion[] = [];
-  currentUserId = '';          // valor por defecto
-  private sub = new Subscription();
-
   constructor(
     private publicacionService: PublicacionServiceService,
     private usuarioService: UsuarioService,
@@ -33,18 +30,9 @@ export class FeedComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.loadPublicaciones();
 
-    this.sub.add(
-      this.usuarioService
-        .auth()
-        .pipe(take(1))
-        .subscribe((user: UsuarioActivo | undefined) => {
-          this.currentUserId = user ? user.id.toString() : '';
-        })
-    );
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
   }
 
   loadPublicaciones(): void {

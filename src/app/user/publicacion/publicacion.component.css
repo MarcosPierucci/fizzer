@@ -96,3 +96,52 @@
 .punto-button.activo:not(:disabled):hover {
   background-color: #64b5f6; /* Azul más claro al pasar el mouse si ya está activo */
 }
+
+
+/* ===== Botón “Editar” personalizado ===== */
+.btn-editar {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-editar:hover {
+  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  transform: translateY(-1px);
+}
+.btn-editar:active {
+  transform: translateY(1px);
+}
+
+/* ===== Botón “Borrar” personalizado ===== */
+.btn-borrar {
+  background: linear-gradient(135deg, #ef5350, #e53935);
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-borrar:hover {
+  background: linear-gradient(135deg, #e53935, #ef5350);
+  transform: translateY(-1px);
+}
+.btn-borrar:active {
+  transform: translateY(1px);
+}
