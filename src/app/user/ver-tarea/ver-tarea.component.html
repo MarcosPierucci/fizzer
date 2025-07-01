@@ -1,18 +1,17 @@
-
-<body>
 <div class="container">
-<div class="sidebar">
-    <a [routerLink]="'/home'">
-    🏠
-    </a>
+  <div class="sidebar">
+    <a [routerLink]="'/home'">🏠</a>
   </div>
-<div class="contenedor-tarea">
+
+  <div class="contenedor-tarea" *ngIf="tareaDelDia">
     <h1 class="titulo-tarea">La tarea del día es:</h1>
-    
     <div class="descripcion-tarea">
-      <strong>Título:</strong> Dibujar a Messi<br>
-      <strong>Descripción:</strong> En esta tarea vamos a dibujar a Messi
+      <strong>Título:</strong> {{ tareaDelDia.titulo }}<br>
+      <strong>Descripción:</strong> {{ tareaDelDia.descripcion }}
     </div>
   </div>
+
+  <div *ngIf="!tareaDelDia">
+    <p>Cargando tarea...</p>
+  </div>
 </div>
-</body>

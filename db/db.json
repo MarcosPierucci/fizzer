@@ -70,6 +70,14 @@
       "baneado": false,
       "admin": false,
       "seguidores": []
+    },
+    {
+      "id": "b8f5",
+      "nombreUsario": "larry",
+      "contraseniaUsuario": "agua1212",
+      "baneado": false,
+      "admin": false,
+      "seguidores": []
     }
   ],
   "tareas": [
@@ -171,25 +179,67 @@
     }
   ],
   "tareasGlobales": [
-    {
-      "id": "id-1",
-      "usada": false,
-      "descripcion": "En esta tarea quiero que la gente dibuje a messi",
-      "titulo": "Dibujar a Messi"
-    },
-    {
-      "id": "141a",
-      "usada": false,
-      "descripcion": "tarea nueva",
-      "titulo": "nueva tarea"
-    },
-    {
-      "id": "ece1",
-      "usada": false,
-      "descripcion": "Prueba para ver si funciona el borrar",
-      "titulo": "PruebaLoca"
-    }
-  ],
+  {
+    "id": "id-1",
+    "usada": false,
+    "descripcion": "En esta tarea quiero que la gente dibuje a Messi",
+    "titulo": "Dibujar a Messi"
+  },
+  {
+    "id": "141a",
+    "usada": false,
+    "descripcion": "tarea nueva",
+    "titulo": "nueva tarea"
+  },
+  {
+    "id": "ece1",
+    "usada": false,
+    "descripcion": "Prueba para ver si funciona el borrar",
+    "titulo": "PruebaLoca"
+  },
+  {
+    "id": "t-001",
+    "usada": false,
+    "descripcion": "Dibujar un paisaje que mezcle naturaleza y ciudad.",
+    "titulo": "Naturaleza urbana"
+  },
+  {
+    "id": "t-002",
+    "usada": false,
+    "descripcion": "Hacer un retrato de alguien usando solo líneas rectas.",
+    "titulo": "Retrato geométrico"
+  },
+  {
+    "id": "t-003",
+    "usada": false,
+    "descripcion": "Inventar un personaje de fantasía y dibujarlo en una pose de acción.",
+    "titulo": "Personaje fantástico"
+  },
+  {
+    "id": "t-004",
+    "usada": false,
+    "descripcion": "Dibujar una escena cotidiana en estilo caricatura.",
+    "titulo": "Vida caricaturizada"
+  },
+  {
+    "id": "t-005",
+    "usada": false,
+    "descripcion": "Rediseñar la portada de un libro que te guste.",
+    "titulo": "Portada reimaginada"
+  },
+  {
+    "id": "t-006",
+    "usada": false,
+    "descripcion": "Ilustrar un objeto común como si fuera parte de una civilización alienígena.",
+    "titulo": "Objeto alienígena"
+  },
+  {
+    "id": "t-007",
+    "usada": false,
+    "descripcion": "Crear una escena que mezcle dos estaciones del año en un mismo lugar.",
+    "titulo": "Fusión de estaciones"
+  }
+],
   "publicaciones": [
     {
       "id": "29b8",
