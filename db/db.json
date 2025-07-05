@@ -242,38 +242,6 @@
 ],
   "publicaciones": [
     {
-      "id": "d02f",
-      "idUsuario": "1",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751162168/dxy0nyvuklrmc4suigoj.png",
-      "descripcion": "Prueba Likes",
-      "baneado": false,
-      "nombreUsuario": "piru",
-      "likes": [
-        "342432",
-        "3",
-        "1"
-      ],
-      "puntosFizzer": [
-        "342432",
-        "3",
-        "1"
-      ],
-      "link": ""
-    },
-    {
-      "id": "f363",
-      "idUsuario": "1",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751221202/xutd59rzriijv81fbiqu.png",
-      "descripcion": "Prueba Loca de los crotos xd",
-      "baneado": false,
-      "nombreUsuario": "piru",
-      "likes": [],
-      "puntosFizzer": [
-        "1"
-      ],
-      "link": ""
-    },
-    {
       "id": "29b8",
       "idUsuario": "324a",
       "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751298370/jlbgc7dw2ch3el5emfnc.png",

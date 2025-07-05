@@ -1,42 +1,100 @@
+/* Contenedor del feed */
 .feed {
-    padding: 16px;
-    max-width:400px; /* Ajusta el ancho máximo */
-    margin: 0 auto;
-    margin-top: 30px; /* Centra el contenido */
-  }
-  
-  .post {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 12px;
-    background-color: #fff;
+  padding: 16px;
+  max-width: 400px; /* Ajusta el ancho máximo */
+  margin: 30px auto 0;
+}
 
-  }
-  
-  .post-header h3 {
-    margin: 0;
-    color: #333;
-    font-size: 32px;
-    margin-top: 10px; /* Reduce el tamaño de la fuente */
-  }
-  
-  .post-body {
-    margin-top: 30px;
-  }
-  
-  .post-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    object-fit: cover; /* Ajusta la imagen para que quepa mejor */
-  }
-  
-  .post-footer {
-    display: flex;
-    justify-content: space-between;
-    color: #666;
-    font-size: 12px; /* Reduce el tamaño de la fuente */
-  }
-  
+/* Cada publicación */
+.post {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background-color: #fff;
+}
+
+/* Encabezado de la publicación */
+.post-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+/* Cuerpo de la publicación */
+.post-body {
+  margin-top: 30px;
+}
+
+/* Imagen de la publicación */
+.post-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  object-fit: cover;
+}
+
+/* Pie de la publicación */
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 12px;
+}
+
+/* Contenedor de acciones (botones) */
+.actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+/* ===== Botón “Editar” personalizado ===== */
+.btn-editar {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-editar:hover {
+  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  transform: translateY(-1px);
+}
+.btn-editar:active {
+  transform: translateY(1px);
+}
+
+/* ===== Botón “Borrar” personalizado ===== */
+.btn-borrar {
+  background: linear-gradient(135deg, #ef5350, #e53935);
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-borrar:hover {
+  background: linear-gradient(135deg, #e53935, #ef5350);
+  transform: translateY(-1px);
+}
+.btn-borrar:active {
+  transform: translateY(1px);
+}
