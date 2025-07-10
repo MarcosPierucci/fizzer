@@ -44,6 +44,7 @@ aceptarTarea(id: string | undefined) {
       };
 
       this.mandarAglobales(tareaGlobal);
+      this.eliminarTarea(id)
     }}, error:(e:Error) =>
     {
       console.log(e.message)
@@ -65,7 +66,7 @@ this.tgs.postTareaGlobal(tareaGlobal).subscribe({
 
 
 
-rechazarTarea(id:string | undefined){
+eliminarTarea(id:string | undefined){
   this.ts.deleteTarea(id).subscribe(
     {
       next:()=>{
