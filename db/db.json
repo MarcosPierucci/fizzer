@@ -35,57 +35,6 @@
       "baneado": false,
       "admin": false,
       "seguidores": []
-    },
-    {
-      "id": "4",
-      "nombreUsario": "usuarioPrueba",
-      "contraseniaUsuario": "hola",
-      "baneado": false,
-      "admin": false,
-      "seguidores": []
-    },
-    {
-      "id": "f11e",
-      "nombreUsario": "UsuarioPruebaid",
-      "contraseniaUsuario": "pruebaId",
-      "baneado": false,
-      "admin": false,
-      "seguidores": []
-    },
-    {
-      "id": "324a",
-      "nombreUsario": "usuario",
-      "contraseniaUsuario": "12345",
-      "baneado": false,
-      "admin": false,
-      "seguidores": [
-        "d410",
-        "1"
-      ]
-    },
-    {
-      "id": "d410",
-      "nombreUsario": "facurochhh",
-      "contraseniaUsuario": "facu1212",
-      "baneado": false,
-      "admin": false,
-      "seguidores": []
-    },
-    {
-      "id": "b8f5",
-      "nombreUsario": "larry",
-      "contraseniaUsuario": "agua1212",
-      "baneado": false,
-      "admin": false,
-      "seguidores": []
-    },
-    {
-      "id": "c355",
-      "nombreUsario": "pedroNuevo",
-      "contraseniaUsuario": "agua1212",
-      "baneado": false,
-      "admin": false,
-      "seguidores": []
     }
   ],
   "tareas": [
@@ -99,13 +48,12 @@
         "Entretenimiento"
       ],
       "aceptada": false,
-      "votaciones": 3,
+      "votaciones": 2,
       "idsVotadores": [
         "3",
-        "1",
         "342432"
       ],
-      "creador": "facu"
+      "creador": "santi"
     },
     {
       "id": "10ff",
@@ -123,78 +71,44 @@
       "creador": "facu"
     },
     {
-      "id": "27eb",
-      "titulo": "Pelicula: Fight Club",
-      "descripcion": "Toca mirar una peli, prepara los pochoclos y busca Fight Club, disponible en Netflix",
+      "id": "04b5",
+      "titulo": "Naturaleza urbana",
+      "descripcion": "Dibujar un paisaje que mezcle naturaleza y ciudad",
       "categorias": [
-        "Arte",
+        "Arte"
+      ],
+      "aceptada": false,
+      "votaciones": 0,
+      "idsVotadores": [],
+      "creador": "facu"
+    },
+    {
+      "id": "b196",
+      "titulo": "Rememora la F1",
+      "descripcion": "Elige un Gran Premio de que tenga mas de 5 años y miratelo completo (Si tiene algo interesante mejor)  ",
+      "categorias": [
+        "Deporte",
         "Entretenimiento"
       ],
       "aceptada": false,
-      "votaciones": 2,
-      "idsVotadores": [
-        "1"
+      "votaciones": 0,
+      "idsVotadores": [],
+      "creador": "piru"
+    },
+    {
+      "id": "28d8",
+      "titulo": "Desafío Deportivo",
+      "descripcion": "Hace una rutina intensa: 20 sentadillas, 15 abdominales, 10 flexiones y 5 burpees. Conta cuantas vueltas pudiste dar",
+      "categorias": [
+        "Deporte"
       ],
+      "aceptada": false,
+      "votaciones": 0,
+      "idsVotadores": [],
       "creador": "santi"
-    },
-    {
-      "id": "6cc2",
-      "titulo": "Huevos fritos divertidos",
-      "descripcion": "Prepara unos huevos fritos con diferentes formas, corazon, estrella, rombo, etc.",
-      "categorias": [
-        "Cocina",
-        "Entretenimiento"
-      ],
-      "aceptada": false,
-      "votaciones": 1,
-      "idsVotadores": [
-        "1"
-      ],
-      "creador": "piru"
-    },
-    {
-      "id": "4214",
-      "titulo": "Sale ese cs?",
-      "descripcion": "Pinta Cs con los pibes en lugar de programar? Seh!",
-      "categorias": [
-        "Videojuegos"
-      ],
-      "aceptada": false,
-      "votaciones": 1,
-      "idsVotadores": [
-        "1"
-      ],
-      "creador": "piru"
     }
   ],
-  "reporte": [
-    {
-      "id": "1",
-      "motivo": "Esto no es un dibujo de messi es una foto de google",
-      "reportado": "santi",
-      "link": "/publicacion/3/usuario/3",
-      "idReportado": "3",
-      "idPublicacionReportada": "3",
-      "reporteTerminado": false
-    },
-    {
-      "id": "b711",
-      "motivo": "prueba reporte",
-      "reportado": "facu",
-      "link": "/publicacion/2/usuario/2",
-      "idReportado": "2",
-      "idPublicacionReportada": "2"
-    },
-    {
-      "id": "face",
-      "motivo": "vergonzoso",
-      "reportado": "pedrousuario",
-      "link": "/publicacion//usuario/c355",
-      "idReportado": "c355",
-      "idPublicacionReportada": "",
-      "reporteTerminado": false
-    }
-  ],
+  "reporte": [],
   "tareasGlobales": [
     {
       "id": "id-1",
@@ -203,186 +117,189 @@
       "titulo": "Dibujar a Messi"
     },
     {
-      "id": "141a",
+      "id": "6cc2",
       "usada": false,
-      "descripcion": "tarea nueva",
-      "titulo": "nueva tarea"
+      "descripcion": "Prepara unos huevos fritos con diferentes formas, corazon, estrella, rombo, etc.",
+      "titulo": "Huevos fritos divertidos"
     },
     {
-      "id": "ece1",
+      "id": "27eb",
       "usada": false,
-      "descripcion": "Prueba para ver si funciona el borrar",
-      "titulo": "PruebaLoca"
+      "descripcion": "Toca mirar una peli, prepara los pochoclos y busca Fight Club, disponible en Netflix",
+      "titulo": "Pelicula: Fight Club"
     },
     {
-      "id": "t-001",
+      "id": "c2ba",
       "usada": false,
-      "descripcion": "Dibujar un paisaje que mezcle naturaleza y ciudad.",
-      "titulo": "Naturaleza urbana"
+      "descripcion": "Organiza una noche de karaoke con al menos dos personas más. Pueden usar YouTube o alguna app de karaoke para cantar sus temas favoritos",
+      "titulo": "Noche de Karaoke"
     },
     {
-      "id": "t-002",
+      "id": "cb59",
       "usada": false,
-      "descripcion": "Hacer un retrato de alguien usando solo líneas rectas.",
+      "descripcion": "Prepará un sándwich o una ensalada con los ojos vendados (alguien puede ayudarte o supervisarte)",
+      "titulo": "Cocina con los Ojos Vendados"
+    },
+    {
+      "id": "872e",
+      "usada": false,
+      "descripcion": "Hacer un retrato de alguien usando solo líneas rectas",
       "titulo": "Retrato geométrico"
-    },
-    {
-      "id": "t-003",
-      "usada": false,
-      "descripcion": "Inventar un personaje de fantasía y dibujarlo en una pose de acción.",
-      "titulo": "Personaje fantástico"
-    },
-    {
-      "id": "t-004",
-      "usada": false,
-      "descripcion": "Dibujar una escena cotidiana en estilo caricatura.",
-      "titulo": "Vida caricaturizada"
-    },
-    {
-      "id": "t-005",
-      "usada": false,
-      "descripcion": "Rediseñar la portada de un libro que te guste.",
-      "titulo": "Portada reimaginada"
-    },
-    {
-      "id": "t-006",
-      "usada": false,
-      "descripcion": "Ilustrar un objeto común como si fuera parte de una civilización alienígena.",
-      "titulo": "Objeto alienígena"
-    },
-    {
-      "id": "t-007",
-      "usada": false,
-      "descripcion": "Crear una escena que mezcle dos estaciones del año en un mismo lugar.",
-      "titulo": "Fusión de estaciones"
     }
   ],
   "publicaciones": [
     {
-      "id": "d02f",
+      "id": "7cea",
       "idUsuario": "1",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751162168/dxy0nyvuklrmc4suigoj.png",
-      "descripcion": "MAÑANA SE RINDE",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1752162229/sjf9mze7jjqt9wmehugn.jpg",
+      "descripcion": "Acá con los pibes nos sumamos a ese cs para la tareusqui",
       "baneado": false,
       "nombreUsuario": "piru",
       "likes": [
-        "342432",
-        "3",
         "1"
+      ],
+      "puntosFizzer": [
+        "1",
+        "3"
+      ],
+      "link": ""
+    },
+    {
+      "id": "28a3",
+      "idUsuario": "3",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1752162351/f9wat7ft4im4zww0x3ab.jpg",
+      "descripcion": "Csssssssssssssssssss",
+      "baneado": false,
+      "nombreUsuario": "santi",
+      "likes": [
+        "3"
       ],
       "puntosFizzer": [
         "342432",
+        "1",
+        "3"
+      ],
+      "link": ""
+    },
+    {
+      "id": "efd1",
+      "idUsuario": "342432",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1752162381/huu8o6wisaxrippzgkm6.jpg",
+      "descripcion": "Mira la faquita que pegue ",
+      "baneado": false,
+      "nombreUsuario": "facu",
+      "likes": [
+        "1",
+        "342432",
+        "3"
+      ],
+      "puntosFizzer": [
+        "342432"
+      ],
+      "link": ""
+    },
+    {
+      "id": "df2f",
+      "idUsuario": "3",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1752162478/mdgz7nsbvb3pmqp6p6kx.jpg",
+      "descripcion": "La verdad no solo salio lindo el dibujo, el cortadito me quedo espectacular",
+      "baneado": false,
+      "nombreUsuario": "santi",
+      "likes": [
+        "1",
+        "3"
+      ],
+      "puntosFizzer": [
+        "342432",
+        "3"
+      ],
+      "link": ""
+    },
+    {
+      "id": "e5ae",
+      "idUsuario": "342432",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1752162508/syixtaw8b5r89vzyv0nj.jpg",
+      "descripcion": "Creo que me podria haber quedado mejor (Quise hacer un tulipan)",
+      "baneado": false,
+      "nombreUsuario": "facu",
+      "likes": [
+        "1",
+        "342432",
+        "3"
+      ],
+      "puntosFizzer": [
+        "1",
+        "342432"
+      ],
+      "link": ""
+    },
+    {
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1752162565/ghr8pnrnqx2nkbnutn2u.jpg",
+      "descripcion": "Bueno, justo hoy le saque foto a este en la chamba",
+      "baneado": false,
+      "nombreUsuario": "piru",
+      "likes": [
+        "1"
+      ],
+      "puntosFizzer": [
         "3",
         "1"
       ],
-      "link": ""
-    },
-    {
-      "id": "f363",
-      "idUsuario": "1",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751221202/xutd59rzriijv81fbiqu.png",
-      "descripcion": "Prueba Loca de los crotos xd",
-      "baneado": false,
-      "nombreUsuario": "piru",
-      "likes": [],
-      "puntosFizzer": [
-        "1"
-      ],
-      "link": ""
-    },
-    {
-      "id": "29b8",
-      "idUsuario": "324a",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751298370/jlbgc7dw2ch3el5emfnc.png",
-      "descripcion": "Petito",
-      "baneado": false,
-      "nombreUsuario": "usuario",
-      "likes": [
-        "1"
-      ],
-      "puntosFizzer": [],
-      "link": ""
-    },
-    {
-      "id": "ca2c",
-      "idUsuario": "1",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751323448/tbiyb219oll3nul1yofc.jpg",
-      "descripcion": "Pruba",
-      "baneado": false,
-      "nombreUsuario": "marcos",
-      "likes": [],
-      "puntosFizzer": [],
-      "link": ""
-    },
-    {
-      "id": "833d",
-      "idUsuario": "1",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751328242/h7vn3mvh0ocf3su4o0jn.png",
-      "descripcion": "re loco",
-      "baneado": false,
-      "nombreUsuario": "piru",
-      "likes": [
-        "1"
-      ],
-      "puntosFizzer": [
-        "1"
-      ],
-      "link": ""
-    },
-    {
-      "id": "",
-      "idUsuario": "c355",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751334796/mbu70gapko3y2vl69ixr.jpg",
-      "descripcion": "HERMOSA",
-      "baneado": false,
-      "nombreUsuario": "pedrousuario",
-      "likes": [],
-      "puntosFizzer": [],
-      "link": ""
-    },
-    {
-      "id": "",
-      "idUsuario": "3",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751336026/rlnpo9dqrzujdx9v9iia.jpg",
-      "descripcion": "sss",
-      "baneado": false,
-      "nombreUsuario": "santi",
-      "likes": [],
-      "puntosFizzer": [],
-      "link": ""
-    },
-    {
-      "id": "",
-      "idUsuario": "3",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751336031/edctyfeljtjqqeciktwm.jpg",
-      "descripcion": "sss",
-      "baneado": false,
-      "nombreUsuario": "santi",
-      "likes": [],
-      "puntosFizzer": [],
-      "link": ""
-    },
-    {
-      "id": "",
-      "idUsuario": "3",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751336121/eahcrsidoeld6fr7m9vh.jpg",
-      "descripcion": "sssdasdasd",
-      "baneado": false,
-      "nombreUsuario": "santi",
-      "likes": [],
-      "puntosFizzer": [],
-      "link": ""
-    },
-    {
-      "idUsuario": "1",
-      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1751336399/o9ugpslcanyqy3luqbm7.jpg",
-      "descripcion": "sasa",
-      "baneado": false,
-      "nombreUsuario": "piru",
-      "likes": [],
-      "puntosFizzer": [],
       "link": "",
-      "id": "b53f"
+      "id": "8cd2"
+    },
+    {
+      "id": "a07b",
+      "idUsuario": "1",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1752162797/znimsljzo62pzxhycnuy.jpg",
+      "descripcion": "Jaja Mesi Pelado",
+      "baneado": false,
+      "nombreUsuario": "piru",
+      "likes": [],
+      "puntosFizzer": [],
+      "link": ""
+    },
+    {
+      "id": "d3e1",
+      "idUsuario": "3",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1752162879/imgjklk0aivzx8pls722.jpg",
+      "descripcion": "Este dibujo lo hice recien en el bondi porque andaba aburrido",
+      "baneado": false,
+      "nombreUsuario": "santi",
+      "likes": [],
+      "puntosFizzer": [],
+      "link": ""
+    },
+    {
+      "id": "cfb3",
+      "idUsuario": "342432",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1752162923/ewhttbups0b5nut9f16v.png",
+      "descripcion": "18 años estudiando bellas artes para que finalmente me salga un dibujo de messi que mas o menos se parece",
+      "baneado": false,
+      "nombreUsuario": "facu",
+      "likes": [
+        "342432",
+        "1",
+        "3"
+      ],
+      "puntosFizzer": [
+        "342432"
+      ],
+      "link": ""
+    },
+    {
+      "id": "d8d3",
+      "idUsuario": "342432",
+      "urlFoto": "https://res.cloudinary.com/dolip28nf/image/upload/v1752163096/ovgp2hv7hy6jmw5awb0c.jpg",
+      "descripcion": "Bueno, ya se que se paso la tarea pero tenia ganas de compratir este cafe que me salio",
+      "baneado": false,
+      "nombreUsuario": "facu",
+      "likes": [
+        "342432"
+      ],
+      "puntosFizzer": [],
+      "link": ""
     }
   ]
 }
